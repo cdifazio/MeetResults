@@ -1,0 +1,136 @@
+(function (scope) {
+
+    function init() {
+        window.addEventListener("p:Logout", function(event) {
+            var node = document.querySelector(".AccountBox .Menu .Logout");
+            if (node) node.click();
+        });
+        var as = document.querySelectorAll(".AccountBox .Menu > li > a#backOffice");
+        var lastFeature = localStorage.getItem("lastFeatureId");
+        if (lastFeature) {
+            for (var i = 0; i < as.length; i++ ){
+                as[i].href += lastFeature;
+            }
+        }
+        var accountActions = document.querySelectorAll("ul.AccountActions:not(.Logged)");
+        if (accountActions) {
+            for (var index in accountActions) {
+                var node = accountActions[index];
+                Dom.registerEvent(node, "click", function(ev) {
+                    var target = Dom.getTarget(ev);
+                    var p = Dom.findParentWithClass(target, "SSO");
+                    if (!p) return;
+
+                    if (googleAnalyticsService) {
+                        googleAnalyticsService.sendMainSigninEvent();
+                        googleAnalyticsService.sendSigninClickedEvent();
+                    }
+                    var shouldCreateNewAccEnabled = (typeof(TEAM_INFO) != "undefined" && TEAM_INFO.shouldCreateNewAccEnabled)
+                                            || (typeof(CONTEXT) != "undefined" && CONTEXT.shouldCreateNewAccEnabled);
+
+                    if (shouldCreateNewAccEnabled) {
+                        Dom.cancelEvent(ev);
+                        var teamName = (typeof(TEAM_INFO) != "undefined" && TEAM_INFO.name) || (typeof(CONTEXT) != "undefined" && CONTEXT.teamName);
+                        var teamAlias = (typeof(TEAM_INFO) != "undefined" && TEAM_INFO.alias) || (typeof(CONTEXT) != "undefined" && CONTEXT.teamAlias);
+                        var cmsLive = (typeof(TEAM_INFO) != "undefined" && TEAM_INFO.useCMS) || (typeof(CONTEXT) != "undefined" && CONTEXT.useCMS);
+                        var message = "Do you wish to join " + teamName + " and begin account creation using your SportsEngine account information?";
+                        var builder = {
+                            title: "Confirm",
+                            size: "small",
+                            buildContent: function (container) {
+                                container.appendChild(Dom.newDOMElement({
+                                    _name: "hbox", "class": "MessageDialog",
+                                    _children: [
+                                        { _name: "icon", "class": "information" },
+                                        {
+                                            _name: "vbox", flex: 1, "class": "Messages",
+                                            _children: [
+                                                { _name: "strong", _text: message }
+                                            ]
+                                        }
+                                    ]
+                                }));
+                            },
+                            actions: [{
+                                    title: "Continue",
+                                    primary: true,
+                                    isCloseHandler: false,
+                                    run: function () {
+                                        this._dialog.quit();
+                                        var to = "/team/" + teamAlias + "/controller/auth/login?to=" +
+                                        encodeURIComponent(cmsLive ? ("/team/" + teamAlias + "/controller/cms/admin/index") : ("/Home.jsp?team=" + teamAlias));
+                                        window.location.href = to;
+                                        return true;
+                                    }
+                                },
+                                {
+                                title: "Cancel",
+                                primary: false,
+                                isCloseHandler: true,
+                                run: function () {
+                                    this._dialog.quit();
+                                    return true;
+                                }
+                            }]
+                        };
+                        var dialog = new BuilderBasedDialog(builder);
+                        dialog.open();
+                        dialog.overlay.style.zIndex = "1003";
+                        dialog.dialogFrame.style.zIndex = "1003";
+                        if (Dom.hasClass(document.body, "Legacy")) {
+                            dialog.dialogFrame.style.fontSize = "1.2em";
+                        }
+                        return;
+                    }
+
+                    var teamId = typeof(TEAM_INFO) != "undefined" ? TEAM_INFO.id :
+                            (typeof(CONTEXT) != "undefined" ? CONTEXT.teamId : 0);
+                    var host = ("" + window.location.host).replace(/\./g, "_");
+                    var storageKey = "notify_sso_signin_changed_for_team_" + teamId + "_" + host;
+                    var hasShownAlert = localStorage.getItem(storageKey) == "true";
+                    if (hasShownAlert || window._signInNotificationDialog) {
+                        if (window._signInNotificationDialog) {
+                            Dom.cancelEvent(ev);
+                        }
+                        return;
+                    }
+                    Dom.cancelEvent(ev);
+                    var signIn = function(){
+                        var links = Dom.findChildWithClass(p, "SignIn");
+                        if (!links) return;
+                        window.open(links.href, "_self");
+                    };
+
+                    if (CONTEXT && CONTEXT.isShowSSOLoginNotify && (CONTEXT.isShowTeamRegistrationLink || CONTEXT.isShowClassRegistrationLink || CONTEXT.isShowBookingRegistrationLink)) {
+                        localStorage.setItem(storageKey, true);
+                        window._signInNotificationDialog = new SignInNotificationDialog(signIn);
+                        window._signInNotificationDialog.onHide = function () {
+                            delete window._signInNotificationDialog;
+                        };
+                        window._signInNotificationDialog.open({
+                            isShowClassRegistrationLink: CONTEXT.isShowClassRegistrationLink,
+                            classRegistrationLinkLabel: CONTEXT.classRegistrationLinkLabel,
+                            isClassRegistrationCustomLinkEnabled: CONTEXT.isClassRegistrationCustomLinkEnabled,
+                            classRegistrationLink: CONTEXT.classRegistrationLink,
+                            isShowTeamRegistrationLink: CONTEXT.isShowTeamRegistrationLink,
+                            teamRegistrationLinkLabel: CONTEXT.teamRegistrationLinkLabel,
+                            isTeamRegistrationCustomLinkEnabled: CONTEXT.isTeamRegistrationCustomLinkEnabled,
+                            teamRegistrationLink: CONTEXT.teamRegistrationLink,
+                            publicClassRegistrationLink: CONTEXT.publicClassRegistrationLink,
+                            publicTeamRegistrationLink: CONTEXT.publicTeamRegistrationLink,
+                            isShowBookingRegistrationLink: CONTEXT.isShowBookingRegistrationLink,
+                            bookingRegistrationLinkLabel: CONTEXT.bookingRegistrationLinkLabel,
+                            isBookingRegistrationCustomLinkEnabled: CONTEXT.isBookingRegistrationCustomLinkEnabled,
+                            bookingRegistrationLink: CONTEXT.bookingRegistrationLink,
+                            publicBookingRegistrationLink: CONTEXT.publicBookingRegistrationLink
+                        });
+                    } else {
+                        signIn();
+                    }
+                });
+            }
+        }
+    }
+
+    Dom.registerEvent(window, "DOMContentLoaded", init, false);
+})(window);

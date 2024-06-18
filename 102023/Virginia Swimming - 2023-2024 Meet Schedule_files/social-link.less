@@ -1,0 +1,235 @@
+/* LESS: /cms/stylesheet/social-link.less */
+.CMSComponentSocialLinks > .Horizontal {
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+.CMSComponentSocialLinks > .Horizontal > li {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+.CMSComponentSocialLinks > .Horizontal > li > a {
+  display: block;
+  font-size: 1.4em;
+  line-height: 1em;
+  width: 1em;
+  padding: 0.2em;
+  border-radius: 0.8em;
+  background: #1878A0;
+  color: #FFF;
+}
+.CMSComponentSocialLinks > .Horizontal > li > a > span {
+  display: none;
+}
+.CMSComponentSocialLinks > .Horizontal > li > icon + span {
+  margin-left: 0.5em;
+}
+.CMSComponentSocialLinks > .Horizontal > li icon {
+  color: #FFF;
+}
+.CMSComponentSocialLinks > .Horizontal > li:hover icon {
+  color: #1878A0;
+}
+.CMSComponentSocialLinks > .Horizontal > li:hover a {
+  background: #FFF;
+}
+.CMSComponentSocialLinks > .Horizontal > li + li {
+  margin-left: 1ex;
+}
+.CMSComponentSocialLinks > .Vertical {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  font-size: 1.5em;
+  list-style: none;
+}
+.CMSComponentSocialLinks > .Vertical > li {
+  margin: 0px;
+  width: 100%;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+}
+.CMSComponentSocialLinks > .Vertical > li:hover {
+  background: none;
+}
+.CMSComponentSocialLinks > .Vertical > li > a {
+  background: none;
+  width: auto;
+  min-width: 0em;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+}
+.CMSComponentSocialLinks > .Vertical > li > a > span {
+  display: none;
+}
+.CMSComponentSocialLinks > .Vertical > li > a > span::before {
+  flex: 1 1 1em;
+  -webkit-flex: 1 1 1em;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  align-items: flex-end;
+}
+.CMSComponentSocialLinks > .Vertical > li > a:hover > icon.facebook {
+  color: #4267b2;
+  background-color: white;
+}
+.CMSComponentSocialLinks > .Vertical > li > a:hover > icon.twitter {
+  background-color: #1da1f2;
+  border-radius: 1em;
+  color: white;
+}
+.CMSComponentSocialLinks > .Vertical > li > a:hover > icon.google-plus {
+  color: #db4437;
+  background-color: white;
+}
+.CMSComponentSocialLinks > .Vertical > li > a:hover > icon.instagram {
+  background-color: #003569;
+  color: white;
+}
+.CMSComponentSocialLinks > .Vertical > li > a:hover > icon.pinterest {
+  background-color: white;
+  color: #bd081c;
+}
+.CMSComponentSocialLinks > .Vertical > li > a:hover > icon.youtube-play {
+  background-color: white;
+  color: #ff0000;
+}
+.CMSComponentSocialLinks > .Vertical > li > a > icon.facebook {
+  border-radius: 0.1em;
+  padding-top: 0.2em;
+  padding-left: 0.2em;
+  padding-right: -0.1em;
+  font-size: 1.8em;
+  color: white;
+  background-color: #4267b2;
+}
+.CMSComponentSocialLinks > .Vertical > li > a > span.facebook-text {
+  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  text-align: right;
+}
+.CMSComponentSocialLinks > .Vertical > li > a > span.facebook-text::before {
+  content: "Find us on";
+  margin-right: 0.5em;
+  color: #4267b2;
+  font-size: 1.5em;
+}
+.CMSComponentSocialLinks > .Vertical > li > a > icon.twitter {
+  border-radius: 1em;
+  font-size: 1.8em;
+  padding: 0.1em;
+  color: #1da1f2;
+}
+.CMSComponentSocialLinks > .Vertical > li > a > span.twitter-text {
+  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  text-align: right;
+}
+.CMSComponentSocialLinks > .Vertical > li > a > span.twitter-text::before {
+  content: "Follow us on";
+  margin-right: 0.5em;
+  color: #1da1f2;
+  font-size: 1.5em;
+}
+.CMSComponentSocialLinks > .Vertical > li > a > icon.google-plus {
+  border-radius: 1em;
+  font-size: 1.8em;
+  padding: 0.1em;
+  background-color: #db4437;
+  color: white;
+}
+.CMSComponentSocialLinks > .Vertical > li > a > span.google-plus-text {
+  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  text-align: right;
+}
+.CMSComponentSocialLinks > .Vertical > li > a > span.google-plus-text::before {
+  content: "Add us on";
+  margin-right: 0.5em;
+  color: #db4437;
+  font-size: 1.5em;
+}
+.CMSComponentSocialLinks > .Vertical > li > a > icon.instagram {
+  border-radius: 1em;
+  font-size: 1.8em;
+  padding: 0.1em;
+  color: #003569;
+}
+.CMSComponentSocialLinks > .Vertical > li > a > span.instagram-text {
+  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  text-align: right;
+}
+.CMSComponentSocialLinks > .Vertical > li > a > span.instagram-text::before {
+  content: "Follow us on";
+  margin-right: 0.5em;
+  color: #003569;
+  font-size: 1.5em;
+}
+.CMSComponentSocialLinks > .Vertical > li > a > icon.pinterest {
+  border-radius: 1em;
+  font-size: 1.8em;
+  padding: 0.1em;
+  color: white;
+  background-color: #bd081c;
+}
+.CMSComponentSocialLinks > .Vertical > li > a > span.pinterest-text {
+  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  text-align: right;
+}
+.CMSComponentSocialLinks > .Vertical > li > a > span.pinterest-text::before {
+  content: "Pin us on";
+  margin-right: 0.5em;
+  color: #bd081c;
+  font-size: 1.5em;
+}
+.CMSComponentSocialLinks > .Vertical > li > a > icon.youtube-play {
+  border-radius: 1em;
+  font-size: 1.8em;
+  padding: 0.1em;
+  color: white;
+  background-color: #ff0000;
+}
+.CMSComponentSocialLinks > .Vertical > li > a > span.youtube-play-text {
+  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  text-align: right;
+}
+.CMSComponentSocialLinks > .Vertical > li > a > span.youtube-play-text::before {
+  content: "Subscribe us on";
+  margin-right: 0.5em;
+  color: #282828;
+  font-size: 1.5em;
+}
+.CMSComponentSocialLinks > .Vertical li + li {
+  margin-top: 1ex;
+}
+/*# sourceMappingURL=social-link.css.map */
+
+

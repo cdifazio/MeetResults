@@ -1,0 +1,128 @@
+/* LESS: /cms/stylesheet/account-bar.less */
+.CMSComponentAccountBar {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+}
+.CMSComponentAccountBar .ImageContainer,
+.CMSComponentAccountBar .GuessIconContainer {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: solid 2px #FFF;
+  overflow: hidden;
+}
+.CMSComponentAccountBar .GuessIconContainer {
+  border: solid 2px #369;
+  color: #369;
+  box-sizing: border-box;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.CMSComponentAccountBar .GuessIconContainer > icon {
+  font-size: 1.4em;
+}
+.CMSComponentAccountBar ul.Menu {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  background: #FFF;
+}
+.CMSComponentAccountBar ul.Menu > li {
+  white-space: nowrap;
+}
+.CMSComponentAccountBar ul.Menu > li > a {
+  display: block;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  align-items: center;
+  color: #FFF;
+  font-weight: bold;
+  padding: 0.5em 0.7em;
+}
+.CMSComponentAccountBar ul.Menu > li > a:hover {
+  color: #FFF;
+  background: #20A2D4;
+}
+.CMSComponentAccountBar ul.Menu > li > a > icon {
+  font-size: 1.2em;
+  margin-right: 0.5em;
+}
+.CMSComponentAccountBar .AccountInfo {
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.CMSComponentAccountBar .AccountInfo > .ImageContainer {
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+}
+.CMSComponentAccountBar .AccountInfo > * + * {
+  margin-left: 0.5em;
+  display: none;
+}
+@media screen and (min-width: 992px) {
+  .CMSComponentAccountBar .AccountInfo > * + * {
+    display: block;
+  }
+  .CMSComponentAccountBar .AccountInfo > * + *.AccountGreeting {
+    flex: 1 1 auto;
+    -webkit-flex: 1 1 auto;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    display: flex;
+    align-items: center;
+  }
+}
+.sys-viewport.lg > .CMSComponentAccountBar .AccountInfo > * + * {
+  display: block;
+}
+.sys-viewport.lg > .CMSComponentAccountBar .AccountInfo > * + *.AccountGreeting {
+  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  align-items: center;
+}
+.CMSComponentAccountBar .AccountInfo .AccountGreeting::after {
+  margin-left: 0.5em;
+  display: inline-block;
+  font: normal normal normal 1.2em/1 "Material Design Icons";
+  font-weight: inherit;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+}
+.CMSComponentAccountBar .AccountInfo .AccountGreeting::after {
+  content: "\F35D";
+}
+.CMSComponentAccountBar .MenuContainer {
+  position: relative;
+}
+.CMSComponentAccountBar .MenuContainer.Activated .Menu {
+  z-index: 1002;
+}
+.CMSComponentAccountBar .MenuContainer .Menu {
+  position: absolute;
+}
+.CMSComponentAccountBar .MenuContainer .Menu.NotLogged {
+  right: 0px;
+}
+.CMSComponentAccountBar .MenuContainer:not(.Activated) .Menu {
+  display: none;
+}
+/*# sourceMappingURL=account-bar.css.map */
+
+

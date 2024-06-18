@@ -1,0 +1,5320 @@
+ServiceFactory.registerService("cmsService", {
+    deletePhotoSlider: ["photoSliderId"],
+    getSystemNotification: [],
+    saveAsDrafts: ["pageIds"],
+    getAvailableSubPages: ["moduleId", "internalType", "internalId"],
+    markAsPublishPage: ["pageId"],
+    saveTeamEventData: ["event"],
+    updatePageMeta: ["pageId", "title", "description"],
+    cloneCommand: ["commandId"],
+    markAsPublishCommand: ["commandId"],
+    getAvailableExtraComponentsByGroup: ["pageId", "sectionId", "currentComponents"],
+    getAvailableExtraComponents: ["pageId", "sectionId", "currentComponents"],
+    deletePages: ["pageIds"],
+    updatePage: ["page"],
+    createCommand: ["command"],
+    isSiteFooterSettingEnabled: [],
+    validateTabName: ["page"],
+    removeComponentFromPageSection: ["pageSectionId", "componentId"],
+    getDefaultPages: ["includedDefautPage"],
+    updateNavigationStructure: ["items"],
+    getRecipientsSetting: [],
+    getGroupRegistry: [],
+    getCustomPrivacyUrlOfMyTeam: [],
+    validateComponentRemovable: ["pageSectionId", "componentId"],
+    updatePageSection: ["id", "settings", "components"],
+    removeAllCMSTeamData: [],
+    updateCommand: ["command"],
+    getInvalidHtmlTags: ["dirtyHTML"],
+    getAllPhotoSlider: ["dataSetName"],
+    getAvailablePages: ["options"],
+    updateCommandsOrder: ["commandIds"],
+    saveAsDraft: ["pageId"],
+    getSettings: ["componentId", "componentType"],
+    createPhotoSlider: ["photoSlider"],
+    getAlertInfo: [],
+    getMainNavigatorItems: [],
+    getPageSectionById: ["id"],
+    deleteCommand: ["command"],
+    getSettingSchemas: ["componentId", "componentType"],
+    createNewPage: ["page"],
+    getComponentTypeRegistry: [],
+    updateSliderOrder: ["sliderIds"],
+    getAllCommands: ["dataSetName"],
+    autoPaySetupRequired: [],
+    getActiveTUMoneyEventDetail: [],
+    markAsPublishPages: ["pageIds"],
+    deploymentDashboardEnabled: [],
+    updateCustomPrivacyUrl: ["url"],
+    setPagesVisibility: ["isVisible", "pageIds"],
+    updatePhotoSlider: ["photoSlider"],
+    saveSettings: ["componentId", "componentType", "settings"],
+    getSystemPageContent: ["pageName"],
+    deletePage: ["pageId"],
+    getTUMoneyEventDetailById: ["id"],
+    getMenuItemInfo: ["pageId"],
+    saveAsDraftCommand: ["commandId"]
+}, {
+interactives: []});
+ServiceFactory.registerService("coreService", {
+    loadClientModuleData: ["moduleName"]
+}, {
+interactives: []});
+ServiceFactory.registerService("ccpaActivityService", {
+    getActivitiesByDateRange: ["startDate", "endDate", "pageIndex", "pageSize"]
+}, {
+interactives: []});
+ServiceFactory.registerService("utilService", {
+    getMainsetVideoByIds: ["videoIds"],
+    submitToken: ["socialInfo"],
+    deleteToken: ["socialType"],
+    getAccounts: ["filters", "start", "count"]
+}, {
+interactives: []});
+ServiceFactory.registerService("financeService", {
+    enableChargeCategories: ["ids", "enable"],
+    generateDownloadableAccountStatementsAsPDF: ["accountIds"],
+    deleteChargeCategories: ["ids"],
+    saveTeamSetting: ["setting"],
+    deleteCharge: ["id"],
+    updatePayment: ["payment"],
+    autoApplyPayments: ["accountId"],
+    generateDownloadableLedgerAsPDF: ["accountId", "savedView"],
+    bulkNewCharges: ["creationParam"],
+    getDefaultTax: [],
+    getCredit: ["id"],
+    generateDownloadableCreditAsPDF: ["creditId"],
+    getUsablyUnappliedPaymentAmounts: ["accountIds"],
+    applyPaymentSourceToCharges: ["sourceId", "appliedChargeAmounts"],
+    getRequisiteData: ["action", "input"],
+    searchFinancialAdminsByTerm: ["term", "excludedAccountIds", "limit"],
+    deleteTax: ["id"],
+    issueCredit: ["credit", "appliedChargeAmounts"],
+    getPrimaryDuePlan: [],
+    deleteRefund: ["id"],
+    saveLateFeePlan: ["plan"],
+    saveChargeCategory: ["category"],
+    updateCredit: ["credit"],
+    findCharges: ["sourceType", "sourceIds", "startIndex", "maxCount"],
+    getTeamNotificationSetting: [],
+    generateDownloadableRefundAsPDF: ["refundId"],
+    generateDownloadablePaymentReversalAsPDF: ["reversalId"],
+    getTeamSetting: [],
+    getTeamNoBillingTimeSettings: [],
+    saveTeamNotificationSetting: ["setting"],
+    getRefund: ["id"],
+    getPayment: ["id"],
+    deletePayment: ["id"],
+    saveWalletSetting: ["setting"],
+    makePayment: ["payment", "appliedChargeAmounts", "processParams"],
+    getCharge: ["id"],
+    issueRefund: ["refund", "appliedChargeAmounts"],
+    deleteCredit: ["id"],
+    updateRefund: ["refund"],
+    bulkIssueCredits: ["creationParam"],
+    generateDownloadableChargeAsPDF: ["chargeId"],
+    saveTax: ["tax"],
+    getWalletSetting: [],
+    saveCharge: ["charge"],
+    calculateProcessingFee: ["payment", "appliedChargeAmounts", "processParams"],
+    setGlobalNoBillingSetting: ["globalNoBilling"],
+    autoApplyPaymentsToCharge: ["chargeId"],
+    predictPaymentPostingPrerequisite: ["charges", "processParams", "chargePostingOptions", "autoApplyParams"],
+    predictAutoApplyPayments: ["accountId"],
+    getPrimaryLateFeePlan: [],
+    sendPaymentSetupGuidelineViaEmail: ["accountIds"],
+    getPaymentReversal: ["id"],
+    saveAccountSetting: ["setting"],
+    generateDownloadableLedgerAsExcel: ["accountId", "savedView"],
+    setTaxAsDefault: ["id"],
+    getDefaultDueDate: ["chargedAt", "timezone"],
+    predictAutoApplyPaymentsToCharge: ["chargeId"],
+    sendAccountStatementsViaEmail: ["accountIds"],
+    bulkMakePayments: ["creationParam"],
+    getAccountLedgerInfo: ["accountId"],
+    getChargeCategories: ["keyword", "startIndex", "count", "order", "showHidden"],
+    saveDuePlan: ["plan"],
+    updateTeamNoBillingTimeSettings: ["settings"],
+    getTeamNoBillingTimeWarning: [],
+    listTaxes: ["start", "count", "extra"],
+    generateDownloadablePaymentAsPDF: ["paymentId"]
+}, {
+interactives: ["makePayment"]});
+ServiceFactory.registerService("commonService", {
+    deleteRosterGroup: ["rosterId"],
+    getRosterGroupById: ["rosterId"],
+    editRosterGroup: ["roster"],
+    getBillingSubgroups: [],
+    deleteBillingGroup: ["billingGroupId"],
+    createRosterGroup: ["roster"],
+    editLocation: ["location"],
+    getBillingGroups: [],
+    createSubBillingGroup: ["subBillingGroup"],
+    deleteSubBillingGroup: ["subBillingGroupId"],
+    getLocationById: ["locationId"],
+    getDeletedRosters: ["ids"],
+    createBillingGroup: ["billingGroup"],
+    deleteLocation: ["locationId"],
+    getSubBillingGroupById: ["subBillingGroupId"],
+    getBillingGroupById: ["billingGroupId"],
+    getLocations: [],
+    editBillingGroup: ["billingGroup"],
+    getRosters: [],
+    editSubBillingGroup: ["subBillingGroupId", "subBillingGroup"],
+    createLocation: ["location"],
+    getDeletedLocations: ["ids"]
+}, {
+interactives: []});
+ServiceFactory.registerService("usasfService", {
+    getAllClubsFromUSASF: [],
+    syncClubDataWithUSASF: [],
+    getLocationForProgram: ["program", "mapAPIKey", "exit"],
+    fetchLocationForProgram: [],
+    searchClubs: ["term", "withinDistance", "safeSportRegconizedOnly", "startIndex", "maxCount"],
+    getAllClubs: []
+}, {
+interactives: []});
+ServiceFactory.registerService("waiverService", {
+    generateDownloadableWaiverReportAsExcel: ["exportingInfo"],
+    startMigrateLegacyWaiverOfTeamRegToAgreement: ["regId", "waiverIndex"],
+    updateSignedWaiver: ["signedData"],
+    saveWaiverAgreement: ["agreement"],
+    getAgreementByKey: ["agreementKey"],
+    getBookingAgreementByKey: ["agreementKey"],
+    getAgreementDetailByKey: ["key", "classId"],
+    getAllAgreements: [],
+    getAgreementHistory: ["key"],
+    getTeamRegAgreementDetailByKey: ["key", "regId"],
+    getTeamRegAgreementByKey: ["agreementKey"],
+    getAgreementById: ["id"],
+    getMemberSignedAgreementDetail: ["memberId", "agreementKey"],
+    getClassAgreementByKey: ["agreementKey"],
+    countRequiredUnsignedAgreements: ["accountId"]
+}, {
+interactives: []});
+ServiceFactory.registerService("usasOMRService", {
+    markRosterEventAsRead: ["event"],
+    getClubActivationLink: [],
+    getUSASRegistrationInvitationEmail: [],
+    startOnboardingOMR: [],
+    getOMROnboardingInfo: [],
+    decodeMetaData: ["encodedData"],
+    getAllUnlinkedMembers: ["term"],
+    deactivateOnboardingOMR: [],
+    markRosterNotificationAsRead: [],
+    getLegacyOrgSwimmerId: ["memberId"],
+    fixMergeUssnoMeetResult: [],
+    finishOnboardingOMR: [],
+    markAccountAsInterstitialContentShown: ["contentType", "accountId"],
+    allowShowWarningRegisterUSASMembership: ["memberId"],
+    markAllRosterEventsAsRead: ["events"],
+    saveInvitationEmailTemplateData: ["emailData"],
+    confirmOnboardingOMR: [],
+    isRosterEventNotificationVisible: [],
+    refreshUSASRosterForMember: ["memberId"],
+    getOMRShoppingCartRequisite: ["shoppingCartId"],
+    unlinkUSASRoster: ["teamAlias"],
+    getClubDeactivationLink: [],
+    markRosterEventAsUnread: ["event"],
+    listEmptyRegistrationClubs: [],
+    sendUSASRegistrationInvitationEmail: ["ids"],
+    isOMRConnectedForMyTeam: [],
+    mergeUssnoMeetResult: ["listMergeInfo"],
+    isTeamUnifyVendorActivated: ["clubCode", "lscCode"],
+    linkUSASMemberWithTUMember: ["usasMemberId", "tuMemberId", "updateResults"],
+    getUsasMemberDetailByMemberId: ["memberId"],
+    isAccountInterstitialContentShow: ["contentType", "accountId"],
+    isOMREnabledForMyTeam: [],
+    getRegistrationLink: ["context"],
+    refreshUSASRosters: [],
+    bulkNewMemberCharges: ["creationParam"],
+    getRosterEvents: ["fromDate", "toDate", "onlyShowUnreadEvents"]
+}, {
+interactives: []});
+ServiceFactory.registerService("businessPublisherService", {
+    searchPlaces: ["term"],
+    getTeamInfo: [],
+    connectAndSaveServiceAccount: ["serviceType", "authenCode"],
+    getContactBusinessReview: ["servicePublishingTargetId", "nextPageToken", "orderBy", "limit"],
+    searchBusinessCategories: ["serviceType", "term", "excludedItems"],
+    disconnectServiceAccount: ["serviceType", "serviceAccountId"],
+    getContactBusinessProfile: ["contactInfoId"],
+    getServicePublishingTargetStateInfo: ["contactInfoId", "includedUpdatedInfo"],
+    deleteContactBusinessProfile: ["contactInfoId"],
+    getContactBusinessPerformances: ["contactInfoId"],
+    connectContactToPublishingTarget: ["contactInfoId", "target"],
+    saveContactBusinessProfile: ["profileInfo"],
+    isNotificationShown: [],
+    updateOrgProfilePropertyValues: ["contactInfoId", "dataList"],
+    syncBusinessProfile: ["contactInfoId", "dataList"],
+    getAllServicePublishingTargets: ["serviceType"],
+    gatherAndGetBusinessProfileSourceDataInfo: ["contactInfoId"],
+    isBPITeamActive: [],
+    searchAdminsByTerm: ["term", "excludedAccountIds", "limit"],
+    getAssociatedContacts: [],
+    deleteBusinessReplyReview: ["serviceType", "publishingTargetId", "reviewId"],
+    getTeamNotificationSetting: [],
+    markTeamAsInitialized: [],
+    getAssociatedContactTargets: ["contactInfoId"],
+    reconnectServiceAccount: ["serviceType", "authenCode"],
+    saveTeamNotificationSetting: ["setting"],
+    getAllContactBusinessProfiles: ["order", "autoConnectToTarget"],
+    getAllServiceConnections: ["serviceType"],
+    disconnectContactTargetAssociation: ["contactInfoId", "publishingTargetId"],
+    getServicePublishingTargetShareableLink: ["contactInfoId"],
+    replyBusinessReview: ["publishingTargetId", "reviewId", "reviewText"]
+}, {
+interactives: []});
+ServiceFactory.registerService("ssoMigrationService", {
+    getSSOMigrationItemByRegionId: ["regionId"],
+    downloadRegionAccountZipPackage: ["regionId"],
+    findAllTeamsInRegion: ["regionId"],
+    getSSOMigrationItems: [],
+    findTeamsInRegion: ["regionId", "term", "orders", "start", "count"],
+    startMigration: ["regionId"],
+    initMigrationRegionItems: [],
+    importMigrationResult: ["regionId", "resultFile", "loginEnabled", "firstTimeSignInNotifyEnabled"]
+}, {
+interactives: []});
+ServiceFactory.registerService("posPaymentService", {
+    registerTerminalReader: ["storeLocationId", "registrationCode", "label"],
+    deleteAccountCard: ["accountId", "accountCardTokenId"],
+    addCardToAccount: ["accountId", "cardToken", "metadata"],
+    editAccountCardInfo: ["accountCardTokenId", "name", "expM", "expY"],
+    removeReader: ["readerId"],
+    getReadersForTeamStoreLocation: ["storeLocationId"],
+    getTerminalReaderConnectionToken: [],
+    listAccountCards: ["accountId"]
+}, {
+interactives: []});
+ServiceFactory.registerService("billingService", {
+    saveClassScheduledCharge: ["classId", "charge"],
+    getScheduledChargeById: ["chargeId"],
+    getScheduledChargeConfig: [],
+    deleteScheduledChargeById: ["chargeId"],
+    getScheduledCharges: ["classId", "start", "count", "orders"]
+}, {
+interactives: []});
+ServiceFactory.registerService("onboardingDashboardService", {
+    getStepStatus: ["step"],
+    getAtRiskReasons: [],
+    saveTimesDatabaseFile: ["path"],
+    saveMemberDatabaseFile: ["path"],
+    getOnboardingStatusSummary: [],
+    updateTeamOnboardingInfo: ["teamInfo"],
+    getTeamProcessingFeeRateMapping: ["teamIds"],
+    initializeOrgDashboardMonitor: [],
+    saveDomainSetupStep: ["info"],
+    setTargetLaunchDate: ["targetLaunchDate"],
+    saveStepUnderstanding: ["stepName"]
+}, {
+interactives: []});
+ServiceFactory.registerService("fundraisingService", {
+    getFundraisingObligationData: [],
+    getCategories: [],
+    migrateFundraisingInvoice: ["context", "inputSettings", "team", "destTumEventDonate", "sourceTumEventId", "sourceEventDonateIdx"],
+    getTumMember: ["sourceId"],
+    getFundraisingObligation: []
+}, {
+interactives: []});
+ServiceFactory.registerService("IWorkoutService", {
+    
+}, {
+interactives: []});
+ServiceFactory.registerService("tubillService", {
+    setAccountSsoUuid: ["accountId", "seUuid", "email"],
+    guestTimeZoneOfFromAddress: ["address"]
+}, {
+interactives: []});
+ServiceFactory.registerService("classMetaService", {
+    getCouponById: ["id"],
+    listUsageCurrItem: ["isUsed", "ids"],
+    deleteLessonCurrItems: ["listCurrItemId"],
+    updateClassMetaOrders: ["lessonProgs"],
+    searchLessonMap: ["order", "pageIndex", "pageSize", "keyword"],
+    getLessonCurrItemById: ["currItemId"],
+    listUsageSession: ["isUsed", "ids"],
+    updateLessonCurr: ["curr"],
+    deleteCoupon: ["ids"],
+    deleteLessonLocs: ["ids"],
+    getAvailablePrograms: [],
+    getSubProgramsByProgram: ["programId"],
+    deleteLessonSessions: ["ids"],
+    createLessonLoc: ["lessonLoc"],
+    updateLessonLoc: ["lessonLoc"],
+    updateLessonCurrItem: ["currItem"],
+    searchLessonLoc: ["order", "pageIndex", "pageSize", "keyword"],
+    getSubPrograms: ["programId", "terms", "startIndex", "count", "order"],
+    getLessonLocById: ["id"],
+    searchLessonCurrItemByCurrId: ["currId"],
+    getAvailableSubPrograms: [],
+    createLessonSession: ["session"],
+    updateLessonSession: ["session"],
+    deleteSubPrograms: ["ids"],
+    updateMultiSubProgram: ["ids", "programId", "annualRegAccount", "annualRegStudent", "lessonCoupon", "middleNameRequired", "hideSlot", "useUnappliedpayment"],
+    getSubProgramConfiguration: [],
+    updateCoupon: ["coupon"],
+    createLessonCurrItem: ["currItem"],
+    getCouponConfiguration: [],
+    createLessonMap: ["map"],
+    updateLessonMap: ["map"],
+    getLessonMapById: ["id"],
+    createCoupon: ["coupon"],
+    updateWaiver: ["waiver"],
+    getSubProgramById: ["id"],
+    getLessonSessionById: ["id"],
+    getLessonPZoneById: ["id"],
+    listUsageCurr: ["isUsed", "ids"],
+    getLessonCurrById: ["currId"],
+    getProgramById: ["id"],
+    getPrograms: ["terms", "startIndex", "count", "order"],
+    deletePrograms: ["ids"],
+    listUsageLoc: ["isUsed", "ids"],
+    createLessonCurr: ["curr"],
+    searchCoupons: ["order", "pageStart", "pageSize", "keyword"],
+    updateLessonSessionOrder: ["ids"],
+    createLessonPZone: ["zone"],
+    searchLessonCurr: ["order", "pageIndex", "pageSize", "keyword"],
+    updateLessonPZone: ["zone"],
+    deleteLessonCurrs: ["ids"],
+    deleteLessonPZones: ["ids"],
+    listUsagePZone: ["isUsed", "ids"],
+    listUsageMap: ["isUsed", "ids"],
+    getWaiver: [],
+    searchLessonPZone: ["order", "pageIndex", "pageSize", "keyword"],
+    updateLessonCurrItemsOrder: ["listCurrItemId"],
+    saveSubProgram: ["subProgram"],
+    getLessonClassBySubProg: ["subprogId"],
+    searchLessonSession: ["order", "pageIndex", "pageSize", "keyword"],
+    saveProgram: ["program"],
+    deleteLessonMaps: ["ids"]
+}, {
+interactives: []});
+ServiceFactory.registerService("kpiDashboardService", {
+    queryIndexes: ["timeRangeType", "timeRange", "indexKeys"],
+    getKPICaseStatusDataForTeam: ["teamDetail", "from", "to", "caseStatus"],
+    buildKPISalesForceDataKey: ["from", "to"],
+    getDailyStatResultsFromCaseStatusDataList: ["caseStatusDataList", "caseStatus", "teamDetail"],
+    getKPIDashboardSalesForceData: ["from", "to"],
+    getTeamKPIDashboardSalesForceData: ["teamAlias", "from", "to"],
+    getIndexProviderDescriptors: []
+}, {
+interactives: []});
+ServiceFactory.registerService("discountdanceStatusService", {
+    
+}, {
+interactives: []});
+ServiceFactory.registerService("classAdminService", {
+    cloneMultiLessonClass: ["classIds"],
+    updateReviewedStatus: ["ids", "reviewedStatus"],
+    filterClassWithPaymentPlan: ["excludedClassIds"],
+    deleteDiscountPlan: ["id"],
+    removeWaitList: ["lessonClassInIds"],
+    updateAdminSetting: ["setting"],
+    saveDiscountPlan: ["discountPlan"],
+    updateStudentRegSlot: ["student", "slot"],
+    updateSelectedCoaches: ["ids"],
+    updateAccountAnnualRegPaidDate: ["id", "paidDate"],
+    cancelRegistrations: ["lessonClassInIds"],
+    updateStartDropDatePolicy: ["regPolicy"],
+    getInstructorsInfo: [],
+    getPaymentPlanAssignedRelatedRecipients: ["studentIds"],
+    updateMemberAnnualRegPaidDate: ["id", "paidDate"],
+    generateDownloadableInstructorReportAsExcel: ["ids", "instructorIds"],
+    projectMultiItemsForRegistration: ["projectedInfo"],
+    browseClassForSchedule: ["terms", "classStatus"],
+    generateDownloadableRegistrationsAsExcel: ["ids"],
+    generateDownloadableNewRegistrationsReportAsExcel: ["ids"],
+    projectMultiItems: ["classInfo", "slot", "paymentPlanItems", "startDate", "endDate"],
+    saveMultiSlots: ["multiSlots"],
+    getLessonInstructor: [],
+    getRegistrationsOfClass: ["filter", "order"],
+    getDiscountPlanById: ["id"],
+    getDueDate: ["chargeDate"],
+    saveClassInfo: ["classInfo"],
+    getStudents: ["classId", "slot"],
+    getClassDetailById: ["id"],
+    shareSocial: ["socialParam"],
+    getLessonClasses: ["criteria", "order"],
+    deleteLessonClass: ["classIds"],
+    filterPaymentPlans: ["excludedClassId", "lessonClassIds", "keyword", "order"],
+    fillPaymentPlans: ["planList"],
+    getClassConfiguration: [],
+    getDiscountPlans: [],
+    saveMultiLessonClassInfo: ["ids", "classInfo"],
+    getAdminSetting: [],
+    getAddableClassesForMember: ["criteria", "order"],
+    getAccountInfo: [],
+    cancelRegistration: ["lessonClassInId"],
+    saveAndCloneClassInfo: ["classInfo"],
+    getProjectionPlan: ["classInfo", "slot", "paymentPlanItem", "startDate", "endDate"],
+    getDiscountPlanToAttachRatePlan: [],
+    getAnnualRegByAccountId: ["accountId"],
+    getSocial: ["socialType"],
+    sendPaymentPlanAssignedStudentEmail: ["recipients", "subject", "message", "files", "paymentPlanInfo"],
+    saveAssignedStudents: ["students", "updateSlot"]
+}, {
+interactives: []});
+ServiceFactory.registerService("paymentPlanService", {
+    testMigration: []
+}, {
+interactives: []});
+ServiceFactory.registerService("stripeIntegrationService", {
+    chargeFees: ["chargeParams"],
+    getOnboardingPreProcessData: [],
+    isStripeEnabled: [],
+    uploadStripeEvidence: ["disputeId"],
+    listStripeTransaction: ["transFilter"],
+    uploadStripeAccountRequirement: ["path"],
+    isAccessibleOnboardSetup: [],
+    listStateProvince: [],
+    listStripeDispute: ["stripeDisputeSearchFilter"],
+    deletePerson: ["bankId", "listPersons"],
+    listStripePayoutSumaryData: ["stripePayoutSearchFilter"],
+    importFeeReportIntoDb: ["reportFile", "reportStart"],
+    getPayoutListPreConfig: [],
+    getTinCheckFailureAccount: [],
+    getSepReportDashboardStats: ["filters"],
+    updateStripePendingAccountStatus: ["accountId"],
+    exportPayout: ["stripePayoutSearchFilter"],
+    getTransactionById: ["transactionId"],
+    addStripeHostedBankAccount: ["accountData"],
+    getDisputeDetail: ["disputeId"],
+    getSettings: [],
+    saveElectronicOnboardingData: ["edata"],
+    getAvailableAccountForDailyPayoutSum: [],
+    saveDailyPayoutSummarySubscriber: ["selectedIds"],
+    updateAccountForTIN: ["stripeAccount"],
+    getPaymentVerificationList: ["offset", "limit"],
+    exportSinglePayout: ["stripePayoutSearchFilter"],
+    updateBankAccount: ["jo"],
+    startStripeMigration: ["dbb", "stripePrcocessType"],
+    getElectronicOnboardingData: [],
+    exportDispute: ["stripeDisputeSearchFilter"],
+    getDisputeOptions: [],
+    updateStripeTransactionDetail: ["transactionType", "transactionTypeId", "transactionStatus"],
+    getCountryList: [],
+    updateMccCode: ["mccCode"],
+    setDisputeOptions: ["disputeOptions"],
+    rejectPaymentIntent: ["id"],
+    stripeHostedAccountRefresh: ["accountId"],
+    createStripeHostedAccountLink: ["accountId"],
+    updateStripeAccount: ["stripeAccount"],
+    reEnablePayout: [],
+    getStripeDispute: ["disputeId"],
+    saveStripeAccount: ["stripeAccount"],
+    getAccountField: [],
+    submitDispute: ["disputeId", "disputeData", "submit"],
+    getStripePayout: ["payoutId"],
+    updateStripeHostedAccountStatus: ["accountId"],
+    getStripeTransactionSumary: [],
+    uploadStripeDocument: ["path"],
+    saveStripeHostedAccount: ["accountData"],
+    getChargeFeeAmount: ["chargeParams"],
+    createUpdateStripeHostedAccountLink: ["accountId"],
+    listStripePayout: ["stripePayoutSearchFilter"],
+    exportTransaction: ["transFilter"],
+    getDisputeListPreConfig: [],
+    savePerson: ["bankId", "personParams"],
+    getCountrySpec: [],
+    listPersons: ["filter"],
+    getStripeFeeInfo: [],
+    saveSettings: ["jo"],
+    setPersonRepresentative: ["bankId", "personId"],
+    getStripeAccount: ["bankAccountId"],
+    initializeFeeReportFilterValues: [],
+    validateStripeAccount: ["team", "stripeAccount"],
+    getTransactionListPreConfig: [],
+    saveAddressRemittance: ["jo"],
+    setPersonRepresentativeWithAccount: ["accountId", "personId"],
+    getMigrationStatus: [],
+    getCountrySpecData: [],
+    getTotalNotification: [],
+    updatePerson: ["bankId", "personParams"]
+}, {
+interactives: []});
+ServiceFactory.registerService("usasDeckPassService", {
+    unlinkDeckPassForMember: ["memberId"],
+    getLiveStreamStatus: [],
+    generateConnectFlowURLForMember: ["memberId"],
+    getDeckPassHomeFullWidthURL: [],
+    isUSASDeckPassIntegrationEnabled: [],
+    generateConnectedMemberPageURL: ["memberId"],
+    clearMemberRecentActivity: ["memberId"],
+    getCurrentAccountMemberSummaries: [],
+    getDeckPassHomeURL: []
+}, {
+interactives: []});
+ServiceFactory.registerService("tuUpdateService", {
+    getUpdates: ["term", "subSystem", "start", "count"],
+    createUpdate: ["updateId", "files"],
+    getUpdateById: ["updateId"],
+    editUpdate: ["updateId", "files"],
+    deleteUpdates: ["ids"],
+    getNotificationMap: []
+}, {
+interactives: []});
+ServiceFactory.registerService("financePaymentProcessingService", {
+    registerTerminalReader: ["paymentLocationId", "registrationCode", "label"],
+    deleteAccountCard: ["accountId", "accountCardTokenId"],
+    addCardToAccount: ["accountId", "cardToken", "metadata"],
+    getAccountWalletInfo: ["accountId"],
+    createTerminalPaymentIntent: ["refId", "amount", "currency", "accountId"],
+    editAccountCreditCardInfo: ["accountCardTokenId", "info", "isCardReplaced"],
+    getPaymentMethod: ["id"],
+    addSetupIntent: [],
+    getPaymentSettings: ["accountId"],
+    getCardActivityLogs: ["accountId"],
+    editAccountAchInfo: ["accountCardTokenId", "info"],
+    editAccountCardInfo: ["accountCardTokenId", "name", "expM", "expY"],
+    removeReader: ["readerId"],
+    getAccountWithPaymentInfo: ["accountId"],
+    getTerminalReaderConnectionToken: [],
+    getReadersForTeamPaymentLocation: ["paymentLocationId"],
+    listAccountCards: ["accountId", "includeCC", "includeACH"],
+    saveAccountEpmConfigInfo: ["accountId", "config"]
+}, {
+interactives: []});
+ServiceFactory.registerService("classRegService", {
+    getProgramByIds: ["programIds"],
+    getClassDetailById: ["classId"],
+    getSubProgramByIds: ["subProgramIds"],
+    isUsingClassPaymentPlan: [],
+    getProgramTree: []
+}, {
+interactives: []});
+ServiceFactory.registerService("attndMessagingService", {
+    sendToPracticeCoaches: ["practiceScheduleIds", "accountIds", "subject", "message", "messageTypes"],
+    sendToPracticeMembers: ["practiceScheduleIds", "memberIds", "subject", "message", "messageTypes"],
+    sendToBookingMembers: ["appointmentIds", "subject", "message", "messageTypes"],
+    sendToClassMembers: ["slotInstanceIds", "memberIds", "subject", "message", "messageTypes"],
+    sendToClassInstructors: ["slotInstanceIds", "accountIds", "subject", "message", "messageTypes"],
+    sendToBookingInstructors: ["appointmentIds", "subject", "message", "messageTypes"]
+}, {
+interactives: []});
+ServiceFactory.registerService("usasSafeSportService", {
+    getSafeSportUrl: [],
+    isSafeSportEnabledForMyTeam: []
+}, {
+interactives: []});
+ServiceFactory.registerService("userDashboardService", {
+    loadAllDashboardData: []
+}, {
+interactives: []});
+ServiceFactory.registerService("workforceService", {
+    
+}, {
+interactives: []});
+ServiceFactory.registerService("timeStandardService", {
+    save: ["ids"],
+    list: []
+}, {
+interactives: []});
+ServiceFactory.registerService("classRegShoppingService", {
+    addClassSlotToCart: ["classId", "slot", "quantity"],
+    getRegistrableClasses: ["classRegFilter"],
+    getClassDetailInfo: ["classId"],
+    changeRegSlot: ["classId", "slot", "moduleDataId", "shoppingCartId", "itemId"],
+    batchCartItemUpdate: ["actions"],
+    commitAssignMembersStep: [],
+    projectPaymentPlanOfCartItem: ["cartItemDetailId"]
+}, {
+interactives: []});
+ServiceFactory.registerService("cmsMigration", {
+    startHiddenPageMigrationProcess: ["pagesIds"],
+    updateSandboxAccessLevels: ["levels"],
+    startMigrationProcess: ["templateId", "variantName"],
+    unpublish: [],
+    publish: [],
+    getCMSMigrationStatus: [],
+    signalTeamChanged: ["teamId"],
+    getCMSMigrationProgress: [],
+    getSandboxAccessLevels: [],
+    getHiddenMenuItemsOfCurrentTeam: []
+}, {
+interactives: []});
+ServiceFactory.registerService("businessReviewService", {
+    getAssociatedContacts: [],
+    markShowedPublicSharingFacebookHint: [],
+    leaveReviewForService: ["reviewId", "actedServiceType"],
+    isPromptingForFeedback: [],
+    isBusinessReviewEnabled: [],
+    makeSatisfiedReview: ["contactInfoId"],
+    getReviewInviationEmailData: [],
+    getTargetReviewableStates: ["contactInfoId"],
+    sendFeedback: ["reviewId", "content"],
+    saveReviewInviationEmailTemplateData: ["keyValues"],
+    markReadBusinessReview: ["reviewIds"],
+    getBusinessReviewsFeedBackInfo: ["contactInfoId", "reviewerId", "accountAction"],
+    isShowedPublicSharingFacebookHint: [],
+    getContactInfo: ["contactInfoId"],
+    sendReviewInvitationViaEmail: ["contactInfoId", "accountIds"],
+    makeDissatisfiedReview: ["contactInfoId"],
+    getLastPromptingItem: []
+}, {
+interactives: []});
+ServiceFactory.registerService("configurationService", {
+    updateTeamFeatureModuleConfig: ["config"],
+    getConfigValue: ["configKey"],
+    deleteConfigItem: ["configKey"],
+    isTeamFeatureModuleEnabled: ["clientType", "moduleName"],
+    invalidateConfig: ["configKey"],
+    searchTeams: ["keywords"],
+    updateConfigItem: ["configKey", "configValue"],
+    addConfigItem: ["configKey", "configValue"],
+    list: ["configKey", "start", "count"],
+    getAllEnabledTeamFeatureModules: ["clientType"],
+    getAllTeamFeatureModuleConfigs: []
+}, {
+interactives: []});
+ServiceFactory.registerService("ymcaService", {
+    
+}, {
+interactives: []});
+ServiceFactory.registerService("shoppingCartService", {
+    deletePaymentMethod: ["id"],
+    batchCartUpdate: ["itemInfoMap"],
+    listPaymentMethods: ["paymentMethod"],
+    getShoppingCartAccountSettingInfo: ["id"],
+    discardShoppingCart: [],
+    getCurrentShoppingCartSummary: [],
+    performCheckout: ["deal"],
+    getCheckoutInfo: [],
+    updateNewMember: ["newMember"],
+    getCurrentShoppingCart: [],
+    saveNewAccountData: ["newAccount"],
+    exportDownloadableOrderPDF: ["id"],
+    performCheckoutPreconditionCheck: [],
+    addPaymentMethod: ["input", "metadata"],
+    getCurrentShoppingCartMembers: [],
+    updateMember: ["member"],
+    updatePaymentMethod: ["id", "input", "options"],
+    saveAccountData: ["account"],
+    getCheckoutPaymentPrerequisite: [],
+    deleteNewMember: ["newMemberId"],
+    moveBack: ["stepId"],
+    setMemberSignedWaivers: ["signedWaivers"],
+    createNewMember: ["newMember"],
+    getPostCheckoutMessages: ["id"],
+    getShoppingCartArchivedReason: ["id"],
+    getWaiverSigningInfo: ["id"],
+    getWalletSettings: [],
+    useCoupons: ["couponCodes"],
+    requestCheckoutPayment: ["request"],
+    markStepCompleted: ["stepId"],
+    getMemberDataOptions: []
+}, {
+interactives: ["performCheckout"]});
+ServiceFactory.registerService("discountdanceNotificationService", {
+    sendPurchaseReminderViaEmail: ["ids"]
+}, {
+interactives: []});
+ServiceFactory.registerService("bookingsShoppingService", {
+    getBookingSlotsInCurrentCart: [],
+    searchRegistrableBookingSubProgramItems: ["filter"],
+    getBookingRegistrationFilterIndicators: [],
+    getBookingDetailInfo: ["bookingId"],
+    searchRegistrableBookingItemsOfSubProgram: ["subProgramId", "filter"],
+    batchCartItemUpdate: ["actions"],
+    addBookingSlotsToCart: ["bookingSlotIds"]
+}, {
+interactives: []});
+ServiceFactory.registerService("financeReportService", {
+    exportBillingSimulationToExcel: ["criteria"],
+    getAccountChargeCategorySummaryItems: ["criteria", "start", "count", "order"],
+    exportChargeCategoryReportToExcel: ["criteria"],
+    exportDiscountCouponReportToExcel: ["criteria", "order"],
+    getDiscountCouponReportItems: ["criteria", "start", "count", "order"],
+    exportAccountChargeSummaryReportToExcel: ["criteria", "order"],
+    getDiscountCouponSummary: ["criteria"],
+    getChargeCategoryReportItems: ["criteria"],
+    getAccountChargeCategorySummary: ["criteria"]
+}, {
+interactives: []});
+ServiceFactory.registerService("ncsaService", {
+    
+}, {
+interactives: []});
+ServiceFactory.registerService("contactDetailService", {
+    getCoachList: [],
+    removeContact: ["id"],
+    getDirectorList: [],
+    getContactDetailById: ["contactId"],
+    updateContactOrders: ["ids"],
+    createContact: ["contact"],
+    updateContact: ["contact"],
+    getMemberDtos: ["term"]
+}, {
+interactives: []});
+ServiceFactory.registerService("posAccountService", {
+    getOrderIdByFinancialSourceId: ["type", "sourceId"],
+    getSaleOrdersByIds: ["orderIds"]
+}, {
+interactives: []});
+ServiceFactory.registerService("bookingsSettingService", {
+    deleteCoupons: ["couponIds"],
+    saveGeneralBookingSetting: ["bookingSetting"],
+    getBookingSubProgramsByProgramId: ["programId"],
+    getCoupon: ["couponId"],
+    deleteMapByIds: ["ids"],
+    saveBookingSubProgram: ["subProgram"],
+    getBookingDiscountPlanById: ["id"],
+    getMaps: ["terms", "startIndex", "count", "order"],
+    getBookingPages: [],
+    getBookingSubProgramById: ["subProgramId"],
+    getBookingDiscountPlans: [],
+    searchCoupons: ["terms", "startIndex", "count", "order"],
+    deleteBookingDiscountPlanById: ["id"],
+    getZones: ["terms", "startIndex", "count", "order"],
+    getBookingPrograms: ["terms", "startIndex", "count", "order"],
+    deleteSubPrograms: ["subProgramIds"],
+    saveBookingPages: ["pagesSetting"],
+    updateBookingDisplayOrder: ["listIds", "programMap", "subProgramMap"],
+    deleteZoneByIds: ["ids"],
+    saveLocation: ["location"],
+    getGeneralBookingSetting: [],
+    getLocationById: ["id"],
+    updateCoupon: ["coupon"],
+    saveBookingDiscountPlan: ["discountPlan"],
+    saveZone: ["zone"],
+    deleteLocationByIds: ["ids"],
+    createCoupon: ["coupon"],
+    getZoneById: ["id"],
+    getLocations: ["terms", "startIndex", "count", "order"],
+    deleteBookingProgramById: ["ids"],
+    getMapById: ["id"],
+    saveBookingProgram: ["bookingProgram"],
+    saveMap: ["map"],
+    getBookingProgramById: ["id"]
+}, {
+interactives: []});
+ServiceFactory.registerService("usasService", {
+    updateRegStatus: ["memberIds"],
+    submitRegPackage: ["year", "memberIds"],
+    listMemberData: ["memberIds"],
+    verifyVendorCode: ["info"],
+    switchOnTeamUsasSetting: ["status", "teamIds"],
+    checkVendorCode: [],
+    findPersonIds: ["memberIds"],
+    batchRegistrations: [],
+    savePersons: ["persons"],
+    comparePersons: ["memberIds"],
+    checkBatchRegistrationStatus: ["fileId"],
+    comparePerson: ["memberId"]
+}, {
+interactives: []});
+ServiceFactory.registerService("financeAccountService", {
+    listMyCards: ["includeCC", "includeACH"],
+    deleteMyCard: ["accountCardTokenId"],
+    getMyFinanceInfo: [],
+    editMyCard: ["accountCardTokenId", "cardToken", "name", "expM", "expY", "last4", "cardBrand"],
+    getMyWalletInfo: [],
+    saveMyEpmConfig: ["config"],
+    addMyCard: ["cardToken"],
+    getRequisitePaymentData: []
+}, {
+interactives: []});
+ServiceFactory.registerService("practiceService", {
+    getPracticeInstance: ["practiceScheduleId"],
+    updateOnDeckAttendance: ["ondeckPracitceId", "swimmerId", "state"],
+    getScrapbookById: ["scrapbookId"],
+    updateOnDeckPracticeNote: ["ondeckPracitceId", "swimmerId", "note"],
+    updatePracticeInstance: ["practiceScheduleId", "practiceInfo"],
+    updateOnDeckAttendanceSwimmerNote: ["ondeckPracitceId", "swimmerId", "note"]
+}, {
+interactives: []});
+ServiceFactory.registerService("ccpaSearchService", {
+    anonymizeAccount: ["accountId"],
+    exportAccountsAsExcel: ["emails"],
+    searchByEmails: ["keyword", "pageIndex", "pageSize"]
+}, {
+interactives: []});
+ServiceFactory.registerService("socialFeedService", {
+    
+}, {
+interactives: []});
+ServiceFactory.registerService("financeMigration", {
+    getBalanceMigrationSummary: [],
+    startMigration: ["data"],
+    getMigrationProgress: []
+}, {
+interactives: []});
+ServiceFactory.registerService("shoppingCartSSOLoginService", {
+    
+}, {
+interactives: []});
+ServiceFactory.registerService("settingsService", {
+    getSettingSchemas: ["settingKey"],
+    getSettings: ["settingKey"],
+    saveSettings: ["settingKey", "settings"]
+}, {
+interactives: []});
+ServiceFactory.registerService("authInfoService", {
+    sendPasswordResetEmailToAccounts: ["accountIds"],
+    isSSOEnabledForTeam: ["teamAlias"],
+    isSSOLimitedAccessAccountEnabledForTeam: ["teamAlias"],
+    shouldCreateNewAccountForTeam: ["teamAlias"],
+    getCurrentUUID: [],
+    forgotPassword: ["email", "teamAlias"],
+    getAssociatedTeamsOfAuthenticatedAccount: [],
+    isFirstTimeSignInNotifyForTeam: ["teamAlias"],
+    getAssociatedTeamsOfEmail: ["email"]
+}, {
+interactives: []});
+ServiceFactory.registerService("icms", {
+    getGenericPhoto: ["id"],
+    updateContentPageOrder: ["pages"],
+    getMainText: [],
+    createContentPage: ["contentPage"],
+    getGenericContent: ["id"],
+    removeLink: ["linkId"],
+    saveMainText: ["data"],
+    getAllResourcePages: [],
+    getContentPageById: ["contentPageId"],
+    updateLinksOrder: ["links"],
+    setTeamResources: ["contentPageId", "show"],
+    setPublicLinkVisiblity: ["contentPageId", "visible"],
+    updateEditableAccountsForContentPage: ["contentPageId", "accountIds"],
+    getAllContentLinkByContentPageId: ["contentPageId"],
+    editContentPage: ["contentPage"],
+    saveGenericPhoto: ["data"],
+    updateLink: ["contentPageId", "link"],
+    getAllCustomPages: ["term"],
+    addLink: ["contentPageId", "link"],
+    removeContentPage: ["contentPageId"],
+    setDraftContentPage: ["contentPageId", "hidden"],
+    saveGenericContent: ["data"],
+    getContentPageLinkMapById: ["contentPageId"]
+}, {
+interactives: []});
+ServiceFactory.registerService("calendarService", {
+    subcribeCalendar: ["criteria"],
+    getCalendarDateSummaryItems: ["criteria"],
+    getCalendarSubcribeItem: [],
+    getCalendarItem: ["criteria"]
+}, {
+interactives: []});
+ServiceFactory.registerService("quickbooksService", {
+    
+}, {
+interactives: []});
+ServiceFactory.registerService("testAsyncService", {
+    doExample: ["name"]
+}, {
+interactives: ["doExample"]});
+ServiceFactory.registerService("businessPublisherIntegrationService", {
+    removeCMSComponentReviewShowCaseItem: ["reviewId", "serviceType"],
+    getAssociatedServiceTargets: ["serviceType"],
+    getCMSComponentReviewShowcaseInfo: ["includeReviewSummary"],
+    shareTeamFeed: ["param"],
+    saveCMSComponentReviewShowCaseItems: ["reviews"],
+    isBPITeamActive: [],
+    updateCMSComponentReviewShowcaseItemsOrder: ["orderedInput"],
+    addCMSComponentReviewShowCaseItems: ["reviews", "serviceType"]
+}, {
+interactives: []});
+ServiceFactory.registerService("myTuInvoiceService", {
+    saveCard: ["card"],
+    updateBillingContact: ["accountId", "contact"],
+    payNow: ["accountId", "invoiceId", "amount"],
+    setPaymentMethodDefault: ["id", "accountId"],
+    getAccountAdditionalEmailAddresses: [],
+    updateAccountAdditionalEmailAddresses: ["accountId", "emails"],
+    getTeamCurrentInvoices: [],
+    getInvoiceUrl: ["id"],
+    getTeamInvoiceInitData: ["alias"],
+    addPaymentMethodToAccount: ["id", "accountId"],
+    getTeamPaymentMethods: [],
+    setCardDefault: ["id"],
+    buildZuoraAddCardWrapperURL: ["params", "prepopulateFields"],
+    getCurrentInvoiceStatusInfo: [],
+    generateSignature: ["type"],
+    deleteCard: ["id"],
+    listContract: []
+}, {
+interactives: []});
+ServiceFactory.registerService("customDomainService", {
+    generateSetupInstructions: ["teamId", "params"],
+    findTeamAdminEmailAddresses: ["teamId", "limit"],
+    getTeamDomainSetting: ["teamId"],
+    forceProviderStatusUpdate: ["teamId"],
+    performSetup: ["teamId", "params"],
+    disableActiveSetup: ["teamId"],
+    cancelPendingSetup: ["teamId"],
+    sendDNSInstructionEmail: ["teamId", "addresses", "extraContent", "instructions", "domain"]
+}, {
+interactives: []});
+ServiceFactory.registerService("amaService", {
+    runASACustomReport: ["fields"],
+    resetPassword: ["acountId", "pwdRequest"],
+    getWorkforceMemberRoleById: ["memberId", "roleId"],
+    deleteCustomRole: ["customRoleId"],
+    sendLoginEmailInstructions: ["acountId"],
+    resetPasswordByEmail: ["email", "password"],
+    getFieldsAndHeadersFromContext: ["customExportContextType"],
+    addWorkforceRolesForMember: ["memberId", "roleIds"],
+    mergeSwimmerId: ["memberId", "oldId", "newId"],
+    getAccountById: ["id"],
+    deleteAccountAvatar: ["accountId"],
+    updateWorkforceMemberInfo: ["workforceMemberInfo"],
+    saveAccount: ["id", "account"],
+    deleteCustomCourse: ["customCourseId"],
+    isAMA2EnabledFor: ["teamAlias"],
+    generateSwimmingForm: ["memberIds", "request"],
+    checkMembershipDataReport: ["memberIds"],
+    updateMemberAvatar: ["memberId", "file"],
+    resetTShirtSizeOfMembers: ["memberIds"],
+    getListWorkforceCourseByRoleId: ["roleId"],
+    updateMember: ["memberId", "member"],
+    removeCourseOfWorkforceMemberRole: ["memberId", "roleId", "courseId"],
+    anonymizeName: ["accountIds"],
+    uploadWorkforceCertificateFile: ["memberId", "type", "memberRoleCourseId", "file"],
+    createCustomRole: ["customRoleName"],
+    getArchivedRegFiles: [],
+    updateAccountNames: ["account"],
+    rebuildMemberIds: ["memberIds"],
+    generateMembersDirectory: ["memberIds", "request"],
+    getAsaFieldsAndHeaders: [],
+    getMainsetNumberOfCoachesInfo: [],
+    getListWorkforceRole: [],
+    checkAccountBalance: ["accountIds"],
+    markDeleteCoaches: ["acountIds"],
+    generateAveryLabelsOfMembers: ["memberIds"],
+    pushAccountPINNotification: ["ids"],
+    deleteMemberAvatar: ["memberId"],
+    isSwimmeetFeatureEnabled: [],
+    getFieldsAndHeaders: ["excluedClassMembership"],
+    deleteWorkforceCertificateFile: ["memberId", "type", "memberRoleCourseId"],
+    getMobileAppSetting: ["accountId"],
+    getFullAccountById: ["id"],
+    getASAFeeSetup: ["memberIds"],
+    getPluginViewRegistry: ["accountId"],
+    isVideoFeatureEnabled: [],
+    saveMobileAppSetting: ["accountId", "settings"],
+    sendSMSVerificationForAccounts: ["sms"],
+    verifyMemberSMS: ["memberId", "code"],
+    generateRegPkg: ["memberIds", "year"],
+    getIdsForReport: ["ids"],
+    chargeMemberASAFee: ["memberIds", "targetValue"],
+    getMemberById: ["memberId"],
+    createCustomCourse: ["customCourseName"],
+    generateSDIF: ["memberIds", "date"],
+    getSimpleListAllAccountsOfMyTeam: [],
+    multiEditUKMembers: ["memberIds", "request"],
+    markAsPaid: ["memberIds", "paidDate"],
+    getTeamStoreLocations: [],
+    multiEditMembers: ["memberIds", "request"],
+    convertMembersToCoaches: ["memberIds"],
+    getMembersByAccountId: ["accountId"],
+    getWorkforMemberData: ["memberId"],
+    verifyAccountSMS: ["accountId", "code"],
+    markDeleteMembers: ["memberIds", "deleted"],
+    getBestTimesForSwimmer: ["memberId"],
+    sendAccountPINEmail: ["ids"],
+    getSimpleListAllMembersOfMyTeam: [],
+    sendMemberVerificationEmail: ["memberId"],
+    sendAccountPINSMS: ["ids"],
+    removeWorkforceRoleOfMember: ["memberId", "roleId"],
+    exportSwimMarkRecords: ["memberIds"],
+    runExcelReport: ["customExportFields"],
+    updateAccountAvatar: ["accountId", "file"],
+    getFullMemberById: ["memberId"],
+    addCoursesForWorkforceMemberRole: ["memberId", "roleId", "courseIds"],
+    saveCoach: ["accountId", "coachType"],
+    getMainsetCoaches: [],
+    exportAttendanceChecksheet: ["memberIds", "request"],
+    markDeleteAccounts: ["accountIds", "deleted"],
+    generateAveryLabelsOfAccounts: ["accountIds"],
+    multiEditAccounts: ["accountIds", "request"],
+    getAccountFullNameByIds: ["ids"],
+    generateAccountPIN: ["ids"],
+    resetSwimsuitSizeOfMembers: ["memberIds"],
+    generateAttendanceReport: ["memberIds", "from", "to"],
+    listIndividualAttendance: ["memberId", "fromDate", "toDate"],
+    getNCSABanner: ["page", "accountId"],
+    updateWorkforceMemberRoleById: ["memberId", "roleId"],
+    sendVerificationEmailForAccount: ["opt"],
+    isPracticeProEnabled: [],
+    multiEditUsaMembers: ["memberIds", "request"],
+    getMemberLiteInfoByIds: ["memberId"]
+}, {
+interactives: []});
+ServiceFactory.registerService("billingSummaryService", {
+    exportIncomeTransations: ["from", "to", "chargeType", "billingDataType", "bankId"],
+    getPastPaymentItems: ["accountId", "start", "count"],
+    getIncomeTransactionReportSummary: ["from", "to", "chargeType", "billingDataType", "bankId"],
+    exportInvoicesToPDF: ["accountIds"],
+    getPaymentReportRecords: ["filters", "start", "count"],
+    exportPostingInvoiceData: ["month", "year"],
+    exportAdditionalAccountCharges: [],
+    exportPaymentSummary: ["filters"],
+    exportUnInvoicedReport: [],
+    mailBillingSummary: ["accountIds"],
+    getBillingSessionContext: [],
+    getCoAInvoiceItemReportRecords: ["filters", "start", "count"],
+    getInvoiceReportChargeDateInfo: ["month", "year"],
+    getInvoiceItems: ["accountId", "from", "to", "start", "count"],
+    getIncomeReportRecords: ["filters", "start", "count"],
+    getInvoiceReportRecords: ["filters", "start", "count"],
+    getIncomeReportSummary: ["filters"],
+    getPaymentAchRecords: ["accountName", "year", "month", "bankId", "status", "billingDataType", "start", "count", "order"],
+    getBillingLessonInvoices: ["accountId", "start", "count"],
+    getBillingFilters: ["filters"],
+    mailInvoice: ["accountIds"],
+    getPayments: ["accountId", "from", "to", "start", "count"],
+    getInvoiceHistorySummary: ["accountId", "from", "to"],
+    exportInvoiceCoAReport: ["filters"],
+    exportInvoiceReport: ["filters"],
+    getBillingLessonInvoiceSummary: ["accountId"],
+    getPaymentSummary: ["filters"],
+    getAccountInfo: ["accountId"],
+    getCoAPaymentReportRecords: ["filters", "start", "count"],
+    getBillingInvoiceSummary: ["filters"],
+    getTeamOptions: ["options"],
+    getInvoiceCoAReportSummary: ["filters"],
+    getInvoiceReportSummary: ["filters"],
+    exportIncomeReport: ["filters"],
+    getPaymentAchReportSummary: ["accountName", "year", "month", "bankId", "status", "billingDataType"],
+    getOpenedInvoice: ["accountId", "month", "year"],
+    getIncomeTransactionReportRecords: ["from", "to", "chargeType", "billingDataType", "bankId", "start", "count"],
+    exportInvoicesToExcel: ["accountIds"]
+}, {
+interactives: []});
+ServiceFactory.registerService("attndService", {
+    updateAttendance: ["attendances"],
+    sendMessage: ["transportation", "dataType", "ids", "files", "message"],
+    buildTrackingAttendance: ["classList"],
+    updateSkill: ["member"],
+    takeAttendanceFromKiosk: ["attendances"],
+    getCalendar: ["startDate", "endDate"],
+    getAttendances: ["classId", "slot", "weekDay", "takenDate"],
+    saveAttendances: ["classId", "slot", "weekDay", "takenDate", "attendances"],
+    getAttendanceFilter: [],
+    exportToExcel: ["classList"],
+    assignSkillsForMultiMembers: ["memberSkills"],
+    getMembersInTeam: [],
+    getHistory: ["startDate", "endDate", "eventTypes"],
+    getAvailableStudents: ["classId", "slot", "weekDay", "takenDate"],
+    getAccountInfoForMessaging: [],
+    buildTrackingSkill: ["classList"],
+    getKioskClassCalendar: ["pin", "lessonLocId"]
+}, {
+interactives: []});
+ServiceFactory.registerService("uksService", {
+    
+}, {
+interactives: []});
+ServiceFactory.registerService("classStartDropDateService", {
+    getAllStartDropDatePolicy: [],
+    getStartDropDatePolicyById: ["id"],
+    saveStartDropDatePolicy: ["startDropDatePolicy"],
+    deleteStartDropDatePolicyById: ["id"]
+}, {
+interactives: []});
+ServiceFactory.registerService("meetEntryService", {
+    getMeetNames: ["pastEvent"],
+    processChargeAndPaymentForMeetEntry: ["teamId", "byAccountId", "genData", "vMeet2MiscInvs", "processCharge", "jobInfo"],
+    createMeetEntryBatch: ["meet", "file"]
+}, {
+interactives: ["processChargeAndPaymentForMeetEntry"]});
+ServiceFactory.registerService("teamRegShoppingService", {
+    getDefaultAgreementKeys: [],
+    addMemRegToCart: ["regId", "regGroupId", "payOptionId", "locationId", "quantity"],
+    isTeamRegShoppingEnabled: [],
+    getAgreementKeys: ["regId"],
+    getRegistrableMemRegs: ["filter"],
+    getMemRegById: ["regId"],
+    getMemRegInfo: ["regId"],
+    getMemRegByEventId: ["eventId"],
+    getMemRegDetailById: ["regId"],
+    getPayOptionsOf: ["regId"],
+    exportDownloadableRegistrationReceiptPDF: ["regId"],
+    getRegistrationGroupsOf: ["regId"],
+    batchCartItemUpdate: ["actions"]
+}, {
+interactives: []});
+ServiceFactory.registerService("costumeManagementService", {
+    getCostumesPaginatedList: ["costumeFilter", "order"],
+    assignCostumesForMembers: ["assignedInfo"],
+    updateCostume: ["costume"],
+    exportDownloadableCostumeOrdering: ["filters", "exportOptions"],
+    batchCostumeDashboardUpdate: ["actions"],
+    updateMemberSizings: ["memberSizings"],
+    updateSizeOptions: ["costumeId", "sizeCharts"],
+    updateMemberSizing: ["memberSizing"],
+    updateMemberSizingSettings: ["sizingSettings"],
+    updateVendor: ["vendor"],
+    getOrInitializeMemberSizingSettings: ["pageIndex", "pageSize"],
+    checkDuplicatedInfoForAction: ["requestInfo"],
+    isMemberSizingCompleted: ["memberId"],
+    getCostumeSizingSettingInfo: [],
+    checkDuplicatedForMarkAsAllDashboard: ["option"],
+    saveCostumeSizingSettingInfo: ["settingInfo"],
+    calculateAutoSizer: ["memberSizing", "memberSizing"],
+    getAllVendors: [],
+    getImportClassCostumeInfos: ["importClassId"],
+    getOrInitializeMemberSizing: ["memberId"],
+    getCostume: ["costumeId"],
+    createCostume: ["costume"],
+    markAsAllDashboardStatus: ["option"],
+    getModuleDisplayName: [],
+    deleteVendor: ["vendor"],
+    postChargesForCostumes: ["postChargesInfo"],
+    clearMemberSizings: ["memberIdList"],
+    exportDownloadableCostumeDashboard: ["filters", "exportOptions"],
+    setParentsSizingToolEnabled: ["parentsSizingToolEnabled"],
+    getVendors: [],
+    importCostumeForClass: ["classId", "importCostumIds"],
+    createVendor: ["vendor"],
+    getMemberSizings: ["classId", "pageIndex", "pageSize"],
+    getCostumeAssignmentInfo: ["costumeId"],
+    isParentsSizingToolEnabled: [],
+    getCostumePostChargesRequisiteInfo: ["costumeFilter"],
+    updateMemberSizingStatus: ["memberId", "status"],
+    deleteCostume: ["costumeId"],
+    getCustomVendors: [],
+    getMemberSizingStatus: ["memberId"]
+}, {
+interactives: []});
+ServiceFactory.registerService("discountdanceService", {
+    connectTeacherAccount: ["email", "pwd"],
+    getTeacherInfo: [],
+    sendCouponCode: ["email"],
+    getTeamReminderSetting: [],
+    getDashboardRecentPurchased: [],
+    getDashboardDressCodeSummary: [],
+    isAccountNavigationalContentShow: ["accountId"],
+    markAccountAsNavigationalContentShown: ["accountId"],
+    getInvoice: ["id"],
+    getRequisiteData: ["action", "input"],
+    linkDressCodeWithClasses: ["dressCodeId", "classIds", "isApplyDressCodeToMembers"],
+    saveTeamReminderSetting: ["setting"],
+    getPurchaseReminderEmailData: [],
+    disconnectTeacherAccount: [],
+    markAsPurchased: ["ids"],
+    markAsUnpurchased: ["ids"],
+    getDressCodeWideClassItems: ["start", "count"],
+    getDressCodes: [],
+    getDashboardPurchaseReminder: [],
+    getTeacherStorePreviewInfo: ["source", "input"],
+    getDashboardTeacherSummary: [],
+    markAsPolicyAccepted: ["accountId"],
+    getDDCheckoutInfo: ["scId"],
+    finishDDSCCheckout: ["data"],
+    createDDSCCheckoutTrackingData: ["data"],
+    savePurchaseReminderEmailTemplateData: ["keyValues"],
+    getDashboardPurchasedByClassDressCode: []
+}, {
+interactives: []});
+ServiceFactory.registerService("ibisService", {
+    listAccountInvoices: ["filters", "start", "count", "orders"],
+    listAccountInvoiceItems: ["filters", "start", "count", "orders"]
+}, {
+interactives: []});
+ServiceFactory.registerService("classBillByHourService", {
+    saveRatePlan: ["ratePlan"],
+    getRatePlan: ["ratePlanId"],
+    getRatePlans: [],
+    deleteRatePlan: ["ratePlanId"]
+}, {
+interactives: []});
+ServiceFactory.registerService("emailService", {
+    sendSMSVerificationToMembers: ["memberIds"],
+    getPreviewEmail: ["emailType"],
+    sendMessageForCalendar: ["dataType", "ids", "files", "dataMessage"],
+    sendLoginInstructionsToAccounts: ["accountIds"],
+    sendMessage: ["transportation", "dataType", "ids", "files", "message"],
+    sendMessageAllTypes: ["dataType", "ids", "files", "dataMessage"],
+    sendSMSVerificationToAccounts: ["accountIds"],
+    sendEmail: ["accountIds", "emailType"],
+    sendEmailVerificationToAccounts: ["accountIds"],
+    sendEmailVerificationToMembers: ["memberIds"],
+    getReceipientInfoForCalendar: ["transportations", "dataType", "ids"],
+    getReceipientInfos: ["transportation", "dataType", "ids"],
+    getReceipientInfoAllTypes: ["transportations", "dataType", "ids"]
+}, {
+interactives: []});
+ServiceFactory.registerService("meetService", {
+    saveMeetBillingSetting: ["setting"],
+    getMeetBillingSetting: [],
+    testRemoteService: []
+}, {
+interactives: []});
+ServiceFactory.registerService("posService", {
+    processRefundSaleOrder: ["orderId", "items", "options"],
+    updateProductPropertyValues: ["type", "items"],
+    testSendOrderEmail: ["orderId", "emailAddress"],
+    sendInventoryOrderViaEmail: ["inventoryOrderIds", "emailAddresses"],
+    getTaxRate: [],
+    markAsProductItemsPublished: ["ids"],
+    markAsProductItemsUnpublished: ["ids"],
+    getSimpleSaleCart: ["id"],
+    getFullInventoryOrder: ["id"],
+    getSaleOrder: ["id"],
+    archiveSaleOrders: ["orderIds", "archived"],
+    teamPOSInitialize: ["defaultLocation", "taxRateId", "chargeCategoryId"],
+    bulkUpdateProductItems: ["items"],
+    calculateSaleCartProcessingFee: ["id", "accountId", "paymentMethod"],
+    getPOSChargeCategoryId: [],
+    cloneInventoryOrderAsDraft: ["sourceInventoryOrderId"],
+    processPayment: ["saleCartId", "paymentMethod", "accountId", "guestFirstName", "guestLastName", "guestEmail", "guestPhone", "paymentInfo"],
+    getDashboardGrossSales: ["filter"],
+    generateDownloadableOrdersAsPDF: ["orderIds"],
+    getProductPropertyValues: ["type"],
+    getPosSessionStatus: [],
+    getProductOptionStockInfo: ["productOptionId"],
+    createTerminalPaymentIntent: ["saleCartId", "accountId", "guestFirstName", "guestLastName", "guestEmail", "guestPhone", "skipProcessingFee"],
+    getProductStocksByProductId: ["productId"],
+    getSaleOrdersByIds: ["ids"],
+    getDashboardPaymentMethods: ["filter"],
+    getOrderIdByFinancialSourceId: ["type", "sourceId"],
+    generateDownloadableOrdersAsExcel: ["orderIds"],
+    saveInventoryOrder: ["inventoryOrder", "processOrderAfterSaving"],
+    getInventoryHistoryByStoreLocation: ["optionId", "storeLocationId", "order", "offset", "limit"],
+    listTaxRates: [],
+    updateSaleOrderInvoiceDueDate: ["id", "dueDate"],
+    getDashboardRecentSales: ["filter"],
+    updateInfoAndGetSaleCart: ["id"],
+    updateProductItem: ["item"],
+    getFullProductItemsByIds: ["ids"],
+    deleteProductPropertyValue: ["type", "id"],
+    sendOrdersViaEmail: ["orderIds", "userRecipients", "withPdfAttachment", "withExcelAttachment"],
+    deleteSaleCartItem: ["id"],
+    getProductItemsByIds: ["ids", "storeLocationId"],
+    getSaleCart: ["id"],
+    sendInventoryOrderViaEmailWithAttachment: ["orderIds", "userRecipients", "withPdfAttachment", "withExcelAttachment"],
+    getProductPropertyTypeValueMap: ["types"],
+    getDashboardLocationSales: ["filter"],
+    getDefaultInvoiceDueDate: [],
+    deleteInventoryOrder: ["inventoryOrderId"],
+    updateTeamStoreLocation: ["storeLocation"],
+    updateSaleCartItemQuantity: ["id", "quantity"],
+    updateSaleCartDiscount: ["id", "discount"],
+    getDashboardInventoryAlerts: ["filter"],
+    generateDownloadableOrders: ["outputFormat", "orderIds"],
+    getTeamStoreLocations: [],
+    updateTaxRate: ["taxRateId"],
+    deleteSaleCart: ["id"],
+    exportSaleOrderToPdf: ["orderId"],
+    performInventoryAudit: ["productOptionId", "items"],
+    sendOrderReceiptViaEmail: ["orderId", "userRecipients"],
+    receiveInventoryOrder: ["inventoryOrder", "markCompleted"],
+    sendOrdersViaEmailWithJob: ["orderIds", "userRecipients", "withPdfAttachment", "withExcelAttachment"],
+    generateDownloadableInventoryOrderAsPDF: ["orderId"],
+    cancelInventoryOrder: ["inventoryOrderId"],
+    updateSessionLastStoreLocation: ["id"],
+    isPOSInitializedForTeam: [],
+    generateDownloadableInventoryHistory: ["optionId", "storeLocationId"],
+    updatePOSChargeCategory: ["chargeCategoryId"],
+    addItemToCart: ["cartId", "saleItem", "storeLocationId"],
+    bulkUpdateSaleCartItemQuantities: ["itemQuantityMap"],
+    exportInventoryOrderToPdf: ["orderId"],
+    startProcessingInventoryOrder: ["inventoryOrderId"],
+    getDashboardTopSales: ["filter"],
+    generateDownloadableInventoryTransactionsReport: ["filters", "orders", "fieldNames", "extraInfos"],
+    updateProductPropertyOrders: ["type", "ids"],
+    getProductOptionWithStats: ["productOptionIds", "storeLocationId"],
+    markAsProductItemsDeleted: ["ids"],
+    calculateAndGetRefundSaleOrderSummary: ["orderId", "items", "options"],
+    searchPopulatedProductOptions: ["keywords", "excludedOptionIds", "storeLocationId", "max", "order"]
+}, {
+interactives: ["processPayment"]});
+ServiceFactory.registerService("techFeeService", {
+    getElectronicTransactions: ["teamId", "month", "year", "startIndex", "count"],
+    getOfflineTotal: ["teamId", "month", "year"],
+    getOfflineTransactions: ["teamId", "month", "year", "startIndex", "count"],
+    getElectronicTotal: ["teamId", "month", "year"]
+}, {
+interactives: []});
+ServiceFactory.registerService("marketingService", {
+    getRegistrableClasses: ["progIds", "subProgIds"],
+    getProgramFilters: []
+}, {
+interactives: []});
+ServiceFactory.registerService("auditLogService", {
+    getTeamInfo: ["teamId"],
+    getLogDetailViewData: ["logLevel"],
+    isTeamLogLevelAvailable: []
+}, {
+interactives: []});
+ServiceFactory.registerService("financeSimulationService", {
+    startBillingSimulation: ["params"],
+    startBillingSimulationForAccount: ["accountId", "simulatedDate"],
+    querySimulationResult: ["simulationId", "start", "count", "orders"]
+}, {
+interactives: []});
+ServiceFactory.registerService("memRegMigrationService", {
+    process: ["offset", "fromDate", "toDate"],
+    migrateInvoice: ["team", "memRegId", "memRegAccountIdx", "invIdx"],
+    processOneTeam: ["team", "fromDate", "toDate"]
+}, {
+interactives: []});
+ServiceFactory.registerService("asyncWorkerManager", {
+    getWorkerState: ["uuid"],
+    replyMessageRequest: ["uuid", "messageId", "map"]
+}, {
+interactives: []});
+ServiceFactory.registerService("teamRegService", {
+    getDefaultAgreementKeys: [],
+    isAllLegacyWaiverMigrated: ["memRegId"],
+    getTeamRegMigratedAgreement: ["memRegId", "waiverIndex"],
+    getAgrementsByMemRegId: ["memRegId"],
+    getAgreementKeys: ["regId"],
+    hasAnyLegacyWaiverMigrated: ["memRegId"],
+    getLegacyTeamRegSignedWaiver: ["memRegId", "waiverIndex", "order"],
+    getLegacyWaiver: ["memRegId", "waiverIndex"],
+    getMemRegInvoiceInfo: ["memRegId", "financialItemId"]
+}, {
+interactives: []});
+ServiceFactory.registerService("accountService", {
+    getTeamAccounts: [],
+    searchTeamAccountsByTerm: ["term", "excludedAccountIds", "limit"],
+    getNonAdminAccountsActive: []
+}, {
+interactives: []});
+ServiceFactory.registerService("serviceHoursService", {
+    getServiceHoursData: ["accountId"]
+}, {
+interactives: []});
+ServiceFactory.registerService("bookingsAMAService", {
+    getMemberBookings: ["memberId", "status", "recentMonths"],
+    generateDownloadableMemberBookingsSummaryAsPDF: ["memberId", "status", "recentMonths"],
+    saveMember: ["member"],
+    generateDownloadableMemberBookingsCalendarAppointmentsAsPDF: ["memberId", "startDate", "endDate"],
+    getMemberAppointments: ["memberId", "startDate", "endDate"],
+    sendEmailMessageToInstructor: ["transportation", "dataType", "instructorIds", "attachments", "message"],
+    getMemberAppointmentsOfAccount: ["accountId", "status", "recentMonths"],
+    getAccounts: ["keyword", "startIndex", "pageSize", "order"],
+    getAccountEmailReceipientInfo: ["transportation", "dataType", "instructorIds"],
+    getMemberConfiguration: [],
+    saveAccount: ["emailLoginInstructions", "account"]
+}, {
+interactives: []});
+ServiceFactory.registerService("noClassSchedulesService", {
+    getScheduleById: ["id"],
+    deleteSchedule: ["ids"],
+    saveSchedule: ["noClassSchedule"],
+    getSchedules: ["terms", "startIndex", "count", "order"],
+    loadSchedulesByTimezone: ["editingClassId", "editingClassTimezoneId"]
+}, {
+interactives: []});
+ServiceFactory.registerService("teamResourceManager", {
+    uploadResource: ["file", "resource"]
+}, {
+interactives: []});
+ServiceFactory.registerService("featureManagementService", {
+    activateFeatureForTeam: ["featureKey", "teamId"],
+    setDefaultStatusOfFeature: ["featureKey", "enable"],
+    getAllTeamFeatures: ["teamId"],
+    getAllFeaturesOfMyTeam: [],
+    getFeatureAssignmentDetail: ["featureKey"],
+    disableFeatureOnTeam: ["featureKey", "teamId"],
+    removeFeatureFromTeam: ["featureKey", "teamId"],
+    getEnabledFeaturesOfMyTeam: [],
+    isFeatureActiveOnTeam: ["featureKey", "teamId"]
+}, {
+interactives: []});
+ServiceFactory.registerService("dataViewService", {
+    updateSavedViewSharingOptions: ["savedViewId", "sharingMode", "userIds", "notifyUsers"],
+    listAllIds: ["specId", "filters", "orders"],
+    updateSavedViewOrders: ["specId", "ids"],
+    getSpecification: ["specId"],
+    getFilterValueItems: ["filterValueMap", "specId"],
+    searchUsersForSavedViewSharing: ["term", "excludedAccountIds", "limit"],
+    list: ["specId", "filters", "start", "count", "orders", "excludedFieldNames"],
+    createSavedView: ["savedView"],
+    updateSavedView: ["savedView"],
+    refreshFilters: ["specId", "filters"],
+    getAllSavedViewsBySpecification: ["savedView"],
+    createListAllIdsJob: ["specId", "filters", "orders"],
+    deleteSavedView: ["id"],
+    findFilterListItems: ["specId", "filterName", "filterValueMap", "keys", "keyword"],
+    getSavedViewSharingInfo: ["savedViewId"],
+    refreshColumns: ["specId", "filters"],
+    createListJob: ["specId", "filters", "start", "count", "orders", "excludedFieldNames"],
+    export: ["specId", "filters", "orders", "fieldNames", "outputFormat", "extraInfos"],
+    makeSavedViewAsDefault: ["id", "specId"]
+}, {
+interactives: []});
+ServiceFactory.registerService("sourceMemRegMigrationService", {
+    migrateInvoice: ["context", "inputSettings", "team", "destMemRegInv", "memRegId", "memRegAccountIdx", "invIdx"],
+    migrateAsaRegistration: ["context"]
+}, {
+interactives: []});
+ServiceFactory.registerService("billingGroupService", {
+    getMemberWideCharge: ["id"],
+    listAccountWideCharges: ["start", "count", "order"],
+    saveBillingGroup: ["group"],
+    getRequisiteData: ["action", "input"],
+    saveSubBillingGroup: ["group"],
+    saveGroupChargeConfiguration: ["config"],
+    getAccountWideCharge: ["id"],
+    deleteMemberWideCharge: ["id"],
+    saveAccountWideCharge: ["charge"],
+    getGroupChargeConfiguration: ["groupId"],
+    saveIndividualAccountCharge: ["charge"],
+    deleteBillingGroup: ["ids"],
+    getBillingSetting: [],
+    deleteSubBillingGroup: ["ids"],
+    getIndividualAccountCharge: ["id"],
+    saveBillingSetting: ["setting"],
+    isBillingGroupFeatureActive: [],
+    listIndividualAccountCharges: ["accountId", "start", "count", "order"],
+    deleteAccountWideCharge: ["id"],
+    saveGroupDiscountPolicy: ["policy"],
+    deleteIndividualAccountCharge: ["id"],
+    getDiscountPolicy: [],
+    listMemberWideCharges: ["start", "count", "order"],
+    saveMemberWideCharge: ["charge"],
+    getSubBillingGroup: ["id"],
+    getBillingGroup: ["id"]
+}, {
+interactives: []});
+ServiceFactory.registerService("newsService", {
+    archiveNewsItems: ["ids"],
+    updateNewsItem: ["newsItem", "emailRecipients"],
+    unarchiveNewsItems: ["ids"],
+    getNewsItemById: ["id"],
+    getNewsItems: ["teamId", "keywords", "start", "count", "archived", "order"],
+    createNewsItem: ["newsItem", "emailRecipients"],
+    deleteNewsItems: ["ids"]
+}, {
+interactives: []});
+ServiceFactory.registerService("classToolService", {
+    saveRegistrations: ["classIdMemberIdMap", "registrations"],
+    saveMember: ["member"],
+    buildRegistrations: ["classIdMemberIdMap", "currentRegistrations", "taxApplication", "order"],
+    projectBbhPaymentPlanOfNewRegistration: ["focusRegistrationId", "classIdMemberIdMap", "currentRegistrations"],
+    getAccountWithPaymentInfo: ["accountId"],
+    getAccounts: ["keyword", "startIndex", "pageSize", "order"],
+    validateRegistrations: ["classIdMemberIdMap", "registrations"],
+    getMetaData: ["classIds"],
+    getMemberConfiguration: [],
+    saveAccount: ["emailLoginInstructions", "account"],
+    getMembers: ["classId", "limitGender", "limitAge", "keyword", "excludeMemberIds", "startIndex", "pageSize", "order"]
+}, {
+interactives: []});
+ServiceFactory.registerService("teamInfoService", {
+    deleteContactInfo: ["id"],
+    getTeamPartners: [],
+    getAllContactInfos: [],
+    getSportType: [],
+    updateTeamPartnerVisibility: ["id", "visible"],
+    updateTeamPartners: ["items"],
+    getTeamLevel: [],
+    updateTeamLevel: ["data"],
+    getTeam: [],
+    updateContactInfo: ["info"],
+    getContactInfoById: ["id"],
+    updateLinkVisibility: ["id", "visible"],
+    getSiteLive: [],
+    updateTeamPartnerOrders: ["data"],
+    updateLinkOrders: ["data"],
+    getUtilityLinks: [],
+    deleteLink: ["id"],
+    generateYMCALogo: ["spec", "teamName", "ymcaName", "useWhiteMobileVersion"],
+    addTeamPartner: ["item"],
+    updateLinks: ["links"],
+    getSocialLinks: [],
+    addUtilityLink: ["link"],
+    updateTeamLogo: ["info"],
+    updateContactInfoOrders: ["orderedIds"],
+    deleteTeamPartner: ["id"],
+    updateContactVisibility: ["id", "visible"],
+    getContactInfo: [],
+    getTeamLogo: [],
+    addContactInfo: ["info"],
+    getYMCATeamInfo: []
+}, {
+interactives: []});
+ServiceFactory.registerService("calService", {
+    sendToInstructors: ["accountIds", "message"]
+}, {
+interactives: []});
+ServiceFactory.registerService("bookingsService", {
+    updateReviewedStatus: ["ids", "reviewedStatus"],
+    addCardToAccount: ["accountId", "cardToken", "metadata"],
+    filterBookingWithPaymentPlan: ["excludedBookingIds"],
+    getPrintBookingAppointmentsInfo: ["request"],
+    checkAppointmentRegistrations: ["bookingId", "participants", "order"],
+    generateDownloadableAppointmentsReportAsExcel: ["appointmentIds"],
+    getAvailableBookingSlots: ["criteria"],
+    saveMultiBookingInfo: ["bookingIds", "multipleBookingEditRequest"],
+    predictBookingSlots: ["booking", "criteria"],
+    generateDownloadablePredictBookingSlotsAsPDF: ["booking", "criteria"],
+    getBookingAgreementInfo: ["key", "bookingId"],
+    getBookingInfoById: ["bookingId"],
+    getRequisiteData: ["action", "input"],
+    predictNearestSlotDateOfBooking: ["booking", "pointDate", "type"],
+    archiveBookings: ["ids"],
+    restoreRemovedBookingSlots: ["ids"],
+    projectMultiItems: ["paymentPlanItemsProjectedInfo"],
+    generateDownloadableAppointmentReceiptAsPDF: ["appointmentId"],
+    markBookingsDeleted: ["bookingIds"],
+    predictNextAvailableDateForBooking: ["booking"],
+    getBookingFeeInfoByBookingSlots: ["bookingId", "memberId", "slots"],
+    getNextAvailableDateForBooking: ["criteria"],
+    cloneBooking: ["clonedBookingInfo"],
+    changeSlotForAppointment: ["appointmentId", "newSlotId"],
+    markBookingSlotsRemoved: ["ids"],
+    filterPaymentPlans: ["excludedBookingId", "bookingIds", "keyword", "order"],
+    fillPaymentPlans: ["paymentPlans"],
+    getBookingsBySubProgramId: ["subProgramId"],
+    getBookingSlots: ["criteria"],
+    projectMultiItemsForAppointment: ["appointmentId"],
+    bookAppointments: ["bookingId", "participants"],
+    getBookingSlotAppointmentInfo: ["bookingSlotId"],
+    predictDateBookingSlotSummaryItems: ["booking", "startDate", "endDate"],
+    saveBookingInfo: ["bookingInfo"],
+    unarchiveBookings: ["ids"],
+    getAccountWithPaymentInfo: ["accountId"],
+    getProjectionPlan: ["bookingInfo", "paymentPlanItem", "startDate", "endDate"],
+    cancelAppointments: ["appointmentIds"],
+    getDateBookingSlotSummaryItems: ["criteria"],
+    generateDownloadableBookingSlotsAsPDF: ["criteria"],
+    getNearestSlotDateOfBooking: ["criteria", "pointDate", "type", "availableSlotOnly"],
+    getMembers: ["bookingId", "limitAge", "limitGender", "keyword", "startIndex", "pageSize", "order"]
+}, {
+interactives: []});
+ServiceFactory.registerService("classDressCodeService", {
+    getClassDressCodeDetails: ["classIds"],
+    saveClassDressCode: ["config"],
+    getRequisiteData: ["config"],
+    getSimpleClassDressCodeDetails: ["classIds"],
+    getClassDressCodeDetail: ["classId"]
+}, {
+interactives: []});
+ServiceFactory.registerService("regNotifService", {
+    getRegistrableLessonClass: [],
+    getRegistrableBookings: ["forAccountId"],
+    enable: ["id"],
+    disable: ["id"],
+    get: ["id"],
+    save: ["regNotif"],
+    list: ["accountId"],
+    delete: ["id"],
+    getNotifyOnValidationInfoOfAccount: ["accountId"]
+}, {
+interactives: []});
+ServiceFactory.registerService("eventService", {
+    getUpcommingEventByCategory: ["eventType", "componentId"],
+    getEventCategories: ["componentId"]
+}, {
+interactives: []});
+ServiceFactory.registerService("templateAdminService", {
+    deleteFile: ["templateId", "path"],
+    uploadFile: ["templateId", "path", "file"],
+    saveFileContent: ["templateId", "path", "content"],
+    createNewFolder: ["templateId", "path", "newFolderName"],
+    compressTemplateForDownload: ["templateId"],
+    loadFileContent: ["templateId", "path"],
+    cloneAsDevTemplate: ["templateId"],
+    updateTemplateSuite: ["file", "templateSuite"],
+    getMyTeamTemplateSuiteUsage: [],
+    markDeprecated: ["templateId"],
+    installNewTemplateSuite: ["file", "templateSuite"],
+    getTemplateSuiteUsedInfo: ["templateId"],
+    findPopulatedTemplateSuitesForMyTeam: ["keywords", "startIndex", "count", "order"],
+    getTeamUsedTemplateSuiteInfo: ["templateId", "teamName", "startIndex", "count"],
+    findPopulatedTemplateSuites: ["keywords", "startIndex", "count", "order"],
+    getTemplateFileUrl: ["templateId", "path"],
+    renameFile: ["templateId", "path", "newName"],
+    deleteTemplate: ["templateId"],
+    applyMyTeamTemplateSuite: ["usage", "cleanSetup"],
+    createNewFile: ["templateId", "path", "newFileName"],
+    listFiles: ["templateId", "path"],
+    setTemplateDevModeStatus: ["enabled"]
+}, {
+interactives: []});
+ServiceFactory.registerService("ICoachService", {
+    
+}, {
+interactives: []});
+ServiceFactory.registerService("smmigrationService", {
+    finishSandboxing: [],
+    startMigration: ["sourceTeamAlias", "targetTeamAlias"]
+}, {
+interactives: []});
+ServiceFactory.registerService("donationService", {
+    getChargeDetail: ["title", "description", "sourceId", "sourceKey", "accountId", "chargeById"],
+    getChargePostingOptions: [],
+    getPaymentParams: ["accountDetail", "vaultToken", "paymentMethod", "totalAmount", "charges", "totalAmount"],
+    processRefund: ["payment", "sourceId", "donateRefundAmount", "donateFeeRefundAmount", "processingFeeIncluded"],
+    getPayment: ["accountId", "chargeById", "title", "description", "chargeAmt"],
+    getChargeItem: ["title", "description", "chargeAmt", "coaId"]
+}, {
+interactives: []});
+ServiceFactory.registerService("cronSupportService", {
+    getTeamInfo: ["directory"],
+    executeCronManually: ["type", "params"],
+    getRegisteredCronTaskTypes: [],
+    cleanupCronResults: [],
+    isManualModeEnable: ["type"]
+}, {
+interactives: []});
+ServiceFactory.registerService("bookingSharingService", {
+    deleteSocialConnection: ["tokenType"],
+    sharePostViaSocial: ["targets", "content"],
+    getConnectedSocialTargets: ["tokenType"],
+    saveSocialConnection: ["jsonSocialToken"]
+}, {
+interactives: []});
+ServiceFactory.registerService("classAmaService", {
+    getMemberSettingClasses: ["memberId"],
+    getActiveMemberClasses: ["memberId", "classStatus", "recentMonths"],
+    getMemberClassDetail: ["memberId", "classId", "slot"],
+    getMemberAttendanceAtClass: ["memberId", "classId", "slot", "startDate", "endDate", "terms", "startIndex", "count", "order"],
+    updateSkills: ["memberId", "classId", "currId", "regIdx", "classInIdx", "skills"],
+    getMemberClasses: ["memberId", "classStatus", "recentMonths"],
+    getMemberCalendar: ["memberId", "startDate", "endDate"],
+    getAccountEmailReceipientInfo: ["transportation", "dataType", "instructorIds"],
+    getAccountClasses: ["accountId", "classStatus", "recentMonths"]
+}, {
+interactives: []});
+ServiceFactory.registerService("financeStatusService", {
+    isReadyForMigration: [],
+    isActive: [],
+    isEnable: []
+}, {
+interactives: []});
+ServiceFactory.registerService("paymentUtilService", {
+    getRefundabilityByTransactionDate: ["transactionDate"],
+    isRefundAllowedByTransactionId: ["transactionId"],
+    deleteTeamRefundConfig: ["teamId"],
+    isRefundAllowedByTransactionDate: ["transactionDate"],
+    listRefundConfigByTeam: ["keywords", "start", "count", "order"],
+    setRefundConfigByTeam: ["config"],
+    getSimpleTeamChargeCategories: [],
+    getRefundabilityByTransactionId: ["transactionId"]
+}, {
+interactives: []});
+ServiceFactory.registerService("notifyingService", {
+    
+}, {
+interactives: []});
+ServiceFactory.registerService("nodeManager", {
+    invalidateCacheEntry: ["cacheId", "key", "secret"],
+    refreshCache: ["cacheId", "secret"]
+}, {
+interactives: []});
+ServiceFactory.registerService("jobService", {
+    getJobExecutionResult: ["jobId"]
+}, {
+interactives: []});
+ServiceFactory.registerService("cmsDiagService", {
+    ignoreProblem: ["problemId"],
+    inspectMyTeamSite: [],
+    getTeamSiteProblems: [],
+    getTeamSiteWarningCount: [],
+    resolveProblem: ["problemId"],
+    ignoreAllProblems: []
+}, {
+interactives: []});
+
+var TIMEZONES = {
+    server: "America\/Los_Angeles",
+    team: "EST5EDT"
+};
+
+var TEAM_INFO = {
+  "id" : 8040,
+  "alias" : "va",
+  "team" : "Virginia Swimming",
+  "language" : "en_US",
+  "timezoneId" : "EST5EDT",
+  "domain" : "",
+  "useCustomDomain" : false,
+  "rootDomainPrefix" : "https://www.gomotionapp.com",
+  "isYmcaNonTUTeam" : false,
+  "isNonTUTeam" : false,
+  "sepaymentDisplayNotificationJewel" : false,
+  "sepaymentNavigateToDisputeTab" : false,
+  "electronicProcessingFeeLabel" : "Organization's Management Fee",
+  "enabledFeatures" : [ "news", "practices", "class", "team-reg", "shoppingcart", "class-reg", "sc-team-reg", "swim-meet", "time-reports", "safesport", "practices-pro", "coaches", "coach-list", "videos", "bpi", "pos", "social-feed", "billinggroup", "backoffice-calendar" ],
+  "sportType" : "swimming"
+};
+
+ServiceFactory.requestEnhancer = function (request) {
+    request.setRequestHeader("X-TU-Team", TEAM_INFO.alias);
+    request.setRequestHeader("X-Rio-Client-TimeZone",  typeof(moment) != "undefined" && typeof(moment.tz) != "undefined" ? moment.tz.guess() : "");
+};
+var LOCALE = {
+    language: "en-US",
+    currencySign: "$",
+    currencyCode: "USD"
+};
+var BUILD_ID = "1718595520105";
+
+var SERVER_FLAVOR = "SE";
+
+var BASE_FULL_URL = "https://www.gomotionapp.com/";
+var API_TRANSPORT_URI = BASE_FULL_URL + "api";
+var Config = {};
+var Enums = {};
+var CustomExportContextType = {};
+CustomExportContextType["AccountView"] = {
+    type: "AccountView"
+};
+CustomExportContextType["MemberView"] = {
+    type: "MemberView"
+};
+CustomExportContextType["USASwimmingView"] = {
+    type: "USASwimmingView"
+};
+CustomExportContextType["EventSignupAdmin"] = {
+    type: "EventSignupAdmin"
+};
+Enums.CustomExportContextType = CustomExportContextType;
+var MixedRelayType = {};
+MixedRelayType["TwoMaleTwoFemale"] = {
+    code: 10
+};
+MixedRelayType["AnyCombo"] = {
+    code: 20
+};
+Enums.MixedRelayType = MixedRelayType;
+var YmcaProgram = {};
+YmcaProgram["None"] = {
+    code: 0,
+    type: "None",
+    displayName: "None"
+};
+YmcaProgram["Masters"] = {
+    code: 100,
+    type: "Masters",
+    displayName: "Masters"
+};
+YmcaProgram["WaterPolo"] = {
+    code: 200,
+    type: "WaterPolo",
+    displayName: "Water Polo"
+};
+YmcaProgram["Diving"] = {
+    code: 300,
+    type: "Diving",
+    displayName: "Diving"
+};
+YmcaProgram["BeginToSwim"] = {
+    code: 400,
+    type: "BeginToSwim",
+    displayName: "Begin-To-Swim"
+};
+Enums.YmcaProgram = YmcaProgram;
+var ASAEthnicity = {};
+ASAEthnicity["None"] = {
+    code: 0,
+    type: "None",
+    displayName: "None"
+};
+ASAEthnicity["WhiteBritish"] = {
+    code: 1,
+    type: "WhiteBritish",
+    displayName: "White - British"
+};
+ASAEthnicity["WhiteIrish"] = {
+    code: 2,
+    type: "WhiteIrish",
+    displayName: "White - Irish"
+};
+ASAEthnicity["WhiteOther"] = {
+    code: 4,
+    type: "WhiteOther",
+    displayName: "White - Other"
+};
+ASAEthnicity["AsianIndian"] = {
+    code: 8,
+    type: "AsianIndian",
+    displayName: "Asian - Indian"
+};
+ASAEthnicity["AsianPakistani"] = {
+    code: 16,
+    type: "AsianPakistani",
+    displayName: "Asian - Pakistani"
+};
+ASAEthnicity["AsianBangladeshi"] = {
+    code: 32,
+    type: "AsianBangladeshi",
+    displayName: "Asian - Bangladeshi"
+};
+ASAEthnicity["AsianOther"] = {
+    code: 64,
+    type: "AsianOther",
+    displayName: "Asian - Other"
+};
+ASAEthnicity["Chinese"] = {
+    code: 128,
+    type: "Chinese",
+    displayName: "Chinese"
+};
+ASAEthnicity["MixedWhiteAndBlackCaribbean"] = {
+    code: 256,
+    type: "MixedWhiteAndBlackCaribbean",
+    displayName: "Mixed - White and Black Caribbean"
+};
+ASAEthnicity["MixedWhiteAndAsian"] = {
+    code: 512,
+    type: "MixedWhiteAndAsian",
+    displayName: "Mixed - White and Asian"
+};
+ASAEthnicity["MixedOther"] = {
+    code: 1024,
+    type: "MixedOther",
+    displayName: "Mixed - Other"
+};
+ASAEthnicity["BlackCaribbean"] = {
+    code: 2048,
+    type: "BlackCaribbean",
+    displayName: "Black - Caribbean"
+};
+ASAEthnicity["BlackAfrican"] = {
+    code: 4096,
+    type: "BlackAfrican",
+    displayName: "Black - African"
+};
+ASAEthnicity["BlackOther"] = {
+    code: 8192,
+    type: "BlackOther",
+    displayName: "Black - Other"
+};
+ASAEthnicity["Other"] = {
+    code: 16384,
+    type: "Other",
+    displayName: "Other Ethnic Group"
+};
+Enums.ASAEthnicity = ASAEthnicity;
+var USARegistrationSeason = {};
+USARegistrationSeason["NotSet"] = {
+    code: 0,
+    type: "NotSet",
+    displayName: "Not Set"
+};
+USARegistrationSeason["Season1"] = {
+    code: 10,
+    type: "Season1",
+    displayName: "Season 1"
+};
+USARegistrationSeason["Season2"] = {
+    code: 20,
+    type: "Season2",
+    displayName: "Season 2"
+};
+USARegistrationSeason["Individual"] = {
+    code: 30,
+    type: "Individual",
+    displayName: "Season Individual"
+};
+USARegistrationSeason["YearRound"] = {
+    code: 40,
+    type: "YearRound",
+    displayName: "Year Round"
+};
+USARegistrationSeason["SingleMeet"] = {
+    code: 50,
+    type: "SingleMeet",
+    displayName: "Single Meet"
+};
+USARegistrationSeason["Outreach"] = {
+    code: 60,
+    type: "Outreach",
+    displayName: "Outreach"
+};
+USARegistrationSeason["Flex"] = {
+    code: 70,
+    type: "Flex",
+    displayName: "Flex"
+};
+Enums.USARegistrationSeason = USARegistrationSeason;
+var FinancialRequirements = {};
+FinancialRequirements["None"] = {
+    bit: 0,
+    type: "None",
+    displayName: "Not Set"
+};
+FinancialRequirements["CreditCard"] = {
+    bit: 1,
+    type: "CreditCard",
+    displayName: "Credit Card"
+};
+FinancialRequirements["ACH"] = {
+    bit: 2,
+    type: "ACH",
+    displayName: "ACH"
+};
+FinancialRequirements["BalanceOlderThan"] = {
+    bit: 4,
+    type: "BalanceOlderThan",
+    displayName: "Balance Older Than"
+};
+FinancialRequirements["OutstandingBalance"] = {
+    bit: 8,
+    type: "OutstandingBalance",
+    displayName: "Outstanding Balance"
+};
+Enums.FinancialRequirements = FinancialRequirements;
+var YesNo = {};
+YesNo["No"] = {
+    code: 0,
+    type: "No",
+    displayName: "No"
+};
+YesNo["Yes"] = {
+    code: 1,
+    type: "Yes",
+    displayName: "Yes"
+};
+Enums.YesNo = YesNo;
+var MemberSearchType = {};
+MemberSearchType["OptOut"] = {
+    code: 1,
+    type: "OptOut",
+    displayName: "Do not participate"
+};
+MemberSearchType["Participate"] = {
+    code: 0,
+    type: "Participate",
+    displayName: "Participate"
+};
+Enums.MemberSearchType = MemberSearchType;
+var Organization = {};
+Organization["None"] = {
+    code: 0,
+    type: "None",
+    displayName: "None"
+};
+Organization["USGOMO"] = {
+    code: 1,
+    type: "USGOMO",
+    displayName: "Unknown"
+};
+Organization["UKGOMO"] = {
+    code: 60,
+    type: "UKGOMO",
+    displayName: "Unknown"
+};
+Organization["IEGOMO"] = {
+    code: 61,
+    type: "IEGOMO",
+    displayName: "Unknown"
+};
+Organization["CAGOMO"] = {
+    code: 51,
+    type: "CAGOMO",
+    displayName: "Unknown"
+};
+Organization["USMasters"] = {
+    code: 7,
+    type: "USMasters",
+    displayName: "US Masters Swimming"
+};
+Organization["USTriathlon"] = {
+    code: 2,
+    type: "USTriathlon",
+    displayName: "US Triathlon"
+};
+Organization["USSwimming"] = {
+    code: 3,
+    type: "USSwimming",
+    displayName: "USA Swimming"
+};
+Organization["JujitsuAmerica"] = {
+    code: 4,
+    type: "JujitsuAmerica",
+    displayName: "Jujitsu America"
+};
+Organization["USRec"] = {
+    code: 5,
+    type: "USRec",
+    displayName: "US Recreational Swimming"
+};
+Organization["CanadianSwimming"] = {
+    code: 6,
+    type: "CanadianSwimming",
+    displayName: "Canadian Swimming"
+};
+Organization["AustraliaSwimming"] = {
+    code: 8,
+    type: "AustraliaSwimming",
+    displayName: "Swimming Australia"
+};
+Organization["FrenchSwimming"] = {
+    code: 9,
+    type: "FrenchSwimming",
+    displayName: "French Swimming"
+};
+Organization["UnitedKingdom"] = {
+    code: 11,
+    type: "UnitedKingdom",
+    displayName: "Unknown"
+};
+Organization["YMCA"] = {
+    code: 20,
+    type: "YMCA",
+    displayName: "Unknown"
+};
+Organization["CanadianRecSwimming"] = {
+    code: 45,
+    type: "CanadianRecSwimming",
+    displayName: "Unknown"
+};
+Organization["IrelandSwimming"] = {
+    code: 50,
+    type: "IrelandSwimming",
+    displayName: "Unknown"
+};
+Enums.Organization = Organization;
+var YesNoNone = {};
+YesNoNone["No"] = {
+    code: 10,
+    type: "No",
+    displayName: "No"
+};
+YesNoNone["Yes"] = {
+    code: 20,
+    type: "Yes",
+    displayName: "Yes"
+};
+Enums.YesNoNone = YesNoNone;
+var CreditCardKind = {};
+CreditCardKind["Visa"] = {
+    code: 10,
+    type: "Visa",
+    displayName: "Visa"
+};
+CreditCardKind["Mastercard"] = {
+    code: 20,
+    type: "Mastercard",
+    displayName: "Mastercard"
+};
+CreditCardKind["Discover"] = {
+    code: 30,
+    type: "Discover",
+    displayName: "Discover"
+};
+CreditCardKind["Amex"] = {
+    code: 40,
+    type: "Amex",
+    displayName: "American Express"
+};
+Enums.CreditCardKind = CreditCardKind;
+var Currency = {};
+Currency["Unknown"] = {
+    code: 0,
+    type: "Unknown",
+    displayName: ""
+};
+Currency["USD"] = {
+    code: 1,
+    type: "USD",
+    displayName: "Dollar"
+};
+Currency["AUD"] = {
+    code: 2,
+    type: "AUD",
+    displayName: "Dollar"
+};
+Currency["GBP"] = {
+    code: 3,
+    type: "GBP",
+    displayName: "Pound"
+};
+Currency["CAD"] = {
+    code: 4,
+    type: "CAD",
+    displayName: "Dollar"
+};
+Currency["EUR"] = {
+    code: 5,
+    type: "EUR",
+    displayName: "Euro"
+};
+Enums.Currency = Currency;
+var ProcessingFeeLabel = {};
+ProcessingFeeLabel["ORGANIZATION_MANAGEMENT_FEE"] = {
+    code: 0,
+    type: "ORGANIZATION_MANAGEMENT_FEE",
+    displayName: "Organization's Management Fee"
+};
+ProcessingFeeLabel["MANAGEMENT_FEE"] = {
+    code: 1,
+    type: "MANAGEMENT_FEE",
+    displayName: "Management Fee"
+};
+ProcessingFeeLabel["REIMBURSEMENT_FEE"] = {
+    code: 2,
+    type: "REIMBURSEMENT_FEE",
+    displayName: "Reimbursement Fee"
+};
+ProcessingFeeLabel["RECOUPMENT_FEE"] = {
+    code: 3,
+    type: "RECOUPMENT_FEE",
+    displayName: "Recoupment Fee"
+};
+Enums.ProcessingFeeLabel = ProcessingFeeLabel;
+var MeetEntryFeeCCStatus = {};
+MeetEntryFeeCCStatus["None"] = {
+    code: 0,
+    type: "None",
+    displayName: "None"
+};
+MeetEntryFeeCCStatus["Partial"] = {
+    code: 10,
+    type: "Partial",
+    displayName: "Partial"
+};
+MeetEntryFeeCCStatus["All"] = {
+    code: 20,
+    type: "All",
+    displayName: "All"
+};
+Enums.MeetEntryFeeCCStatus = MeetEntryFeeCCStatus;
+var TUMAdminType = {};
+TUMAdminType["NotAnAdmin"] = {
+    code: 0,
+    type: "NotAnAdmin",
+    displayName: "None"
+};
+TUMAdminType["FullAccess"] = {
+    code: 1048576,
+    type: "FullAccess",
+    displayName: "Full Access"
+};
+TUMAdminType["LimitedAccess"] = {
+    code: 2097152,
+    type: "LimitedAccess",
+    displayName: "Limited Access"
+};
+TUMAdminType["IntermediateAccess"] = {
+    code: 4194304,
+    type: "IntermediateAccess",
+    displayName: "Intermediate Access"
+};
+Enums.TUMAdminType = TUMAdminType;
+var ApprovalType = {};
+ApprovalType["NoType"] = {
+    code: 0,
+    type: "NoType",
+    displayName: "No Type"
+};
+ApprovalType["CoachReg"] = {
+    code: 1,
+    type: "CoachReg",
+    displayName: "Coach Registration"
+};
+ApprovalType["TeamReg"] = {
+    code: 2,
+    type: "TeamReg",
+    displayName: "Team Registration"
+};
+ApprovalType["AccountSiteAccess"] = {
+    code: 3,
+    type: "AccountSiteAccess",
+    displayName: "Account Site Access"
+};
+ApprovalType["MeetSanction"] = {
+    code: 4,
+    type: "MeetSanction",
+    displayName: "Meet Sanction"
+};
+Enums.ApprovalType = ApprovalType;
+var YesNoUnknown = {};
+YesNoUnknown["Unknown"] = {
+    code: 0,
+    type: "Unknown",
+    displayName: "Unknown"
+};
+YesNoUnknown["No"] = {
+    code: 10,
+    type: "No",
+    displayName: "No"
+};
+YesNoUnknown["Yes"] = {
+    code: 20,
+    type: "Yes",
+    displayName: "Yes"
+};
+Enums.YesNoUnknown = YesNoUnknown;
+var GearAdminType = {};
+GearAdminType["NotAnAdmin"] = {
+    code: 0,
+    type: "NotAnAdmin",
+    displayName: "Not an Admin"
+};
+GearAdminType["Admin"] = {
+    code: 16777216,
+    type: "Admin",
+    displayName: "Admin"
+};
+Enums.GearAdminType = GearAdminType;
+var WorkoutType = {};
+WorkoutType["UNDEFINED"] = {
+    code: -1,
+    type: "UNDEFINED",
+    displayName: "UnDefined Workout Type"
+};
+WorkoutType["UNSPECIFIED"] = {
+    code: 0,
+    type: "UNSPECIFIED",
+    displayName: "Not Specified Yet"
+};
+WorkoutType["SWIM"] = {
+    code: 1,
+    type: "SWIM",
+    displayName: "Swim"
+};
+WorkoutType["DRYLAND"] = {
+    code: 2,
+    type: "DRYLAND",
+    displayName: "Dryland"
+};
+WorkoutType["OTHER"] = {
+    code: 4,
+    type: "OTHER",
+    displayName: "Other"
+};
+Enums.WorkoutType = WorkoutType;
+var RegistrationNotificationType = {};
+RegistrationNotificationType["None"] = {
+    code: 1,
+    type: "None",
+    displayName: "None"
+};
+RegistrationNotificationType["Instant"] = {
+    code: 2,
+    type: "Instant",
+    displayName: "Instant Notification"
+};
+RegistrationNotificationType["DailySummary"] = {
+    code: 3,
+    type: "DailySummary",
+    displayName: "Daily Summary"
+};
+Enums.RegistrationNotificationType = RegistrationNotificationType;
+var YmcaFeeType = {};
+YmcaFeeType["TeamReg"] = {
+    code: 10,
+    type: "TeamReg",
+    displayName: "Team Registration Fee"
+};
+YmcaFeeType["MeetSanction"] = {
+    code: 20,
+    type: "MeetSanction",
+    displayName: "Meet Sanction Fee"
+};
+YmcaFeeType["CoachRegLate"] = {
+    code: 30,
+    type: "CoachRegLate",
+    displayName: "Coach Registration Late Fee"
+};
+YmcaFeeType["National"] = {
+    code: 90,
+    type: "National",
+    displayName: "National"
+};
+Enums.YmcaFeeType = YmcaFeeType;
+var MemberBillingGroupStatus = {};
+MemberBillingGroupStatus["ON"] = {
+    code: 1,
+    type: "ON",
+    displayName: "ON"
+};
+MemberBillingGroupStatus["OFF"] = {
+    code: 0,
+    type: "OFF",
+    displayName: "OFF"
+};
+Enums.MemberBillingGroupStatus = MemberBillingGroupStatus;
+var CertificateType = {};
+CertificateType["Lifeguarding"] = {
+    code: 10,
+    type: "Lifeguarding",
+    displayName: "Lifeguarding"
+};
+CertificateType["FirstAid"] = {
+    code: 20,
+    type: "FirstAid",
+    displayName: "First-Aid"
+};
+CertificateType["CPR"] = {
+    code: 30,
+    type: "CPR",
+    displayName: "CPR"
+};
+CertificateType["Principles"] = {
+    code: 40,
+    type: "Principles",
+    displayName: "Principles"
+};
+CertificateType["PrinciplesWorkbook"] = {
+    code: 45,
+    type: "PrinciplesWorkbook",
+    displayName: "Principles Work Book"
+};
+CertificateType["STSC"] = {
+    code: 50,
+    type: "STSC",
+    displayName: "STSC"
+};
+CertificateType["ChildProtection"] = {
+    code: 60,
+    type: "ChildProtection",
+    displayName: "Child Protection"
+};
+Enums.CertificateType = CertificateType;
+var MeetEntryFeeGenWarning = {};
+MeetEntryFeeGenWarning["None"] = {
+    code: 0,
+    type: "None",
+    displayName: "None"
+};
+MeetEntryFeeGenWarning["AlreadyInvoiced"] = {
+    code: 10,
+    type: "AlreadyInvoiced",
+    displayName: "Already Invoiced; Duplicate invoice item might be created."
+};
+MeetEntryFeeGenWarning["NoMatchingEventNo"] = {
+    code: 20,
+    type: "NoMatchingEventNo",
+    displayName: "No matching Event # found from the connected Meet; No invoice item will be created."
+};
+Enums.MeetEntryFeeGenWarning = MeetEntryFeeGenWarning;
+var TruthyInt = {};
+TruthyInt["False"] = {
+    code: 0,
+    type: "False",
+    displayName: "false"
+};
+TruthyInt["True"] = {
+    code: 1,
+    type: "True",
+    displayName: "true"
+};
+Enums.TruthyInt = TruthyInt;
+var UKMigrateType = {};
+UKMigrateType["US1"] = {
+    code: 10,
+    description: "US1"
+};
+UKMigrateType["UK2"] = {
+    code: 20,
+    description: "UK2"
+};
+UKMigrateType["UK3"] = {
+    code: 30,
+    description: "UK3"
+};
+UKMigrateType["UK4"] = {
+    code: 30,
+    description: "UK4"
+};
+UKMigrateType["US5"] = {
+    code: 40,
+    description: "US5"
+};
+Enums.UKMigrateType = UKMigrateType;
+var CreditUsage = {};
+CreditUsage["Visa"] = {
+    tuCode: 10
+};
+CreditUsage["MC"] = {
+    tuCode: 20
+};
+CreditUsage["Discover"] = {
+    tuCode: 30
+};
+CreditUsage["AmEx"] = {
+    tuCode: 40
+};
+CreditUsage["DinnerClub"] = {
+    tuCode: 50
+};
+CreditUsage["JCB"] = {
+    tuCode: 60
+};
+CreditUsage["AustrialBank"] = {
+    tuCode: 70
+};
+CreditUsage["CarteBlanche"] = {
+    tuCode: 80
+};
+Enums.CreditUsage = CreditUsage;
+var UsaRegFileStatus = {};
+UsaRegFileStatus["Offline"] = {
+    code: 0,
+    type: "Offline",
+    displayName: "Offline"
+};
+UsaRegFileStatus["Pending"] = {
+    code: 1,
+    type: "Pending",
+    displayName: "Pending"
+};
+UsaRegFileStatus["ProcessingStarted"] = {
+    code: 2,
+    type: "ProcessingStarted",
+    displayName: "Processing Started"
+};
+UsaRegFileStatus["Complete"] = {
+    code: 3,
+    type: "Complete",
+    displayName: "Complete"
+};
+UsaRegFileStatus["Deleted"] = {
+    code: 4,
+    type: "Deleted",
+    displayName: "Deleted"
+};
+Enums.UsaRegFileStatus = UsaRegFileStatus;
+var EnrollStatus = {};
+EnrollStatus["NotAccepted"] = {
+    code: 0,
+    shortName: "E"
+};
+EnrollStatus["Accepted"] = {
+    code: 10,
+    shortName: "A"
+};
+EnrollStatus["Rejected"] = {
+    code: 99,
+    shortName: "R"
+};
+Enums.EnrollStatus = EnrollStatus;
+var USARegistrationStatus = {};
+USARegistrationStatus["NotSet"] = {
+    code: 0,
+    type: "NotSet",
+    displayName: "Not Set"
+};
+USARegistrationStatus["New"] = {
+    code: 10,
+    type: "New",
+    displayName: "New"
+};
+USARegistrationStatus["Renew"] = {
+    code: 20,
+    type: "Renew",
+    displayName: "Renew"
+};
+USARegistrationStatus["Change"] = {
+    code: 30,
+    type: "Change",
+    displayName: "Change"
+};
+USARegistrationStatus["Delete"] = {
+    code: 40,
+    type: "Delete",
+    displayName: "Delete"
+};
+USARegistrationStatus["NoReg"] = {
+    code: 50,
+    type: "NoReg",
+    displayName: "No Reg"
+};
+USARegistrationStatus["Upgrade"] = {
+    code: 60,
+    type: "Upgrade",
+    displayName: "Upgrade"
+};
+Enums.USARegistrationStatus = USARegistrationStatus;
+var PoolLength = {};
+PoolLength["TwentyFiveYards"] = {
+    code: 0,
+    type: "TwentyFiveYards",
+    displayName: "25 Yards"
+};
+PoolLength["FiftyMeters"] = {
+    code: 1,
+    type: "FiftyMeters",
+    displayName: "50 Meters"
+};
+PoolLength["TwentyFiveMeters"] = {
+    code: 2,
+    type: "TwentyFiveMeters",
+    displayName: "25M"
+};
+Enums.PoolLength = PoolLength;
+var NoTime = {};
+NoTime["UNSET"] = {
+    code: 0,
+    type: "UNSET",
+    displayName: ""
+};
+NoTime["DNS"] = {
+    code: 1,
+    type: "DNS",
+    displayName: "DNS"
+};
+NoTime["DQ"] = {
+    code: 2,
+    type: "DQ",
+    displayName: "DQ"
+};
+NoTime["NT"] = {
+    code: 3,
+    type: "NT",
+    displayName: "NT"
+};
+NoTime["SCR"] = {
+    code: 4,
+    type: "SCR",
+    displayName: "SCR"
+};
+NoTime["NS"] = {
+    code: 5,
+    type: "NS",
+    displayName: "NS"
+};
+Enums.NoTime = NoTime;
+var YmcaMeetSanctionReason = {};
+YmcaMeetSanctionReason["LongCourse"] = {
+    code: 10,
+    type: "LongCourse",
+    displayName: "YMCA National Long Course Championship"
+};
+YmcaMeetSanctionReason["ShortCourse"] = {
+    code: 20,
+    type: "ShortCourse",
+    displayName: "YMCA National Short Course Championship"
+};
+Enums.YmcaMeetSanctionReason = YmcaMeetSanctionReason;
+var YmcaNationalMeetType = {};
+YmcaNationalMeetType["None"] = {
+    code: 0,
+    type: "None",
+    displayName: "None"
+};
+YmcaNationalMeetType["ShortCourse"] = {
+    code: 100,
+    type: "ShortCourse",
+    displayName: "YMCA National Short Course"
+};
+YmcaNationalMeetType["LongCourse"] = {
+    code: 200,
+    type: "LongCourse",
+    displayName: "YMCA National Long Course"
+};
+Enums.YmcaNationalMeetType = YmcaNationalMeetType;
+var ASAOpportunity = {};
+ASAOpportunity["None"] = {
+    bit: 0,
+    type: "None",
+    displayName: "None"
+};
+ASAOpportunity["Products"] = {
+    bit: 1,
+    type: "Products",
+    displayName: "No thank you, I don't want British Swimming/the ASA to send me details of products and services"
+};
+ASAOpportunity["Events"] = {
+    bit: 2,
+    type: "Events",
+    displayName: "No thank you, I don't want British Swimming/the ASA to send me details of events"
+};
+ASAOpportunity["Partners"] = {
+    bit: 4,
+    type: "Partners",
+    displayName: "No thank you, I don't want British Swimming/the ASA to send me details from British Swimming/ the ASA's commercial partners"
+};
+Enums.ASAOpportunity = ASAOpportunity;
+var HelpVideoType = {};
+HelpVideoType["Single"] = {
+    code: 10,
+    type: "Single",
+    displayName: "Single"
+};
+HelpVideoType["Playlist"] = {
+    code: 0,
+    type: "Playlist",
+    displayName: "Playlist"
+};
+Enums.HelpVideoType = HelpVideoType;
+var YmcaFacility = {};
+YmcaFacility["None"] = {
+    code: 0,
+    type: "None",
+    displayName: "None"
+};
+YmcaFacility["RecPools"] = {
+    code: 100,
+    type: "RecPools",
+    displayName: "Recreational Pools"
+};
+YmcaFacility["Y25Pools"] = {
+    code: 200,
+    type: "Y25Pools",
+    displayName: "25 Yard Pools"
+};
+YmcaFacility["M25Pools"] = {
+    code: 300,
+    type: "M25Pools",
+    displayName: "25 Meter Pools"
+};
+YmcaFacility["M50Pools"] = {
+    code: 400,
+    type: "M50Pools",
+    displayName: "50 Meter Pools"
+};
+Enums.YmcaFacility = YmcaFacility;
+var MediaType = {};
+MediaType["NEWSPHOTO"] = {
+    mimeType: "image\/jpeg"
+};
+MediaType["MEMBERPHOTO"] = {
+    mimeType: "image\/jpeg"
+};
+MediaType["INDRESULT"] = {
+    mimeType: "audio\/mp3"
+};
+MediaType["RELAYRESULT"] = {
+    mimeType: "audio\/mp3"
+};
+MediaType["WORKOUT"] = {
+    mimeType: "audio\/mp3"
+};
+MediaType["NEWSVOICENOTE"] = {
+    mimeType: "audio\/mp3"
+};
+MediaType["TALLY"] = {
+    mimeType: "audio\/mp3"
+};
+Enums.MediaType = MediaType;
+var MccCode = {};
+MccCode["ForProfit"] = {
+    code: "8299",
+    description: "For Profit (8299)"
+};
+MccCode["NonProfit"] = {
+    code: "8398",
+    description: "Non-Profit (8398)"
+};
+Enums.MccCode = MccCode;
+var ASADiscipline = {};
+ASADiscipline["None"] = {
+    bit: 0,
+    type: "None",
+    displayName: "None"
+};
+ASADiscipline["Swimming"] = {
+    bit: 1,
+    type: "Swimming",
+    displayName: "Swimmer"
+};
+ASADiscipline["WPolo"] = {
+    bit: 2,
+    type: "WPolo",
+    displayName: "Water Polo Player"
+};
+ASADiscipline["Synchro"] = {
+    bit: 4,
+    type: "Synchro",
+    displayName: "Synchronised Swimmer"
+};
+ASADiscipline["Diving"] = {
+    bit: 16,
+    type: "Diving",
+    displayName: "Diver"
+};
+ASADiscipline["OpenWater"] = {
+    bit: 32,
+    type: "OpenWater",
+    displayName: "Open Water Swimmer"
+};
+ASADiscipline["MastersSwim"] = {
+    bit: 64,
+    type: "MastersSwim",
+    displayName: "Master Swimmer"
+};
+ASADiscipline["MastersWPolo"] = {
+    bit: 128,
+    type: "MastersWPolo",
+    displayName: "Masters Water Polo Player"
+};
+ASADiscipline["MastersSynchro"] = {
+    bit: 256,
+    type: "MastersSynchro",
+    displayName: "Masters Synchronised Swimmer"
+};
+ASADiscipline["MastersDiving"] = {
+    bit: 512,
+    type: "MastersDiving",
+    displayName: "Masters Diver"
+};
+ASADiscipline["MastersOpenWater"] = {
+    bit: 1024,
+    type: "MastersOpenWater",
+    displayName: "Masters Open Water Swimmer"
+};
+ASADiscipline["ParaSwim"] = {
+    bit: 2048,
+    type: "ParaSwim",
+    displayName: "Para-Swimmer"
+};
+ASADiscipline["HighDiving"] = {
+    bit: 4096,
+    type: "HighDiving",
+    displayName: "High Diver"
+};
+ASADiscipline["OfficialVolunteer"] = {
+    bit: 8192,
+    type: "OfficialVolunteer",
+    displayName: "Official / Volunteer"
+};
+ASADiscipline["PaidWorkforce"] = {
+    bit: 16384,
+    type: "PaidWorkforce",
+    displayName: "Paid Workforce"
+};
+ASADiscipline["Other"] = {
+    bit: 32768,
+    type: "Other",
+    displayName: "Other (Parent / Life Member)"
+};
+Enums.ASADiscipline = ASADiscipline;
+var PhotoSize = {};
+PhotoSize["UPLOAD"] = {
+    maxpix: 1280
+};
+Enums.PhotoSize = PhotoSize;
+var CompetitiveCategory = {};
+CompetitiveCategory["MALE"] = {
+    code: 1,
+    label: "Male"
+};
+CompetitiveCategory["FEMALE"] = {
+    code: 2,
+    label: "Female"
+};
+Enums.CompetitiveCategory = CompetitiveCategory;
+var Progression = {};
+Progression["None"] = {
+    code: 0,
+    type: "None",
+    displayName: "Finals"
+};
+Progression["Prelim"] = {
+    code: 1,
+    type: "Prelim",
+    displayName: "Prelim"
+};
+Progression["Finals"] = {
+    code: 2,
+    type: "Finals",
+    displayName: "Finals"
+};
+Enums.Progression = Progression;
+var AttendanceState = {};
+AttendanceState["NotTakeAttendance"] = {
+    value: -1,
+    code: "NotTakeAttendance",
+    title: "Not Taken Attendance",
+    abbr: "",
+    rate: 0.0,
+    count: 0,
+    color: ""
+};
+AttendanceState["Absent"] = {
+    value: 0,
+    code: "Absent",
+    title: "Absent",
+    abbr: "A",
+    rate: 0.0,
+    count: 0,
+    color: "red"
+};
+AttendanceState["Present"] = {
+    value: 1,
+    code: "Present",
+    title: "Present",
+    abbr: "P",
+    rate: 1.0,
+    count: 1,
+    color: "green"
+};
+AttendanceState["Tardy"] = {
+    value: 2,
+    code: "Tardy",
+    title: "Tardy",
+    abbr: "T",
+    rate: 1.0,
+    count: 1,
+    color: "green"
+};
+AttendanceState["LeftEarly"] = {
+    value: 3,
+    code: "LeftEarly",
+    title: "Left Early",
+    abbr: "L",
+    rate: 1.0,
+    count: 1,
+    color: "green"
+};
+AttendanceState["TardyLeftEarly"] = {
+    value: 4,
+    code: "TardyLeftEarly",
+    title: "Tardy & Left Early",
+    abbr: "TL",
+    rate: 1.0,
+    count: 1,
+    color: "green"
+};
+AttendanceState["ExcusedAbsence"] = {
+    value: 5,
+    code: "ExcusedAbsence",
+    title: "Excused Absence",
+    abbr: "E",
+    rate: 0.0,
+    count: 0,
+    color: "red"
+};
+Enums.AttendanceState = AttendanceState;
+var MainSetCoachType = {};
+MainSetCoachType["NotACoach"] = {
+    code: 0,
+    type: "NotACoach",
+    displayName: ""
+};
+MainSetCoachType["AssitantCoach"] = {
+    code: 60,
+    type: "AssitantCoach",
+    displayName: "Assistant Coach"
+};
+MainSetCoachType["HeadCoach"] = {
+    code: 90,
+    type: "HeadCoach",
+    displayName: "Head Coach"
+};
+Enums.MainSetCoachType = MainSetCoachType;
+var CoachType = MainSetCoachType;
+var MainSetSwimStatus = {};
+MainSetSwimStatus["Normal"] = {
+    code: 0,
+    type: "Normal",
+    displayName: "Normal"
+};
+MainSetSwimStatus["Missed"] = {
+    code: 1,
+    type: "Missed",
+    displayName: "Missed"
+};
+MainSetSwimStatus["Skipped"] = {
+    code: 2,
+    type: "Skipped",
+    displayName: "Skipped"
+};
+Enums.MainSetSwimStatus = MainSetSwimStatus;
+var MainSetDefaultEnergy = {};
+MainSetDefaultEnergy["REC"] = {
+    code: 1,
+    type: "REC",
+    displayName: "Warm-up/Recovery"
+};
+MainSetDefaultEnergy["EN1"] = {
+    code: 2,
+    type: "EN1",
+    displayName: "Aerobic Base"
+};
+MainSetDefaultEnergy["EN2"] = {
+    code: 3,
+    type: "EN2",
+    displayName: "Anaerobic Threshold"
+};
+MainSetDefaultEnergy["EN3"] = {
+    code: 4,
+    type: "EN3",
+    displayName: "MaxVO2"
+};
+MainSetDefaultEnergy["SP1"] = {
+    code: 5,
+    type: "SP1",
+    displayName: "Lactate Tolerance"
+};
+MainSetDefaultEnergy["SP2"] = {
+    code: 6,
+    type: "SP2",
+    displayName: "Lactate Peak"
+};
+MainSetDefaultEnergy["SP3"] = {
+    code: 7,
+    type: "SP3",
+    displayName: "Alactate"
+};
+Enums.MainSetDefaultEnergy = MainSetDefaultEnergy;
+var MainSetVideoOwnerType = {};
+MainSetVideoOwnerType["RecentVideos"] = {
+    code: -2,
+    type: "RecentVideos",
+    displayName: "Recent Videos"
+};
+MainSetVideoOwnerType["MyVideos"] = {
+    code: -1,
+    type: "MyVideos",
+    displayName: "My Videos"
+};
+MainSetVideoOwnerType["General"] = {
+    code: 0,
+    type: "General",
+    displayName: "General"
+};
+MainSetVideoOwnerType["Practice"] = {
+    code: 1,
+    type: "Practice",
+    displayName: "Practice"
+};
+MainSetVideoOwnerType["Swimmeet"] = {
+    code: 2,
+    type: "Swimmeet",
+    displayName: "Swimmeet"
+};
+MainSetVideoOwnerType["Swimmer"] = {
+    code: 3,
+    type: "Swimmer",
+    displayName: "Swimmer"
+};
+MainSetVideoOwnerType["Workout"] = {
+    code: 4,
+    type: "Workout",
+    displayName: "Workout"
+};
+MainSetVideoOwnerType["Class"] = {
+    code: 5,
+    type: "Class",
+    displayName: "Class"
+};
+Enums.MainSetVideoOwnerType = MainSetVideoOwnerType;
+var MainSetDefaultStroke = {};
+MainSetDefaultStroke["Backstroke"] = {
+    code: 1,
+    type: "Backstroke",
+    displayName: "Backstroke"
+};
+MainSetDefaultStroke["Breaststroke"] = {
+    code: 2,
+    type: "Breaststroke",
+    displayName: "Breaststroke"
+};
+MainSetDefaultStroke["DryLand"] = {
+    code: 3,
+    type: "DryLand",
+    displayName: "Dry-land"
+};
+MainSetDefaultStroke["Fins"] = {
+    code: 4,
+    type: "Fins",
+    displayName: "Fins"
+};
+MainSetDefaultStroke["Butterfly"] = {
+    code: 5,
+    type: "Butterfly",
+    displayName: "Butterfly"
+};
+MainSetDefaultStroke["Freestyle"] = {
+    code: 6,
+    type: "Freestyle",
+    displayName: "Freestyle"
+};
+MainSetDefaultStroke["FreeMedley"] = {
+    code: 7,
+    type: "FreeMedley",
+    displayName: "Free-medley"
+};
+MainSetDefaultStroke["IM"] = {
+    code: 8,
+    type: "IM",
+    displayName: "IM"
+};
+MainSetDefaultStroke["Paddles"] = {
+    code: 9,
+    type: "Paddles",
+    displayName: "Paddles"
+};
+MainSetDefaultStroke["YourStroke"] = {
+    code: 10,
+    type: "YourStroke",
+    displayName: "Your Stroke"
+};
+MainSetDefaultStroke["SurgicalTubing"] = {
+    code: 11,
+    type: "SurgicalTubing",
+    displayName: "Surgical Tubing"
+};
+MainSetDefaultStroke["WeightLifting"] = {
+    code: 12,
+    type: "WeightLifting",
+    displayName: "Weight-Lifting"
+};
+Enums.MainSetDefaultStroke = MainSetDefaultStroke;
+var MainSetCourse = {};
+MainSetCourse["Unset"] = {
+    code: 0,
+    type: "Unset",
+    displayName: "-"
+};
+MainSetCourse["LCM"] = {
+    code: 1,
+    type: "LCM",
+    displayName: "L"
+};
+MainSetCourse["SCM"] = {
+    code: 2,
+    type: "SCM",
+    displayName: "S"
+};
+MainSetCourse["SCY"] = {
+    code: 3,
+    type: "SCY",
+    displayName: "Y"
+};
+Enums.MainSetCourse = MainSetCourse;
+var MainSetWorkoutType = {};
+MainSetWorkoutType["Undefined"] = {
+    code: 0,
+    type: "Undefined",
+    displayName: "-"
+};
+MainSetWorkoutType["NotSpecified"] = {
+    code: 1,
+    type: "NotSpecified",
+    displayName: "Not specified"
+};
+MainSetWorkoutType["Dryland"] = {
+    code: 2,
+    type: "Dryland",
+    displayName: "Dryland"
+};
+MainSetWorkoutType["Inpool"] = {
+    code: 3,
+    type: "Inpool",
+    displayName: "In pool"
+};
+MainSetWorkoutType["Others"] = {
+    code: 4,
+    type: "Others",
+    displayName: "Others"
+};
+Enums.MainSetWorkoutType = MainSetWorkoutType;
+var MainSetVideoVisibility = {};
+MainSetVideoVisibility["Public"] = {
+    code: 0,
+    type: "Public",
+    displayName: "Team"
+};
+MainSetVideoVisibility["Private"] = {
+    code: 1,
+    type: "Private",
+    displayName: "Coaches"
+};
+MainSetVideoVisibility["Protected"] = {
+    code: 2,
+    type: "Protected",
+    displayName: "Swimmers"
+};
+Enums.MainSetVideoVisibility = MainSetVideoVisibility;
+var MainSetDefaultSwimDescription = {};
+MainSetDefaultSwimDescription["Backstroke"] = {
+    code: 1,
+    type: "Backstroke",
+    displayName: "Backstroke"
+};
+MainSetDefaultSwimDescription["Breaststroke"] = {
+    code: 2,
+    type: "Breaststroke",
+    displayName: "Breaststroke"
+};
+MainSetDefaultSwimDescription["Butterfly"] = {
+    code: 3,
+    type: "Butterfly",
+    displayName: "Butterfly"
+};
+MainSetDefaultSwimDescription["Descend_1_3_Stroke"] = {
+    code: 4,
+    type: "Descend_1_3_Stroke",
+    displayName: "Descend 1-3 stroke"
+};
+MainSetDefaultSwimDescription["FreeDreathe_3_5_7_9"] = {
+    code: 5,
+    type: "FreeDreathe_3_5_7_9",
+    displayName: "Free breathe 3-5-7-9"
+};
+MainSetDefaultSwimDescription["FreeMedly"] = {
+    code: 6,
+    type: "FreeMedly",
+    displayName: "Free-medly"
+};
+MainSetDefaultSwimDescription["Freestyle"] = {
+    code: 7,
+    type: "Freestyle",
+    displayName: "Freestyle"
+};
+MainSetDefaultSwimDescription["IndividualMedley"] = {
+    code: 8,
+    type: "IndividualMedley",
+    displayName: "Individual Medley"
+};
+MainSetDefaultSwimDescription["KickSideBkStomatch"] = {
+    code: 9,
+    type: "KickSideBkStomatch",
+    displayName: "Kick side-bk-stomach"
+};
+MainSetDefaultSwimDescription["KickYourStroke"] = {
+    code: 10,
+    type: "KickYourStroke",
+    displayName: "Kick your stroke"
+};
+MainSetDefaultSwimDescription["Recovery"] = {
+    code: 11,
+    type: "Recovery",
+    displayName: "Recovery/ swim-down"
+};
+MainSetDefaultSwimDescription["Rf_lft_doubleArm"] = {
+    code: 12,
+    type: "Rf_lft_doubleArm",
+    displayName: "Rf-lft-double arm"
+};
+MainSetDefaultSwimDescription["SpringNoBreath"] = {
+    code: 13,
+    type: "SpringNoBreath",
+    displayName: "Spring no breath"
+};
+MainSetDefaultSwimDescription["SurgicalTubing"] = {
+    code: 14,
+    type: "SurgicalTubing",
+    displayName: "Surgical tubing"
+};
+MainSetDefaultSwimDescription["SwimKickPull"] = {
+    code: 15,
+    type: "SwimKickPull",
+    displayName: "Swim-kick-pull"
+};
+MainSetDefaultSwimDescription["WarmUp"] = {
+    code: 16,
+    type: "WarmUp",
+    displayName: "Warm-up"
+};
+MainSetDefaultSwimDescription["YourStroke"] = {
+    code: 17,
+    type: "YourStroke",
+    displayName: "Your Stroke"
+};
+Enums.MainSetDefaultSwimDescription = MainSetDefaultSwimDescription;
+var MainSetDefaultRacePace = {};
+MainSetDefaultRacePace["Pace50"] = {
+    code: 2,
+    type: "Pace50",
+    displayName: "50 pace"
+};
+MainSetDefaultRacePace["Pace100"] = {
+    code: 3,
+    type: "Pace100",
+    displayName: "100 pace"
+};
+MainSetDefaultRacePace["Pace200"] = {
+    code: 4,
+    type: "Pace200",
+    displayName: "200 pace"
+};
+MainSetDefaultRacePace["Pace400"] = {
+    code: 5,
+    type: "Pace400",
+    displayName: "400 pace"
+};
+MainSetDefaultRacePace["Pace500"] = {
+    code: 6,
+    type: "Pace500",
+    displayName: "500 pace"
+};
+MainSetDefaultRacePace["Pace800"] = {
+    code: 7,
+    type: "Pace800",
+    displayName: "800 pace"
+};
+MainSetDefaultRacePace["Pace1000"] = {
+    code: 8,
+    type: "Pace1000",
+    displayName: "1000 pace"
+};
+MainSetDefaultRacePace["Pace1500"] = {
+    code: 9,
+    type: "Pace1500",
+    displayName: "1500 pace"
+};
+MainSetDefaultRacePace["Pace1650"] = {
+    code: 10,
+    type: "Pace1650",
+    displayName: "1650 pace"
+};
+MainSetDefaultRacePace["AerobicThreshold"] = {
+    code: 1,
+    type: "AerobicThreshold",
+    displayName: "Aerobic Threshold"
+};
+Enums.MainSetDefaultRacePace = MainSetDefaultRacePace;
+var MainSetAccessLevel = {};
+MainSetAccessLevel["EDIT_ALL"] = {
+    code: 5,
+    type: "EDIT_ALL",
+    displayName: "EditAll"
+};
+MainSetAccessLevel["VIEWALL_EDITSELF"] = {
+    code: 4,
+    type: "VIEWALL_EDITSELF",
+    displayName: "ViewAll_EditSelf"
+};
+MainSetAccessLevel["EDIT_SELF"] = {
+    code: 3,
+    type: "EDIT_SELF",
+    displayName: "EditSelf"
+};
+MainSetAccessLevel["VIEW_ALL"] = {
+    code: 2,
+    type: "VIEW_ALL",
+    displayName: "ViewAll"
+};
+MainSetAccessLevel["VIEW_SELF"] = {
+    code: 1,
+    type: "VIEW_SELF",
+    displayName: "ViewSelf"
+};
+MainSetAccessLevel["NONE"] = {
+    code: 0,
+    type: "NONE",
+    displayName: "None"
+};
+Enums.MainSetAccessLevel = MainSetAccessLevel;
+var MainSetDefaultSetType = {};
+MainSetDefaultSetType["Drill"] = {
+    code: 1,
+    type: "Drill",
+    displayName: "Drill"
+};
+MainSetDefaultSetType["Kick"] = {
+    code: 2,
+    type: "Kick",
+    displayName: "Kick"
+};
+MainSetDefaultSetType["Dryland"] = {
+    code: 3,
+    type: "Dryland",
+    displayName: "Dryland"
+};
+MainSetDefaultSetType["Meeting"] = {
+    code: 4,
+    type: "Meeting",
+    displayName: "Meeting"
+};
+MainSetDefaultSetType["Pull"] = {
+    code: 5,
+    type: "Pull",
+    displayName: "Pull"
+};
+MainSetDefaultSetType["Swim"] = {
+    code: 6,
+    type: "Swim",
+    displayName: "Swim"
+};
+Enums.MainSetDefaultSetType = MainSetDefaultSetType;
+var MainSetSwimmerState = {};
+MainSetSwimmerState["Undefined"] = {
+    code: 0,
+    type: "Undefined",
+    displayName: "undefined"
+};
+MainSetSwimmerState["In"] = {
+    code: 1,
+    type: "In",
+    displayName: "In"
+};
+MainSetSwimmerState["Out"] = {
+    code: 2,
+    type: "Out",
+    displayName: "Out"
+};
+MainSetSwimmerState["Excused"] = {
+    code: 3,
+    type: "Excused",
+    displayName: "Excused"
+};
+MainSetSwimmerState["OneQuarter"] = {
+    code: 4,
+    type: "OneQuarter",
+    displayName: "1/4"
+};
+MainSetSwimmerState["OneHalf"] = {
+    code: 5,
+    type: "OneHalf",
+    displayName: "1/2"
+};
+MainSetSwimmerState["ThreeQuarters"] = {
+    code: 6,
+    type: "ThreeQuarters",
+    displayName: "3/4"
+};
+Enums.MainSetSwimmerState = MainSetSwimmerState;
+var MainSetPracticeType = {};
+MainSetPracticeType["Undefined"] = {
+    code: 0,
+    type: "Undefined",
+    displayName: "-"
+};
+MainSetPracticeType["Dryland"] = {
+    code: 2,
+    type: "Dryland",
+    displayName: "Dryland"
+};
+MainSetPracticeType["Inpool"] = {
+    code: 3,
+    type: "Inpool",
+    displayName: "In pool"
+};
+MainSetPracticeType["Others"] = {
+    code: 4,
+    type: "Others",
+    displayName: "Others"
+};
+Enums.MainSetPracticeType = MainSetPracticeType;
+var AccountStatus = {};
+AccountStatus["None"] = {
+    code: 0,
+    type: "None",
+    displayName: "Unset"
+};
+AccountStatus["ContactRequest"] = {
+    code: 5,
+    type: "ContactRequest",
+    displayName: "Lead Generation"
+};
+AccountStatus["WaitingForApproval"] = {
+    code: 10,
+    type: "WaitingForApproval",
+    displayName: "Waiting for Approval"
+};
+AccountStatus["Active"] = {
+    code: 20,
+    type: "Active",
+    displayName: "Active"
+};
+AccountStatus["Suspended"] = {
+    code: 30,
+    type: "Suspended",
+    displayName: "Suspended"
+};
+AccountStatus["CancelledHidden"] = {
+    code: 40,
+    type: "CancelledHidden",
+    displayName: "Cancelled/Hidden"
+};
+AccountStatus["Anonymize"] = {
+    code: 50,
+    type: "Anonymize",
+    displayName: "Anonymized"
+};
+Enums.AccountStatus = AccountStatus;
+var TimeConversionAlgo = {};
+TimeConversionAlgo["Default"] = {
+    code: 0,
+    type: "Default",
+    displayName: "Default"
+};
+TimeConversionAlgo["USASwimming"] = {
+    code: 10,
+    type: "USASwimming",
+    displayName: "USA Swimming"
+};
+TimeConversionAlgo["ASA"] = {
+    code: 20,
+    type: "ASA",
+    displayName: "ASA Equivalent Time"
+};
+Enums.TimeConversionAlgo = TimeConversionAlgo;
+var Country = {};
+Country["Unknown"] = {
+    code: 0,
+    type: "Unknown",
+    displayName: "Unknown"
+};
+Country["USA"] = {
+    code: 1,
+    type: "USA",
+    displayName: "United States"
+};
+Country["Australia"] = {
+    code: 2,
+    type: "Australia",
+    displayName: "Australia"
+};
+Country["GBR"] = {
+    code: 3,
+    type: "GBR",
+    displayName: "Great Britain"
+};
+Country["Canada"] = {
+    code: 4,
+    type: "Canada",
+    displayName: "Canada"
+};
+Country["France"] = {
+    code: 5,
+    type: "France",
+    displayName: "France"
+};
+Country["Ireland"] = {
+    code: 6,
+    type: "Ireland",
+    displayName: "Ireland"
+};
+Enums.Country = Country;
+var CertificateExpirationType = {};
+CertificateExpirationType["None"] = {
+    code: 0,
+    type: "None",
+    displayName: ""
+};
+CertificateExpirationType["Expired"] = {
+    code: 10,
+    type: "Expired",
+    displayName: "Expired"
+};
+CertificateExpirationType["ExpiringThisSeason"] = {
+    code: 20,
+    type: "ExpiringThisSeason",
+    displayName: "Expiring this season"
+};
+CertificateExpirationType["UpToDateToday"] = {
+    code: 30,
+    type: "UpToDateToday",
+    displayName: "Up-to-date as of Today"
+};
+Enums.CertificateExpirationType = CertificateExpirationType;
+var GaPages = {};
+GaPages["AmaAccountSearch"] = {
+    code: 0,
+    type: "AmaAccountSearch",
+    displayName: "Ama Account Search"
+};
+GaPages["AmaMemberSearch"] = {
+    code: 1,
+    type: "AmaMemberSearch",
+    displayName: "Ama Member Search"
+};
+Enums.GaPages = GaPages;
+var TouchpadPCAdminType = {};
+TouchpadPCAdminType["NotAnAdmin"] = {
+    code: 0,
+    type: "NotAnAdmin",
+    displayName: "Not an Admin"
+};
+TouchpadPCAdminType["Admin"] = {
+    code: 8388608,
+    type: "Admin",
+    displayName: "Admin"
+};
+Enums.TouchpadPCAdminType = TouchpadPCAdminType;
+var MeetEntryFeeInvStatus = {};
+MeetEntryFeeInvStatus["None"] = {
+    code: 0,
+    type: "None",
+    displayName: "None"
+};
+MeetEntryFeeInvStatus["Partial"] = {
+    code: 10,
+    type: "Partial",
+    displayName: "Partial"
+};
+MeetEntryFeeInvStatus["Full"] = {
+    code: 20,
+    type: "Full",
+    displayName: "Full"
+};
+Enums.MeetEntryFeeInvStatus = MeetEntryFeeInvStatus;
+var MeetPrelimsType = {};
+MeetPrelimsType["FinalsOnly"] = {
+    code: 0,
+    type: "FinalsOnly",
+    displayName: "Finals Only"
+};
+MeetPrelimsType["PrelimsAndFinals"] = {
+    code: 1,
+    type: "PrelimsAndFinals",
+    displayName: "Prelims and Finals"
+};
+Enums.MeetPrelimsType = MeetPrelimsType;
+var TransactStatus = {};
+TransactStatus["None"] = {
+    code: 0,
+    type: "None",
+    displayName: "None"
+};
+TransactStatus["Charged"] = {
+    code: 10,
+    type: "Charged",
+    displayName: "Charged"
+};
+TransactStatus["Failed"] = {
+    code: 20,
+    type: "Failed",
+    displayName: "Failed"
+};
+TransactStatus["InvoiceCreated"] = {
+    code: 30,
+    type: "InvoiceCreated",
+    displayName: "Invoice Created"
+};
+Enums.TransactStatus = TransactStatus;
+var MemberStatus = {};
+MemberStatus["None"] = {
+    code: 0,
+    type: "None",
+    displayName: "Unset"
+};
+MemberStatus["ContactRequest"] = {
+    code: 5,
+    type: "ContactRequest",
+    displayName: "Lead Generation"
+};
+MemberStatus["WaitingForApproval"] = {
+    code: 10,
+    type: "WaitingForApproval",
+    displayName: "Waiting for Approval"
+};
+MemberStatus["Active"] = {
+    code: 20,
+    type: "Active",
+    displayName: "Active"
+};
+MemberStatus["Suspended"] = {
+    code: 30,
+    type: "Suspended",
+    displayName: "Suspended"
+};
+MemberStatus["CancelledHidden"] = {
+    code: 40,
+    type: "CancelledHidden",
+    displayName: "Cancelled/Hidden"
+};
+MemberStatus["Anonymize"] = {
+    code: 50,
+    type: "Anonymize",
+    displayName: "Anonymized"
+};
+Enums.MemberStatus = MemberStatus;
+var USARegistrationDisability = {};
+USARegistrationDisability["None"] = {
+    bit: 0,
+    type: "None",
+    displayName: ""
+};
+USARegistrationDisability["Blind"] = {
+    bit: 1,
+    type: "Blind",
+    displayName: "Legally Blind or Visually Impaired"
+};
+USARegistrationDisability["Deaf"] = {
+    bit: 2,
+    type: "Deaf",
+    displayName: "Deaf or Hard of Hearing"
+};
+USARegistrationDisability["Physical"] = {
+    bit: 4,
+    type: "Physical",
+    displayName: "Physical Disability such as amputation, cerebral palsy, dwarfism, spinal injury, mobility impairment"
+};
+USARegistrationDisability["Cognitive"] = {
+    bit: 8,
+    type: "Cognitive",
+    displayName: "Cognitive Disability such as severe learning disorder, autism"
+};
+Enums.USARegistrationDisability = USARegistrationDisability;
+var TeamUnifyUpdateSubsystem = {};
+TeamUnifyUpdateSubsystem["Info"] = {
+    code: 0,
+    type: "Info",
+    displayName: "General"
+};
+TeamUnifyUpdateSubsystem["SwimOffice"] = {
+    code: 1,
+    type: "SwimOffice",
+    displayName: "SwimOffice"
+};
+TeamUnifyUpdateSubsystem["Mobile"] = {
+    code: 2,
+    type: "Mobile",
+    displayName: "Mobile"
+};
+TeamUnifyUpdateSubsystem["Touchpad"] = {
+    code: 3,
+    type: "Touchpad",
+    displayName: "Touchpad"
+};
+TeamUnifyUpdateSubsystem["TUMoney"] = {
+    code: 4,
+    type: "TUMoney",
+    displayName: "TUMoney"
+};
+TeamUnifyUpdateSubsystem["TULessons"] = {
+    code: 5,
+    type: "TULessons",
+    displayName: "TULessons"
+};
+TeamUnifyUpdateSubsystem["MainSet"] = {
+    code: 6,
+    type: "MainSet",
+    displayName: "MainSet"
+};
+TeamUnifyUpdateSubsystem["SES_WebApplication"] = {
+    code: 100,
+    type: "SES_WebApplication",
+    displayName: "Web Application"
+};
+TeamUnifyUpdateSubsystem["SES_Mobile"] = {
+    code: 101,
+    type: "SES_Mobile",
+    displayName: "Mobile"
+};
+TeamUnifyUpdateSubsystem["SES_Fundraising"] = {
+    code: 102,
+    type: "SES_Fundraising",
+    displayName: "Fundraising"
+};
+TeamUnifyUpdateSubsystem["SES_Billing"] = {
+    code: 103,
+    type: "SES_Billing",
+    displayName: "Billing"
+};
+TeamUnifyUpdateSubsystem["SES_Website"] = {
+    code: 104,
+    type: "SES_Website",
+    displayName: "Website"
+};
+Enums.TeamUnifyUpdateSubsystem = TeamUnifyUpdateSubsystem;
+var CoppaPageType = {};
+CoppaPageType["None"] = {
+    code: 0,
+    type: "None",
+    displayName: ""
+};
+CoppaPageType["MemRegStartLogin_jsp"] = {
+    code: 10,
+    type: "MemRegStartLogin_jsp",
+    displayName: ""
+};
+CoppaPageType["LessonStartLogin_jsp"] = {
+    code: 20,
+    type: "LessonStartLogin_jsp",
+    displayName: ""
+};
+CoppaPageType["ContactMe_do"] = {
+    code: 30,
+    type: "ContactMe_do",
+    displayName: ""
+};
+CoppaPageType["TUMoneyDonate_jsp"] = {
+    code: 40,
+    type: "TUMoneyDonate_jsp",
+    displayName: ""
+};
+CoppaPageType["SpcAdHere_do"] = {
+    code: 50,
+    type: "SpcAdHere_do",
+    displayName: ""
+};
+Enums.CoppaPageType = CoppaPageType;
+var ASADisability = {};
+ASADisability["None"] = {
+    bit: 0,
+    type: "None",
+    displayName: "None"
+};
+ASADisability["Ambulant"] = {
+    bit: 1,
+    type: "Ambulant",
+    displayName: "Ambulant"
+};
+ASADisability["Hearing"] = {
+    bit: 2,
+    type: "Hearing",
+    displayName: "Hearing"
+};
+ASADisability["Learning"] = {
+    bit: 4,
+    type: "Learning",
+    displayName: "Learning"
+};
+ASADisability["Visual"] = {
+    bit: 8,
+    type: "Visual",
+    displayName: "Visual"
+};
+ASADisability["Wheelchair"] = {
+    bit: 16,
+    type: "Wheelchair",
+    displayName: "Wheelchair"
+};
+Enums.ASADisability = ASADisability;
+var PaymentMethod = {};
+PaymentMethod["CreditCard"] = {
+    code: "10",
+    description: "Credit Card"
+};
+PaymentMethod["Check"] = {
+    code: "20",
+    description: "Check"
+};
+PaymentMethod["ACH"] = {
+    code: "30",
+    description: "ACH"
+};
+PaymentMethod["ManualACH"] = {
+    code: "40",
+    description: "Manual ACH"
+};
+PaymentMethod["DomesticWire"] = {
+    code: "50",
+    description: "Domestic Wire"
+};
+PaymentMethod["InternationalWire"] = {
+    code: "40",
+    description: "International Wire"
+};
+PaymentMethod["CreditCardACH"] = {
+    code: "60",
+    description: "Credit Card &amp; ACH"
+};
+PaymentMethod["None"] = {
+    code: "-1",
+    description: "None"
+};
+Enums.PaymentMethod = PaymentMethod;
+var MemberType = {};
+MemberType["Undefined"] = {
+    code: 0,
+    type: "Undefined",
+    displayName: "Undefined"
+};
+MemberType["Comp"] = {
+    code: 5,
+    type: "Comp",
+    displayName: "Comp"
+};
+MemberType["Class"] = {
+    code: 10,
+    type: "Class",
+    displayName: "Class"
+};
+Enums.MemberType = MemberType;
+var Course = {};
+Course["Unset"] = {
+    code: 0,
+    type: "Unset",
+    displayName: "-"
+};
+Course["LCM"] = {
+    code: 4,
+    type: "LCM",
+    displayName: "L"
+};
+Course["SCM"] = {
+    code: 2,
+    type: "SCM",
+    displayName: "S"
+};
+Course["SCY"] = {
+    code: 1,
+    type: "SCY",
+    displayName: "Y"
+};
+Enums.Course = Course;
+var PaymentType = {};
+PaymentType["CC"] = {
+    code: 10,
+    type: "CC",
+    displayName: "CC"
+};
+PaymentType["OFFLINE_CC"] = {
+    code: 15,
+    type: "OFFLINE_CC",
+    displayName: "Offline CC"
+};
+PaymentType["CHECK"] = {
+    code: 20,
+    type: "CHECK",
+    displayName: "Check"
+};
+PaymentType["eCHECK"] = {
+    code: 30,
+    type: "eCHECK",
+    displayName: "E-Check"
+};
+PaymentType["CASH"] = {
+    code: 40,
+    type: "CASH",
+    displayName: "Cash"
+};
+PaymentType["REFUND"] = {
+    code: 70,
+    type: "REFUND",
+    displayName: "Refund"
+};
+PaymentType["CREDIT"] = {
+    code: 80,
+    type: "CREDIT",
+    displayName: "Credit"
+};
+PaymentType["COUNTRY_CLUB_ACCOUNT"] = {
+    code: 85,
+    type: "COUNTRY_CLUB_ACCOUNT",
+    displayName: "Country Club Account"
+};
+PaymentType["OTHER"] = {
+    code: 90,
+    type: "OTHER",
+    displayName: "Other"
+};
+Enums.PaymentType = PaymentType;
+var Citizenry = {};
+Citizenry["US"] = {
+    code: "USA"
+};
+Citizenry["Canada"] = {
+    code: "CAN"
+};
+Citizenry["Other"] = {
+    code: "Non-US"
+};
+Citizenry["Undefined"] = {
+    code: ""
+};
+Enums.Citizenry = Citizenry;
+var ApprovalStatus = {};
+ApprovalStatus["Denied"] = {
+    code: 0,
+    type: "Denied",
+    displayName: "Denied"
+};
+ApprovalStatus["Approved"] = {
+    code: 1,
+    type: "Approved",
+    displayName: "Approved"
+};
+ApprovalStatus["Pending"] = {
+    code: 2,
+    type: "Pending",
+    displayName: "Pending"
+};
+ApprovalStatus["NotSubmitted"] = {
+    code: 99,
+    type: "NotSubmitted",
+    displayName: "Not Submitted"
+};
+Enums.ApprovalStatus = ApprovalStatus;
+var InvitationStatus = {};
+InvitationStatus["Sent"] = {
+    code: 1,
+    localizedName: "No Response"
+};
+InvitationStatus["Accepted"] = {
+    code: 2,
+    localizedName: "Accepted"
+};
+InvitationStatus["Declined"] = {
+    code: 3,
+    localizedName: "Declined"
+};
+Enums.InvitationStatus = InvitationStatus;
+var SyncStatus = {};
+SyncStatus["Auto"] = {
+    code: 0,
+    shortName: "AUTO"
+};
+SyncStatus["Enabled"] = {
+    code: 10,
+    shortName: "ENAB"
+};
+SyncStatus["Disabled"] = {
+    code: 99,
+    shortName: "DISA"
+};
+Enums.SyncStatus = SyncStatus;
+var USARegistrationEthnicity = {};
+USARegistrationEthnicity["Unspecified"] = {
+    bit: 0,
+    type: "Unspecified",
+    displayName: "Some Other Race"
+};
+USARegistrationEthnicity["African"] = {
+    bit: 1,
+    type: "African",
+    displayName: "Black or African American"
+};
+USARegistrationEthnicity["Asian"] = {
+    bit: 2,
+    type: "Asian",
+    displayName: "Asian"
+};
+USARegistrationEthnicity["Caucasian"] = {
+    bit: 4,
+    type: "Caucasian",
+    displayName: "White"
+};
+USARegistrationEthnicity["Hispanic"] = {
+    bit: 8,
+    type: "Hispanic",
+    displayName: "Hispanic or Latino"
+};
+USARegistrationEthnicity["NativeAmerican"] = {
+    bit: 16,
+    type: "NativeAmerican",
+    displayName: "American Indian & Alaska Native"
+};
+USARegistrationEthnicity["NativeHawaiian"] = {
+    bit: 64,
+    type: "NativeHawaiian",
+    displayName: "Native Hawaiian & Other Pacific Islander"
+};
+USARegistrationEthnicity["Other"] = {
+    bit: 32,
+    type: "Other",
+    displayName: "Some Other Race"
+};
+Enums.USARegistrationEthnicity = USARegistrationEthnicity;
+var TokenType = {};
+TokenType["IOS"] = {
+    code: 0
+};
+TokenType["GCM"] = {
+    code: 1
+};
+TokenType["FCM"] = {
+    code: 2
+};
+Enums.TokenType = TokenType;
+var YmcaPayStatus = {};
+YmcaPayStatus["NoFee"] = {
+    code: 0,
+    type: "NoFee",
+    displayName: "No Fee"
+};
+YmcaPayStatus["NotPaid"] = {
+    code: 10,
+    type: "NotPaid",
+    displayName: "Not Paid"
+};
+YmcaPayStatus["Paid"] = {
+    code: 20,
+    type: "Paid",
+    displayName: "Paid"
+};
+Enums.YmcaPayStatus = YmcaPayStatus;
+var RegistrationStatus = {};
+RegistrationStatus["NotRegistered"] = {
+    code: 0,
+    type: "NotRegistered",
+    displayName: "Not Registered"
+};
+RegistrationStatus["Registered"] = {
+    code: 10,
+    type: "Registered",
+    displayName: "Registered"
+};
+Enums.RegistrationStatus = RegistrationStatus;
+var BillingBucket = {};
+BillingBucket["PRIMARY"] = {
+    code: 0,
+    type: "PRIMARY",
+    displayName: "Primary Bank"
+};
+BillingBucket["SECONDARY"] = {
+    code: 2,
+    type: "SECONDARY",
+    displayName: "Secondary Bank"
+};
+Enums.BillingBucket = BillingBucket;
+var ChargeFrequency = {};
+ChargeFrequency["Monthly"] = {
+    code: 10,
+    type: "Monthly",
+    displayName: "Charge Monthly"
+};
+ChargeFrequency["Yearly"] = {
+    code: 30,
+    type: "Yearly",
+    displayName: "Charge Annually"
+};
+ChargeFrequency["OneTime"] = {
+    code: 40,
+    type: "OneTime",
+    displayName: "Charge One Time"
+};
+Enums.ChargeFrequency = ChargeFrequency;
+var Stroke = {};
+Stroke["Free"] = {
+    code: 1,
+    type: "Free",
+    displayName: "Free"
+};
+Stroke["Back"] = {
+    code: 2,
+    type: "Back",
+    displayName: "Back"
+};
+Stroke["Breast"] = {
+    code: 4,
+    type: "Breast",
+    displayName: "Breast"
+};
+Stroke["Fly"] = {
+    code: 8,
+    type: "Fly",
+    displayName: "Fly"
+};
+Stroke["Medley"] = {
+    code: 16,
+    type: "Medley",
+    displayName: "Medley"
+};
+Enums.Stroke = Stroke;
+var SanctionStatus = {};
+SanctionStatus["Denied"] = {
+    code: 0,
+    type: "Denied",
+    displayName: "Denied"
+};
+SanctionStatus["Approved"] = {
+    code: 1,
+    type: "Approved",
+    displayName: "Approved"
+};
+SanctionStatus["Pending"] = {
+    code: 2,
+    type: "Pending",
+    displayName: "Pending"
+};
+Enums.SanctionStatus = SanctionStatus;
+var WorkforceAdminType = {};
+WorkforceAdminType["None"] = {
+    code: 0,
+    type: "None",
+    displayName: "No Access"
+};
+WorkforceAdminType["Admin"] = {
+    code: 268435456,
+    type: "Admin",
+    displayName: "Full Access"
+};
+Enums.WorkforceAdminType = WorkforceAdminType;
+var TokenOS = {};
+TokenOS["NONE"] = {
+    code: 0,
+    label: "none"
+};
+TokenOS["IOS"] = {
+    code: 1,
+    label: "ios"
+};
+TokenOS["ANDROID"] = {
+    code: 2,
+    label: "android"
+};
+Enums.TokenOS = TokenOS;
+var LReportType = {};
+LReportType["NewRegistration"] = {
+    tuCode: 10,
+    description: "New Registration"
+};
+LReportType["StudentDetails"] = {
+    tuCode: 20,
+    description: "Student Details"
+};
+LReportType["ClassListings"] = {
+    tuCode: 30,
+    description: "Class Listings"
+};
+LReportType["CCOnFile"] = {
+    tuCode: 40,
+    description: "CC On File"
+};
+Enums.LReportType = LReportType;
+var EmailOptOutBy = {};
+EmailOptOutBy["User"] = {
+    code: 0,
+    type: "User",
+    displayName: "User"
+};
+EmailOptOutBy["Admin"] = {
+    code: 1,
+    type: "Admin",
+    displayName: "Admin"
+};
+Enums.EmailOptOutBy = EmailOptOutBy;
+var MeetSanctionType = {};
+MeetSanctionType["None"] = {
+    code: 0,
+    type: "None",
+    displayName: "None"
+};
+MeetSanctionType["Championship"] = {
+    code: 100,
+    type: "Championship",
+    displayName: "Championship"
+};
+MeetSanctionType["Invitational"] = {
+    code: 200,
+    type: "Invitational",
+    displayName: "Invitational"
+};
+Enums.MeetSanctionType = MeetSanctionType;
+var CreditCardType = {};
+CreditCardType["Visa"] = {
+    tuCode: 10
+};
+CreditCardType["MC"] = {
+    tuCode: 20
+};
+CreditCardType["Discover"] = {
+    tuCode: 30
+};
+CreditCardType["AmEx"] = {
+    tuCode: 40
+};
+CreditCardType["DinnerClub"] = {
+    tuCode: 50
+};
+CreditCardType["JCB"] = {
+    tuCode: 60
+};
+CreditCardType["AustrialBank"] = {
+    tuCode: 70
+};
+CreditCardType["CarteBlanche"] = {
+    tuCode: 80
+};
+Enums.CreditCardType = CreditCardType;
+var SwimmerDataVisibility = {};
+SwimmerDataVisibility["Visible"] = {
+    code: 1,
+    type: "Visible",
+    displayName: "Visible"
+};
+SwimmerDataVisibility["Restricted"] = {
+    code: 2,
+    type: "Restricted",
+    displayName: "Restricted"
+};
+SwimmerDataVisibility["Hidden"] = {
+    code: 3,
+    type: "Hidden",
+    displayName: "Hidden"
+};
+Enums.SwimmerDataVisibility = SwimmerDataVisibility;
+var MessageResultType = {};
+MessageResultType["Unknown"] = {
+    code: 0,
+    meaning: "Unknown"
+};
+MessageResultType["Opened"] = {
+    code: 1,
+    meaning: "Mail Opened"
+};
+MessageResultType["BouncedStart"] = {
+    code: 2,
+    meaning: "Recipient Not Found"
+};
+MessageResultType["BouncedRecipient"] = {
+    code: 3,
+    meaning: "Recipient Not Found"
+};
+MessageResultType["BouncedHost"] = {
+    code: 4,
+    meaning: "Host Not Found"
+};
+MessageResultType["BouncedSpam"] = {
+    code: 5,
+    meaning: "SPAM Block"
+};
+MessageResultType["BouncedStorage"] = {
+    code: 6,
+    meaning: "Storage Exceeded"
+};
+MessageResultType["BouncedFailedToSend"] = {
+    code: 7,
+    meaning: "Failed to Send"
+};
+MessageResultType["BouncedOthers"] = {
+    code: 8,
+    meaning: "Bounced"
+};
+MessageResultType["BouncedEnd"] = {
+    code: 9,
+    meaning: "Bounced"
+};
+Enums.MessageResultType = MessageResultType;
+var ChargeCategoryBankId = {};
+ChargeCategoryBankId["DefaultBank"] = {
+    code: 0,
+    type: "DefaultBank",
+    displayName: "Default Bank Account"
+};
+ChargeCategoryBankId["SecondaryBank"] = {
+    code: 2,
+    type: "SecondaryBank",
+    displayName: "Secondary Bank Account"
+};
+Enums.ChargeCategoryBankId = ChargeCategoryBankId;
+var WorkforceStatus = {};
+WorkforceStatus["Current"] = {
+    code: 100,
+    type: "Current",
+    displayName: "Current"
+};
+WorkforceStatus["ExpireIn90Days"] = {
+    code: 90,
+    type: "ExpireIn90Days",
+    displayName: "Expires within 90 days"
+};
+WorkforceStatus["ExpireIn60Days"] = {
+    code: 60,
+    type: "ExpireIn60Days",
+    displayName: "Expires within 60 days"
+};
+WorkforceStatus["ExpireIn30Days"] = {
+    code: 30,
+    type: "ExpireIn30Days",
+    displayName: "Expires within 30 days"
+};
+WorkforceStatus["Expired"] = {
+    code: 10,
+    type: "Expired",
+    displayName: "Expired"
+};
+Enums.WorkforceStatus = WorkforceStatus;
+var EmploymentStatus = {};
+EmploymentStatus["Volunteer"] = {
+    code: 0,
+    type: "Volunteer",
+    displayName: "Volunteer"
+};
+EmploymentStatus["FullTime"] = {
+    code: 1,
+    type: "FullTime",
+    displayName: "Full Time"
+};
+EmploymentStatus["PartTime"] = {
+    code: 2,
+    type: "PartTime",
+    displayName: "Part Time"
+};
+Enums.EmploymentStatus = EmploymentStatus;
+var BookingAdminType = {};
+BookingAdminType["None"] = {
+    code: 0,
+    type: "None",
+    displayName: "No Access"
+};
+BookingAdminType["FullAccess"] = {
+    code: 10,
+    type: "FullAccess",
+    displayName: "Full Access"
+};
+Enums.BookingAdminType = BookingAdminType;
+var BillingDataType = {};
+BillingDataType["COMPETITIVE"] = {
+    code: 1,
+    type: "COMPETITIVE",
+    displayName: "Competitive"
+};
+BillingDataType["CLASS"] = {
+    code: 2,
+    type: "CLASS",
+    displayName: "Class"
+};
+Enums.BillingDataType = BillingDataType;
+var PaymentChargeType = {};
+PaymentChargeType["Default"] = {
+    code: 100,
+    type: "Default",
+    displayName: "Default"
+};
+PaymentChargeType["SpecificCard"] = {
+    code: 200,
+    type: "SpecificCard",
+    displayName: "Charge to a specific card"
+};
+PaymentChargeType["Split"] = {
+    code: 300,
+    type: "Split",
+    displayName: "Split Payment"
+};
+Enums.PaymentChargeType = PaymentChargeType;
+var AdminType = {};
+AdminType["NotAnAdmin"] = {
+    code: 0,
+    type: "NotAnAdmin",
+    displayName: "Not an admin"
+};
+AdminType["NotLoggedIn"] = {
+    code: 5,
+    type: "NotLoggedIn",
+    displayName: "Not Logged In"
+};
+AdminType["EmailOnly"] = {
+    code: 10,
+    type: "EmailOnly",
+    displayName: "Email only"
+};
+AdminType["WebOnly"] = {
+    code: 20,
+    type: "WebOnly",
+    displayName: "Web Only"
+};
+AdminType["EmailPrint"] = {
+    code: 30,
+    type: "EmailPrint",
+    displayName: "Email/Print/Calendar"
+};
+AdminType["Webmaster"] = {
+    code: 60,
+    type: "Webmaster",
+    displayName: "Webmaster/Event"
+};
+AdminType["SuperUser"] = {
+    code: 90,
+    type: "SuperUser",
+    displayName: "Superuser"
+};
+Enums.AdminType = AdminType;
+var AccountGroupFieldVisibility = {};
+AccountGroupFieldVisibility["Basic"] = {
+    code: 1,
+    type: "Basic",
+    displayName: "Basic"
+};
+AccountGroupFieldVisibility["Financial"] = {
+    code: 2,
+    type: "Financial",
+    displayName: "Financial"
+};
+AccountGroupFieldVisibility["Membership"] = {
+    code: 3,
+    type: "Membership",
+    displayName: "Membership"
+};
+AccountGroupFieldVisibility["Emergency"] = {
+    code: 4,
+    type: "Emergency",
+    displayName: "Emergency"
+};
+AccountGroupFieldVisibility["Medical"] = {
+    code: 5,
+    type: "Medical",
+    displayName: "Medical"
+};
+AccountGroupFieldVisibility["Contact"] = {
+    code: 6,
+    type: "Contact",
+    displayName: "Contact"
+};
+Enums.AccountGroupFieldVisibility = AccountGroupFieldVisibility;
+var PosAdminType = {};
+PosAdminType["None"] = {
+    code: 0,
+    type: "None",
+    displayName: "None"
+};
+PosAdminType["Sales"] = {
+    code: 10,
+    type: "Sales",
+    displayName: "Sales Access"
+};
+PosAdminType["ItemInventory"] = {
+    code: 16,
+    type: "ItemInventory",
+    displayName: "Item/Inventory Access"
+};
+PosAdminType["FullAccess"] = {
+    code: 32,
+    type: "FullAccess",
+    displayName: "Full Access"
+};
+Enums.PosAdminType = PosAdminType;
+var CCAbusedPageType = {};
+CCAbusedPageType["None"] = {
+    code: 0,
+    type: "None",
+    displayName: ""
+};
+CCAbusedPageType["TUMoneyDonate"] = {
+    code: 10,
+    type: "TUMoneyDonate",
+    displayName: ""
+};
+CCAbusedPageType["SponsorCenter"] = {
+    code: 20,
+    type: "SponsorCenter",
+    displayName: ""
+};
+Enums.CCAbusedPageType = CCAbusedPageType;
+var LessonAdminType = {};
+LessonAdminType["NoAccess"] = {
+    code: 0,
+    type: "NoAccess",
+    displayName: "No Access"
+};
+LessonAdminType["FullAccess"] = {
+    code: 65536,
+    type: "FullAccess",
+    displayName: "Full Access"
+};
+LessonAdminType["IntermediateAccess"] = {
+    code: 262144,
+    type: "IntermediateAccess",
+    displayName: "Intermediate Access"
+};
+LessonAdminType["LimitedAccess"] = {
+    code: 131072,
+    type: "LimitedAccess",
+    displayName: "Limited Access"
+};
+LessonAdminType["MobileAttendance"] = {
+    code: 524288,
+    type: "MobileAttendance",
+    displayName: "Mobile Attendance"
+};
+LessonAdminType["MobileAttendanceMessage"] = {
+    code: 32768,
+    type: "MobileAttendanceMessage",
+    displayName: "Mobile Attendance/Message"
+};
+Enums.LessonAdminType = LessonAdminType;
+var PoolMeasure = {};
+PoolMeasure["Free_50"] = {
+    code: 0,
+    type: "Free_50",
+    displayName: "null"
+};
+PoolMeasure["Free_100"] = {
+    code: 0,
+    type: "Free_100",
+    displayName: "null"
+};
+PoolMeasure["Free_200"] = {
+    code: 0,
+    type: "Free_200",
+    displayName: "null"
+};
+PoolMeasure["Free_400"] = {
+    code: 0,
+    type: "Free_400",
+    displayName: "null"
+};
+PoolMeasure["Free_800"] = {
+    code: 0,
+    type: "Free_800",
+    displayName: "null"
+};
+PoolMeasure["Free_1500"] = {
+    code: 0,
+    type: "Free_1500",
+    displayName: "null"
+};
+PoolMeasure["Breast_50"] = {
+    code: 0,
+    type: "Breast_50",
+    displayName: "null"
+};
+PoolMeasure["Breast_100"] = {
+    code: 0,
+    type: "Breast_100",
+    displayName: "null"
+};
+PoolMeasure["Breast_200"] = {
+    code: 0,
+    type: "Breast_200",
+    displayName: "null"
+};
+PoolMeasure["Fly_50"] = {
+    code: 0,
+    type: "Fly_50",
+    displayName: "null"
+};
+PoolMeasure["Fly_100"] = {
+    code: 0,
+    type: "Fly_100",
+    displayName: "null"
+};
+PoolMeasure["Fly_200"] = {
+    code: 0,
+    type: "Fly_200",
+    displayName: "null"
+};
+PoolMeasure["Back_50"] = {
+    code: 0,
+    type: "Back_50",
+    displayName: "null"
+};
+PoolMeasure["Back_100"] = {
+    code: 0,
+    type: "Back_100",
+    displayName: "null"
+};
+PoolMeasure["Back_200"] = {
+    code: 0,
+    type: "Back_200",
+    displayName: "null"
+};
+PoolMeasure["IM_200"] = {
+    code: 0,
+    type: "IM_200",
+    displayName: "null"
+};
+PoolMeasure["IM_400"] = {
+    code: 0,
+    type: "IM_400",
+    displayName: "null"
+};
+Enums.PoolMeasure = PoolMeasure;
+var EventFeeType = {};
+EventFeeType["PerMember"] = {
+    code: 0,
+    type: "PerMember",
+    displayName: "Per Member"
+};
+EventFeeType["PerAccount"] = {
+    code: 10,
+    type: "PerAccount",
+    displayName: "Per Account"
+};
+EventFeeType["Donation"] = {
+    code: 20,
+    type: "Donation",
+    displayName: "Donation"
+};
+Enums.EventFeeType = EventFeeType;
+var MeetEntryFeesGenerateType = {};
+MeetEntryFeesGenerateType["ALL"] = {
+    code: 0,
+    type: "ALL",
+    displayName: "All"
+};
+MeetEntryFeesGenerateType["RosterGroup"] = {
+    code: 10,
+    type: "RosterGroup",
+    displayName: "Member Group"
+};
+MeetEntryFeesGenerateType["BillingGroup"] = {
+    code: 20,
+    type: "BillingGroup",
+    displayName: "Billing Group"
+};
+MeetEntryFeesGenerateType["Location"] = {
+    code: 30,
+    type: "Location",
+    displayName: "Location"
+};
+Enums.MeetEntryFeesGenerateType = MeetEntryFeesGenerateType;
+var ASACategory = {};
+ASACategory["None"] = {
+    code: 0,
+    type: "None",
+    displayName: "None"
+};
+ASACategory["Category1"] = {
+    code: 1,
+    type: "Category1",
+    displayName: "Club Train"
+};
+ASACategory["Category2"] = {
+    code: 2,
+    type: "Category2",
+    displayName: "Club Compete"
+};
+ASACategory["Category3"] = {
+    code: 4,
+    type: "Category3",
+    displayName: "Club Support"
+};
+Enums.ASACategory = ASACategory;
+var ChargeCategoryKind = {};
+ChargeCategoryKind["Charge"] = {
+    code: 10,
+    type: "Charge",
+    displayName: "Normal Charge/Discount"
+};
+ChargeCategoryKind["Donation"] = {
+    code: 20,
+    type: "Donation",
+    displayName: "Donation"
+};
+Enums.ChargeCategoryKind = ChargeCategoryKind;
+var MeetEntryFeeGenType = {};
+MeetEntryFeeGenType["None"] = {
+    code: 0,
+    type: "None",
+    displayName: "None"
+};
+MeetEntryFeeGenType["ResultsImport"] = {
+    code: 10,
+    type: "ResultsImport",
+    displayName: "Results Import"
+};
+MeetEntryFeeGenType["EntryFileGeneration"] = {
+    code: 20,
+    type: "EntryFileGeneration",
+    displayName: "Entry File Generation"
+};
+Enums.MeetEntryFeeGenType = MeetEntryFeeGenType;
+var NotificationSubscriptionsType = {};
+NotificationSubscriptionsType["YmcaCoachReg"] = {
+    code: 0,
+    type: "YmcaCoachReg",
+    displayName: "YMCA New Coach Registrations"
+};
+NotificationSubscriptionsType["YmcaTeamReg"] = {
+    code: 1,
+    type: "YmcaTeamReg",
+    displayName: "YMCA New Team Registrations"
+};
+NotificationSubscriptionsType["YmcaMeetReg"] = {
+    code: 2,
+    type: "YmcaMeetReg",
+    displayName: "YMCA New Meet Sanction Requests"
+};
+NotificationSubscriptionsType["YmcaCoachChanges"] = {
+    code: 3,
+    type: "YmcaCoachChanges",
+    displayName: "YMCA Coach Certificate Updates or Changes"
+};
+Enums.NotificationSubscriptionsType = NotificationSubscriptionsType;
+var TeamType = {};
+TeamType["NoType"] = {
+    code: 0,
+    type: "NoType",
+    displayName: "No Type"
+};
+TeamType["YMCA"] = {
+    code: 10,
+    type: "YMCA",
+    displayName: "YMCA"
+};
+TeamType["NonTu"] = {
+    code: 20,
+    type: "NonTu",
+    displayName: "Non TeamUnify Team"
+};
+Enums.TeamType = TeamType;
+var CoachType = {};
+CoachType["None"] = {
+    code: 0,
+    description: "None"
+};
+CoachType["FullTime"] = {
+    code: 100,
+    description: "Full-Time"
+};
+CoachType["PartTime"] = {
+    code: 200,
+    description: "Part-Time"
+};
+CoachType["Volunteer"] = {
+    code: 300,
+    description: "Volunteer"
+};
+Enums.CoachType = CoachType;
+var Gender = {};
+Gender["Male"] = {
+    code: 1,
+    type: "Male",
+    displayName: "Male"
+};
+Gender["Female"] = {
+    code: 2,
+    type: "Female",
+    displayName: "Female"
+};
+Gender["Mixed"] = {
+    code: 4,
+    type: "Mixed",
+    displayName: "Mixed"
+};
+Gender["NonBinary"] = {
+    code: 5,
+    type: "NonBinary",
+    displayName: "Non-Binary"
+};
+Gender["NotSpecified"] = {
+    code: 6,
+    type: "NotSpecified",
+    displayName: "Not Specified"
+};
+Enums.Gender = Gender;
+var SwimmerGroupFieldVisibility = {};
+SwimmerGroupFieldVisibility["Basic"] = {
+    code: 1,
+    type: "Basic",
+    displayName: "Basic"
+};
+SwimmerGroupFieldVisibility["Demographics"] = {
+    code: 2,
+    type: "Demographics",
+    displayName: "Demographics"
+};
+SwimmerGroupFieldVisibility["Membership"] = {
+    code: 3,
+    type: "Membership",
+    displayName: "Membership"
+};
+SwimmerGroupFieldVisibility["Emergency"] = {
+    code: 4,
+    type: "Emergency",
+    displayName: "Emergency"
+};
+SwimmerGroupFieldVisibility["Medical"] = {
+    code: 5,
+    type: "Medical",
+    displayName: "Medical"
+};
+SwimmerGroupFieldVisibility["Apparel"] = {
+    code: 6,
+    type: "Apparel",
+    displayName: "Apparel"
+};
+SwimmerGroupFieldVisibility["Contact"] = {
+    code: 7,
+    type: "Contact",
+    displayName: "Contact"
+};
+Enums.SwimmerGroupFieldVisibility = SwimmerGroupFieldVisibility;
+var FinancialAdminType = {};
+FinancialAdminType["None"] = {
+    code: 0,
+    type: "None",
+    displayName: "None"
+};
+FinancialAdminType["FullAccess"] = {
+    code: 16,
+    type: "FullAccess",
+    displayName: "Full Access"
+};
+FinancialAdminType["LimitedAccess"] = {
+    code: 64,
+    type: "LimitedAccess",
+    displayName: "Limited Access"
+};
+FinancialAdminType["ReadOnly"] = {
+    code: 32,
+    type: "ReadOnly",
+    displayName: "Read Only"
+};
+Enums.FinancialAdminType = FinancialAdminType;
+var ASACountry = {};
+ASACountry["None"] = {
+    code: 0,
+    type: "None",
+    displayName: "None"
+};
+ASACountry["England"] = {
+    code: 1,
+    type: "England",
+    displayName: "England"
+};
+ASACountry["Scotland"] = {
+    code: 2,
+    type: "Scotland",
+    displayName: "Scotland"
+};
+ASACountry["Wales"] = {
+    code: 4,
+    type: "Wales",
+    displayName: "Wales"
+};
+ASACountry["Other"] = {
+    code: 8,
+    type: "Other",
+    displayName: "Other"
+};
+Enums.ASACountry = ASACountry;
+var CardFailureStatus = {};
+CardFailureStatus["NONE"] = {
+    translation: "com.teamunify.constants.DBEnumerationHelper$1@27b3b761",
+    code: 0
+};
+CardFailureStatus["BANNED"] = {
+    translation: "com.teamunify.constants.DBEnumerationHelper$1@18440b22",
+    code: 1
+};
+CardFailureStatus["THROTTLED"] = {
+    translation: "com.teamunify.constants.DBEnumerationHelper$1@65c0ca16",
+    code: 2
+};
+Enums.CardFailureStatus = CardFailureStatus;
+var EPaymentChargeKind = {};
+EPaymentChargeKind["MembershipDues"] = {
+    code: 0,
+    type: "MembershipDues",
+    displayName: "Membership Dues"
+};
+EPaymentChargeKind["LessonsRecurring"] = {
+    code: 10,
+    type: "LessonsRecurring",
+    displayName: "Lessons Recurring"
+};
+EPaymentChargeKind["OnDemand"] = {
+    code: 20,
+    type: "OnDemand",
+    displayName: "On Demand"
+};
+Enums.EPaymentChargeKind = EPaymentChargeKind;
+var CardType = {};
+CardType["None"] = {
+    code: 0,
+    type: "None",
+    displayName: "None"
+};
+CardType["Visa"] = {
+    code: 10,
+    type: "Visa",
+    displayName: "Visa"
+};
+CardType["Mastercard"] = {
+    code: 20,
+    type: "Mastercard",
+    displayName: "MasterCard"
+};
+CardType["Discover"] = {
+    code: 30,
+    type: "Discover",
+    displayName: "Discover"
+};
+CardType["Amex"] = {
+    code: 40,
+    type: "Amex",
+    displayName: "American Express"
+};
+CardType["DinnerClub"] = {
+    code: 50,
+    type: "DinnerClub",
+    displayName: "Diners Club"
+};
+CardType["JCB"] = {
+    code: 60,
+    type: "JCB",
+    displayName: "JCB"
+};
+CardType["ACH"] = {
+    code: 9000,
+    type: "ACH",
+    displayName: "ACH"
+};
+Enums.CardType = CardType;
+var MigrationStatus = {};
+MigrationStatus["NONE"] = {
+    code: 0,
+    type: "NONE",
+    displayName: "None"
+};
+MigrationStatus["PENDING"] = {
+    code: 10,
+    type: "PENDING",
+    displayName: "Pending"
+};
+MigrationStatus["COMPLETED"] = {
+    code: 20,
+    type: "COMPLETED",
+    displayName: "Completed"
+};
+MigrationStatus["COMPLETED_AND_MASKED"] = {
+    code: 40,
+    type: "COMPLETED_AND_MASKED",
+    displayName: "Completed & Masked"
+};
+Enums.MigrationStatus = MigrationStatus;
+var EftStatus = {};
+EftStatus["None"] = {
+    code: 0,
+    type: "None",
+    displayName: "None"
+};
+EftStatus["EFT_CC_PROCESS_SCHED"] = {
+    code: 1,
+    type: "EFT_CC_PROCESS_SCHED",
+    displayName: "Scheduled: CC Processing"
+};
+EftStatus["EFT_CC_PROCESS_PENDING"] = {
+    code: 2,
+    type: "EFT_CC_PROCESS_PENDING",
+    displayName: "Pending: CC Processing"
+};
+EftStatus["EFT_CC_PROCESS_CANCELED"] = {
+    code: 5,
+    type: "EFT_CC_PROCESS_CANCELED",
+    displayName: "Canceled: CC Processing"
+};
+EftStatus["EFT_CC_PROCESS_SUCCESS"] = {
+    code: 10,
+    type: "EFT_CC_PROCESS_SUCCESS",
+    displayName: "Success: CC Processing"
+};
+EftStatus["EFT_CC_PROCESS_FAILED"] = {
+    code: 20,
+    type: "EFT_CC_PROCESS_FAILED",
+    displayName: "Failure: CC Processing"
+};
+EftStatus["EFT_CC_SETTLED_SUCCESS"] = {
+    code: 30,
+    type: "EFT_CC_SETTLED_SUCCESS",
+    displayName: "Success: CC Settling"
+};
+EftStatus["EFT_CC_SETTLED_FAILED"] = {
+    code: 40,
+    type: "EFT_CC_SETTLED_FAILED",
+    displayName: "Failure: CC Settling"
+};
+EftStatus["EFT_CC_CANCELED_EXPIRED"] = {
+    code: 50,
+    type: "EFT_CC_CANCELED_EXPIRED",
+    displayName: "CC Canceled: Expired"
+};
+EftStatus["EFT_CC_CANCELED_NO_BALANCE"] = {
+    code: 51,
+    type: "EFT_CC_CANCELED_NO_BALANCE",
+    displayName: "CC Canceled: No need to pay"
+};
+EftStatus["EFT_CC_CANCELED_NOT_CC_METHOD"] = {
+    code: 52,
+    type: "EFT_CC_CANCELED_NOT_CC_METHOD",
+    displayName: "CC Canceled: Not CC method"
+};
+EftStatus["EFT_CC_CANCELED_ANET_ERROR"] = {
+    code: 53,
+    type: "EFT_CC_CANCELED_ANET_ERROR",
+    displayName: "CC Canceled: EFT failed"
+};
+EftStatus["EFT_CC_CANCELED_NO_ANET"] = {
+    code: 54,
+    type: "EFT_CC_CANCELED_NO_ANET",
+    displayName: "CC Canceled: Merchant Account Not Set"
+};
+EftStatus["EFT_CC_CANCELED_ACC_NOT_ACTIVE"] = {
+    code: 55,
+    type: "EFT_CC_CANCELED_ACC_NOT_ACTIVE",
+    displayName: "CC Canceled: Account Not Active"
+};
+EftStatus["EFT_CC_CANCELED_NO_CARD_FOUND"] = {
+    code: 56,
+    type: "EFT_CC_CANCELED_NO_CARD_FOUND",
+    displayName: "CC Canceled: Cannot find card"
+};
+EftStatus["EFT_ECHECK_UNKNOWN"] = {
+    code: 90,
+    type: "EFT_ECHECK_UNKNOWN",
+    displayName: "ACH Unknown Status"
+};
+EftStatus["EFT_ECHECK_PROCESS_SCHED"] = {
+    code: 91,
+    type: "EFT_ECHECK_PROCESS_SCHED",
+    displayName: "ACH Scheduled"
+};
+EftStatus["EFT_ECHECK_PROCESS_CANCELED"] = {
+    code: 95,
+    type: "EFT_ECHECK_PROCESS_CANCELED",
+    displayName: "ACH Canceled"
+};
+EftStatus["EFT_ECHECK_PROCESS_SUBMITTED"] = {
+    code: 98,
+    type: "EFT_ECHECK_PROCESS_SUBMITTED",
+    displayName: "ACH Submitted"
+};
+EftStatus["EFT_ECHECK_PROCESS_FAILED"] = {
+    code: 120,
+    type: "EFT_ECHECK_PROCESS_FAILED",
+    displayName: "ACH Submit Failed"
+};
+EftStatus["EFT_ECHECK_PROCESS_NO_BANK_ACCOUNT_FOUND"] = {
+    code: 121,
+    type: "EFT_ECHECK_PROCESS_NO_BANK_ACCOUNT_FOUND",
+    displayName: "ACH No Bank Account Found"
+};
+EftStatus["EFT_ECHECK_PROGRESS_PENDING"] = {
+    code: 125,
+    type: "EFT_ECHECK_PROGRESS_PENDING",
+    displayName: "ACH Pending"
+};
+EftStatus["EFT_ECHECK_PROGRESS_PENDINGSETTLEMENT"] = {
+    code: 128,
+    type: "EFT_ECHECK_PROGRESS_PENDINGSETTLEMENT",
+    displayName: "ACH PendingSettlement"
+};
+EftStatus["EFT_ECHECK_SETTLED_COMPLETE"] = {
+    code: 130,
+    type: "EFT_ECHECK_SETTLED_COMPLETE",
+    displayName: "ACH Settlement Complete"
+};
+EftStatus["EFT_ECHECK_SETTLED_FAILED"] = {
+    code: 140,
+    type: "EFT_ECHECK_SETTLED_FAILED",
+    displayName: "ACH Settlement Failed"
+};
+EftStatus["EFT_NO_GATEWAY"] = {
+    code: 9999,
+    type: "EFT_NO_GATEWAY",
+    displayName: "No Gateway found to process"
+};
+Enums.EftStatus = EftStatus;
+var TransactionType = {};
+TransactionType["AUTH_CAPTURE"] = {
+    code: 10,
+    type: "AUTH_CAPTURE",
+    displayName: "Authorize and Capture"
+};
+TransactionType["AUTH_ONLY"] = {
+    code: 20,
+    type: "AUTH_ONLY",
+    displayName: "Authorize Only"
+};
+TransactionType["CAPTURE_ONLY"] = {
+    code: 30,
+    type: "CAPTURE_ONLY",
+    displayName: "Capture Only"
+};
+TransactionType["CREDIT"] = {
+    code: 40,
+    type: "CREDIT",
+    displayName: "Credit"
+};
+TransactionType["VOID"] = {
+    code: 50,
+    type: "VOID",
+    displayName: "Void"
+};
+TransactionType["PRIOR_AUTH_CAPTURE"] = {
+    code: 60,
+    type: "PRIOR_AUTH_CAPTURE",
+    displayName: "Prior Authorize and Capture"
+};
+Enums.TransactionType = TransactionType;
+var GatewayType = {};
+GatewayType["GATEWAY_NONE"] = {
+    code: 0,
+    type: "GATEWAY_NONE",
+    displayName: "Unknown Gateway"
+};
+GatewayType["GATEWAY_ANET"] = {
+    code: 10,
+    type: "GATEWAY_ANET",
+    displayName: "ANet"
+};
+GatewayType["GATEWAY_MMOVERS"] = {
+    code: 20,
+    type: "GATEWAY_MMOVERS",
+    displayName: "MMovers"
+};
+GatewayType["GATEWAY_PPCA"] = {
+    code: 30,
+    type: "GATEWAY_PPCA",
+    displayName: "ProcessPink-CA"
+};
+GatewayType["GATEWAY_SEC"] = {
+    code: 40,
+    type: "GATEWAY_SEC",
+    displayName: "SEC"
+};
+GatewayType["GATEWAY_STRIPE"] = {
+    code: 50,
+    type: "GATEWAY_STRIPE",
+    displayName: "Stripe"
+};
+GatewayType["GATEWAY_STRIPE_PLATFORM"] = {
+    code: 51,
+    type: "GATEWAY_STRIPE_PLATFORM",
+    displayName: "Stripe Platform"
+};
+Enums.GatewayType = GatewayType;
+var DATE_FORMATS = {
+  "date_standard" : {
+    "name" : "date_standard",
+    "format" : "MM/dd/yyyy",
+    "description" : "Month/Day/Year (ex. 09/22/2018)"
+  },
+  "date_standard_with_zone" : {
+    "name" : "date_standard_with_zone",
+    "format" : "MM/dd/yyyy z",
+    "description" : "Month/Day/Year (ex. 09/22/2018)"
+  },
+  "date_named" : {
+    "name" : "date_named",
+    "format" : "MMM dd, yyyy",
+    "description" : "MMM dd, yyyy"
+  },
+  "date_short" : {
+    "name" : "date_short",
+    "format" : "MM/dd/yy",
+    "description" : "Month/Day/Year (ex. 09/22/19)"
+  },
+  "date_named_full" : {
+    "name" : "date_named_full",
+    "format" : "MMMM d, yyyy",
+    "description" : "MMMM d, yyyy"
+  },
+  "date_named_full_weekday" : {
+    "name" : "date_named_full_weekday",
+    "format" : "EEEE, MMMM dd, yyyy",
+    "description" : "EEEE, MMMM dd, yyyy"
+  },
+  "date_named_full_weekday_short" : {
+    "name" : "date_named_full_weekday_short",
+    "format" : "EEE, MMMM dd, yyyy",
+    "description" : "EEE, MMMM dd, yyyy"
+  },
+  "date_month_only" : {
+    "name" : "date_month_only",
+    "format" : "MM/dd",
+    "description" : "Month/Day (ex. 09/22)"
+  },
+  "date_month_only_named" : {
+    "name" : "date_month_only_named",
+    "format" : "MMM dd",
+    "description" : "MMM dd"
+  },
+  "datetime_standard" : {
+    "name" : "datetime_standard",
+    "format" : "MM/dd/yyyy h:mm a",
+    "description" : "MM/dd/yyyy h:mm a"
+  },
+  "datetime_standard_with_zone" : {
+    "name" : "datetime_standard_with_zone",
+    "format" : "MM/dd/yyyy h:mm a z",
+    "description" : "MM/dd/yyyy h:mm a z"
+  },
+  "datetime_named" : {
+    "name" : "datetime_named",
+    "format" : "MMM d, y h:mm a",
+    "description" : "MMM d, y h:mm a"
+  },
+  "datetime_named_with_zone" : {
+    "name" : "datetime_named_with_zone",
+    "format" : "MMM d, y h:mm a z",
+    "description" : "MMM d, y h:mm a z"
+  },
+  "datetime_named_full_weekday" : {
+    "name" : "datetime_named_full_weekday",
+    "format" : "EEEE, MMM d, yyyy  h:mm a",
+    "description" : "EEEE, MMM d, yyyy  h:mm a"
+  },
+  "datetime_machine" : {
+    "name" : "datetime_machine",
+    "format" : "yyyy-MM-dd'T'HH:mm:ss.sssZ",
+    "description" : "yyyy-MM-dd'T'HH:mm:ss.sssZ"
+  },
+  "date_machine" : {
+    "name" : "date_machine",
+    "format" : "yyyy-MM-dd",
+    "description" : "yyyy-MM-dd"
+  },
+  "monthyear" : {
+    "name" : "monthyear",
+    "format" : "MM/yyyy",
+    "description" : "Month/Year (ex. 09/2018)"
+  },
+  "monthyear_named" : {
+    "name" : "monthyear_named",
+    "format" : "MMMM, yyyy",
+    "description" : "Month/Year (ex. April, 2018)"
+  },
+  "time" : {
+    "name" : "time",
+    "format" : "h:mm a",
+    "description" : "h:mm a"
+  }
+};
+var LOCALE_RAW_DATA = {
+  "LSC/Region/League" : "Region",
+  "Swim Lesson Button" : "Class Schedule Button",
+  "Lesson" : "Class",
+  "Lesson Admin" : "Class Admin",
+  "Pay Method - Lessons Recurring" : "Pay Method - Classes Recurring",
+  "Lesson Account Status" : "Class Account Status",
+  "Last ACH/CC Modified" : "Last Wallet Updated",
+  "Roster Group" : "Member Group",
+  "Roster Groups" : "Member Groups",
+  "Roster group" : "Member group",
+  "roster group" : "member group",
+  "Roster" : "Member Group",
+  "Rosters" : "Member Groups",
+  "roster" : "member group",
+  "rosters" : "member groups",
+  "roster type" : "member type",
+  "All Roster Groups" : "All Member Groups",
+  "All Rosters" : "All Member Groups",
+  "All rosters" : "All member groups",
+  "Team Profile" : "Org Profile",
+  "MainSet Access Settings" : "Instructor Access Settings",
+  "TUMoney Admin" : "Fundraising Admin",
+  "TU Money Admin" : "Fundraising Admin",
+  "MainSet Coach" : "Coach",
+  "OnDeck Invite" : "Mobile App Invite",
+  "Roster | Location | Billing Setup" : "Member Group | Location | Billing Setup",
+  "Swim Lessons" : "Classes",
+  "Swimmer Note" : "Notes",
+  "Swimmer(s)" : "Member(s)",
+  "Swimmers" : "Members",
+  "Swimmer" : "Member",
+  "swimmers" : "members",
+  "swimmer" : "member",
+  "SWIMMERS" : "MEMBERS",
+  "Swimsuit Size" : "Leotard Size",
+  "Warm-up Pant Size" : "Trouser/Short Size",
+  "Warm-up Jacket Size" : "Jacket Size",
+  "Pant" : "Trouser/Short",
+  "pant" : "trouser/short",
+  "OnDeck" : "Mobile App",
+  "SwimOffice" : "SportsEngine",
+  "lesson" : "class",
+  "lessons" : "classes",
+  "Lessons" : "Classes",
+  "team" : "organization",
+  "teams" : "organizations",
+  "Team" : "Organization",
+  "TEAM EVENT" : "EVENT",
+  "Team event" : "Event",
+  "Team Event" : "Event",
+  "team event" : "event",
+  "Team Events" : "Events",
+  "TEAM HOSTED EVENT" : "ORGANIZATION HOSTED EVENT",
+  "Team Hosted Event" : "Organization Hosted Event",
+  "Team time zone" : "Org time zone",
+  "Team - {{s}}" : "Org - {{s}}",
+  "Team Billing" : "Org Billing",
+  "TeamUnify Time Standards" : "GoMotion Time Standards",
+  "Team Registration" : "Competitive Registration",
+  "TeamUnify" : "GoMotion",
+  "www.myteamwebsite.com" : "www.myorgwebsite.com",
+  "support@teamunify.com" : "support@gomotionapp.com",
+  "medium" : "MMM d y h:mm:ss a",
+  "short" : "M/d/yy h:mm a",
+  "fullDate" : "EEEE, MMMM d y",
+  "longDate" : "MMMM d  y",
+  "mediumDate" : "MMM d y",
+  "shortDate" : "M/d/yy",
+  " (CoA)" : "",
+  "CHARGE NOW" : "CHECKOUT NOW",
+  "SMS" : "Mobile/SMS",
+  "SMS 1" : "Mobile/SMS 1",
+  "SMS 2" : "Mobile/SMS 2",
+  "Send SMS" : "Send Mobile/SMS",
+  "Sending SMS..." : "Sending Mobile/SMS...",
+  "SMS message sent." : "Mobile/SMS message sent.",
+  "Send SMS failed." : "Send Mobible/SMS failed.",
+  "SMS number" : "Mobile/SMS number",
+  "There are no members that you selected with valid SMS numbers" : "There are no members that you selected with valid Mobile/SMS numbers",
+  "Request SMS Verification" : "Request Mobile/SMS Verification",
+  "Are you sure you want to send SMS verifications to {0} member(s)?" : "Are you sure you want to send Mobile/SMS verifications to {0} member(s)?",
+  "Send SMS to selected member(s) failed." : "Send Mobile/SMS to selected member(s) failed.",
+  "Verification SMS sent to {0} member(s)." : "Verification Mobile/SMS sent to {0} member(s).",
+  "There are no accounts that you selected with valid SMS numbers" : "There are no accounts that you selected with valid Mobile/SMS numbers",
+  "Verification SMS sent to {0} account(s)." : "Verification Mobile/SMS sent to {0} account(s).",
+  "Are you sure you want to send SMS verifications to {0} account(s)?" : "Are you sure you want to send Mobile/SMS verifications to {0} account(s)?",
+  "Send SMS to selected account(s) failed." : "Send Mobile/SMS to selected account(s) failed.",
+  "Home Phone" : "Phone",
+  "Work/Mobile Phone" : "Alternate Phone",
+  "Canceled" : "Cancelled",
+  "canceled" : "cancelled",
+  "CANCELED" : "CANCELLED",
+  "TeamUnify On-line Donor Processing Fee ({0}) should be charged to" : "SportsEngine Motion On-line Donor Processing Fee ({0}) should be charged to"
+};
+var TERMINOLOGY_DATA = {"all member groups":"all rosters","GOMOTION FOUNDATION TUMBLE-A-THON AGREEMENT ACCEPTED BY":"USA SWIMMING FOUNDATION SWIM-A-THON AGREEMENT ACCEPTED BY","SPORTSENGINE MOTION CERTIFIED":"USA SWIMMING CERTIFIED","TROUSER/SHORT":"PANT","GOMOTION FOUNDATION TUMBLE-A-THON":"USA SWIMMING FOUNDATION SWIM-A-THON","GoMotion Fee":"USA Swimming Fee","gomotion foundation":"usa swimming foundation","GoMotion Event Fundraising Agreement":"TeamUnify Event Fundraising Agreement","Membership":"Group Setup","All Member Groups":"All Rosters","GOMOTION EVENT FUNDRAISING AGREEMENT":"TEAMUNIFY EVENT FUNDRAISING AGREEMENT","events":"team events","GoMotion":"TeamUnify","gomotion":"teamunify","gomotion foundation tumble-a-thon agreement accepted by":"usa swimming foundation swim-a-thon agreement accepted by","Competitive Registration":"Team Registration","GOMOTION FEE":"USA SWIMMING FEE","Jacket Size":"Warm-up Jacket Size","All member groups":"All rosters","GOMOTION FOUNDATION TUMBLE-A-THON OBLIGATION AGREEMENT":"USA SWIMMING FOUNDATION SWIM-A-THON OBLIGATION AGREEMENT","GoMotion Foundation Tumble-A-Thon Agreement accepted by":"USA Swimming Foundation Swim-A-Thon Agreement accepted by","Leotard Size":"Swimsuit Size","MEMBER GROUPS":"ROSTERS","GoMotion Foundation Tumble-A-Thon Agreement Accepted Date":"USA Swimming Foundation Swim-A-Thon Agreement Accepted Date","sportsengine motion certified":"usa swimming certified","gomotion time standards":"teamunify time standards","Members":"Swimmers","SPORTSENGINE MOTION REGISTERED":"USA SWIMMING REGISTERED","Organization":"Team","Member Group":"Roster","gomotion foundation tumble-a-thon agreement accepted date":"usa swimming foundation swim-a-thon agreement accepted date","ORGANIZATION":"TEAM","SPORTSENGINE MOTION REGISTERED WOMEN":"USA SWIMMING REGISTERED WOMEN","About Tumble-A-Thon":"About Swim-A-Thon","Events":"Team Events","SPORTSENGINE MOTION REGISTERED MEN":"USA SWIMMING REGISTERED MEN","member group":"roster","member":"swimmer","GoMotion Time Standards":"TeamUnify Time Standards","TUMBLE-A-THON DIGITAL RESOURCES":"SWIM-A-THON DIGITAL RESOURCES","GoMotion Foundation Tumble-A-Thon Obligation Agreement":"USA Swimming Foundation Swim-A-Thon Obligation Agreement","SportsEngine Motion Registered":"USA Swimming Registered","sportsengine motion registered women":"usa swimming registered women","Member group":"Roster","sportsengine motion registered":"usa swimming registered","Trouser/Short Size":"Warm-up Pant Size","organization":"team","COMPETITIVE REGISTRATION":"TEAM REGISTRATION","GOMOTION INVOICES":"TEAMUNIFY INVOICES","sportsengine motion registered men":"usa swimming registered men","Tumble-A-Thon":"Swim-A-Thon","ABOUT TUMBLE-A-THON":"ABOUT SWIM-A-THON","EVENTS":"TEAM EVENTS","trouser/short size":"warm-up pant size","organisation":"team","gomotion invoices":"teamunify invoices","Trouser/Short":"Pant","tumble-a-thon":"swim-a-thon","GoMotion Foundation Tumble-A-Thon":"USA Swimming Foundation Swim-A-Thon","TROUSER/SHORT SIZE":"WARM-UP PANT SIZE","GoMotion Foundation":"USA Swimming Foundation","gomotion fee":"usa swimming fee","members":"swimmers","competitive registration":"team registration","Member":"Swimmer","trouser/short":"pant","tumble-a-thon digital resources":"swim-a-thon digital resources","MEMBERS":"SWIMMERS","TUMBLE-A-THON":"SWIM-A-THON","GoMotion Foundation Tumble-A-Thon Agreement accepted date":"USA Swimming Foundation Swim-A-Thon Agreement accepted date","SportsEngine Motion Registered Men":"USA Swimming Registered Men","ORGANISATION":"TEAM","GoMotion Foundation Tumble-A-Thon Agreement Accepted By":"USA Swimming Foundation Swim-A-Thon Agreement Accepted By","leotard size":"swimsuit size","MEMBER GROUP":"ROSTER","member groups":"rosters","LEOTARD SIZE":"SWIMSUIT SIZE","GOMOTION FOUNDATION TUMBLE-A-THON AGREEMENT ACCEPTED DATE":"USA SWIMMING FOUNDATION SWIM-A-THON AGREEMENT ACCEPTED DATE","Member Groups":"Rosters","Member groups":"Rosters","gomotion foundation tumble-a-thon obligation agreement":"usa swimming foundation swim-a-thon obligation agreement","ALL MEMBER GROUPS":"ALL ROSTERS","GOMOTION TIME STANDARDS":"TEAMUNIFY TIME STANDARDS","jacket size":"warm-up jacket size","membership":"group setup","GOMOTION FOUNDATION TUMBLE-A-THON AGREEMENT":"USA SWIMMING FOUNDATION SWIM-A-THON AGREEMENT","MEMBER":"SWIMMER","MEMBERSHIP":"GROUP SETUP","SportsEngine Motion Registered Women":"USA Swimming Registered Women","GOMOTION FOUNDATION":"USA SWIMMING FOUNDATION","Tumble-A-Thon Digital Resources":"Swim-A-Thon Digital Resources","GoMotion Invoices":"TeamUnify Invoices","JACKET SIZE":"WARM-UP JACKET SIZE","Organisation":"Team","gomotion event fundraising agreement":"teamunify event fundraising agreement","GoMotion Foundation Tumble-A-Thon Agreement":"USA Swimming Foundation Swim-A-Thon Agreement","gomotion foundation tumble-a-thon agreement":"usa swimming foundation swim-a-thon agreement","about tumble-a-thon":"about swim-a-thon","GOMOTION":"TEAMUNIFY","SportsEngine Motion Certified":"USA Swimming Certified","gomotion foundation tumble-a-thon":"usa swimming foundation swim-a-thon"};

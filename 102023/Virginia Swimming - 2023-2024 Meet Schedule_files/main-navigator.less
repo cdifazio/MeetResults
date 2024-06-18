@@ -1,0 +1,218 @@
+/* LESS: /cms/stylesheet/main-navigator.less */
+.CMSComponentMainNavigator {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+.MainNavigator {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+.MainNavigator a {
+  white-space: nowrap;
+  padding: 0.7em 1em;
+  display: flex;
+  align-items: center;
+  font-size: 0.85em;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.MainNavigator a:hover {
+  text-decoration: none;
+}
+.MainNavigator li {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  position: relative;
+}
+@media screen and (max-width: 991px) {
+  .MainNavigator li.WithChildren > ul > li > a {
+    padding-left: 2em;
+  }
+}
+@media screen and (min-width: 992px) {
+  .MainNavigator {
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+  }
+  .MainNavigator li {
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    display: flex;
+  }
+  .MainNavigator li.Active .WithChildren,
+  .MainNavigator li:hover > .WithChildren {
+    display: block;
+  }
+  .MainNavigator .WithChildren > ul {
+    display: none;
+    position: absolute;
+    top: 0px;
+  }
+  .MainNavigator > li.WithChildren > ul {
+    top: 100%;
+    margin-left: 0px;
+  }
+  .MainNavigator .WithChildren:hover > ul {
+    display: block;
+  }
+}
+.sys-viewport.lg > .MainNavigator {
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+}
+.sys-viewport.lg > .MainNavigator li {
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+}
+.sys-viewport.lg > .MainNavigator li.Active .WithChildren,
+.sys-viewport.lg > .MainNavigator li:hover > .WithChildren {
+  display: block;
+}
+.sys-viewport.lg > .MainNavigator .WithChildren > ul {
+  display: none;
+  position: absolute;
+  top: 0px;
+}
+.sys-viewport.lg > .MainNavigator > li.WithChildren > ul {
+  top: 100%;
+  margin-left: 0px;
+}
+.sys-viewport.lg > .MainNavigator .WithChildren:hover > ul {
+  display: block;
+}
+.MainNavigator .WithChildren > ul {
+  padding: 0px;
+  margin: 0px;
+  list-style-type: none;
+  z-index: 1001;
+  min-width: 15em;
+}
+.MainNavigator .WithChildren > ul li,
+.MainNavigator .WithChildren > ul a,
+.MainNavigator .WithChildren > ul span {
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  white-space: pre-line;
+  text-align: left;
+}
+.MainNavigator .WithChildren.Progressing > ul {
+  display: none;
+}
+.MainNavigator .WithChildren:not(.FarLeft) > ul {
+  left: 0px;
+}
+.MainNavigator .WithChildren.FarLeft > ul {
+  right: 0px;
+}
+@media screen and (min-width: 992px) {
+  .MainNavigator .caret:after {
+    display: inline-block;
+    font: normal normal normal 1.2em/1 "Material Design Icons";
+    font-weight: inherit;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    margin-left: 0.3em;
+    font-size: 1.5em;
+  }
+  .MainNavigator .caret:after {
+    content: "\F142";
+  }
+  .MainNavigator > li.WithChildren > .caret:after {
+    content: "\F140";
+  }
+}
+.sys-viewport.lg > .MainNavigator .caret:after {
+  display: inline-block;
+  font: normal normal normal 1.2em/1 "Material Design Icons";
+  font-weight: inherit;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+  margin-left: 0.3em;
+  font-size: 1.5em;
+}
+.sys-viewport.lg > .MainNavigator .caret:after {
+  content: "\F142";
+}
+.sys-viewport.lg > .MainNavigator > li.WithChildren > .caret:after {
+  content: "\F140";
+}
+@media screen and (min-width: 992px) {
+  .CMSComponentMainNavigation > .MainNavigator > a {
+    padding: 1.2em 1.45em;
+  }
+}
+.sys-viewport.lg > .CMSComponentMainNavigation > .MainNavigator > a {
+  padding: 1.2em 1.45em;
+}
+@media screen and (min-width: 1200px) {
+  .CMSComponentMainNavigation > .MainNavigator > a {
+    font-size: 0.9em;
+    padding: 1.3em 1.6em;
+  }
+}
+.sys-viewport.xl > .CMSComponentMainNavigation > .MainNavigator > a {
+  font-size: 0.9em;
+  padding: 1.3em 1.6em;
+}
+.MainNavigatorWrapper > .MenuButton {
+  display: none;
+}
+.MainNavigatorWrapper > .MenuButton > span {
+  display: none;
+}
+.MainNavigatorWrapper > .MenuButton {
+  padding: 0.5em;
+}
+.MainNavigatorWrapper > .MenuButton::after {
+  display: inline-block;
+  font: normal normal normal 1.2em/1 "Material Design Icons";
+  font-weight: inherit;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+  font-size: 1.4em;
+}
+.MainNavigatorWrapper > .MenuButton::after {
+  content: "\F35C";
+}
+@media screen and (max-width: 991px) {
+  .MainNavigatorWrapper > .MenuButton {
+    display: block;
+  }
+  .MainNavigatorWrapper.MenuContainer {
+    position: relative;
+  }
+  .MainNavigatorWrapper.MenuContainer .Menu {
+    position: absolute;
+    top: 110%;
+    z-index: 1;
+  }
+  .MainNavigatorWrapper.MenuContainer:not(.Activated) .Menu {
+    display: none;
+  }
+}
+/*# sourceMappingURL=main-navigator.css.map */
+
+

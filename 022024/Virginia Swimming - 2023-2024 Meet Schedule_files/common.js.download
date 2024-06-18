@@ -1,0 +1,224 @@
+var wrappedWindowLocation = {};
+(function (scope) {
+    var windowLoaded = false;
+    var pendingImageLoadHandlers = [];
+
+    function init() {
+        registerImageContainerHandler();
+        registerMenuContainerHandler();
+        widget.__loadScript("/cms/scripts/sso-error.js", function(res) {
+            if (window.proccessSSOError) window.proccessSSOError();
+        });
+    }
+    function adjustSubMenuPosition(liHasChild) {
+        if (liHasChild._adjustTask) window.clearTimeout(liHasChild._adjustTask);
+        var ul = liHasChild.querySelector(":scope > ul");
+        var ulWidth = ul ? ul.getBoundingClientRect().width : 0;
+        Dom.addClass(liHasChild, "Progressing");
+        liHasChild._adjustTask = window.setTimeout(function(){
+            var cbound = liHasChild.getBoundingClientRect();
+            var mainNavi = Dom.findParentWithClass(liHasChild, "CMSComponentMainNavigator");
+            var mbound = mainNavi.getBoundingClientRect();
+            var childWidth = Math.max(ulWidth, cbound.width);
+
+            if ((cbound.left + childWidth) > mbound.right) {
+                Dom.addClass(liHasChild, "FarLeft");
+            } else {
+                Dom.removeClass(liHasChild, "FarLeft");
+            }
+            Dom.removeClass(liHasChild, "Progressing");
+        }, 50);
+    }
+    /* ImageContainer cropping */
+
+    function cropImage(image) {
+        if (typeof(image) == "undefined") return;
+        var src = image.getAttribute ? image.getAttribute("src") : undefined;
+        if (typeof(src) == "undefined" || src.length == 0) return;
+        var centerCrop = Dom.getAttributeAsBoolean(image, "centerCrop", true);
+        if (Dom.hasClass(image.parentNode, "Cropped")) {
+        	centerCrop = false;
+        }
+        Util.cropImage(image, centerCrop, Dom.getAttributeAsBoolean(image, "notUpscale", true));
+        image._cropped = true;
+        image._croppedFor = {
+            pw: image.parentNode.offsetWidth,
+            ph: image.parentNode.offsetHeight
+        }
+        Dom.addClass(image.parentNode, "Initialized");
+    }
+
+    function handleImageLoad(event) {
+        var image = event.target;
+
+        if (windowLoaded) {
+            cropImage(image);
+        } else {
+            image._pendingCrop = true;
+        }
+    }
+
+    function handleImageError(event) {
+        var image = event.target;
+        if (!image) return;
+        image.parentNode.innerHTML = image.alt || "";
+    }
+
+    function registerImageContainerHandler() {
+        Dom.doOnSelector(document.body, ".ImageContainer > img", function (image) {
+            if (image.naturalWidth && image.naturalWidth > 0) {
+                cropImage(image);
+            } else {
+                Dom.registerEvent(image, "load", handleImageLoad);
+                Dom.registerEvent(image, "error", handleImageError);
+            }
+        });
+
+        window.addEventListener("optimizedResize", function() {
+            Dom.doOnSelector(document.body, ".ImageContainer > img", function (image) {
+                cropImage(image);
+            });
+        });
+    }
+
+    /* MenuContainer auto-activating */
+    function handleMenuContainerClick(event) {
+        var container = Dom.findParentWithClass(event.target, "MenuContainer");
+        var menu = Dom.findParentWithClass(event.target, "Menu");
+        if (!container || menu) return;
+
+        menu = Dom.findFirstChildWithClass(container, "Menu");
+        if (!menu) return;
+        var mobileNav = Dom.findDescendantWithClass(document.body, "MobileCombinedNavigation");
+        if (mobileNav && Dom.hasClass(mobileNav, "Activated")) {
+            Dom.removeClass(mobileNav, "Activated");
+        }
+        if (!Dom.hasClass(container, "Activated")) {
+            Dom.addClass(container, "Activated");
+            BaseWidget.registerClosable({
+                close: function () {
+                    Dom.removeClass(container, "Activated");
+                },
+                shouldCloseOnBlur: function (e) {
+                    var found = Dom.findUpward(e.target, function (node) {
+                        return node == container;
+                    });
+                    return !found;
+                },
+                getClosableContainer: function () {
+                    return menu;
+                }
+            });
+        } else {
+            Dom.removeClass(container, "Activated");
+        }
+    }
+    function registerMenuContainerHandler() {
+        Dom.registerEvent(document.body, "click", handleMenuContainerClick);
+    }
+    function processUrl(url) {
+        if (!url) return "";
+        if (url.indexOf("javascript:") == 0) return url;
+        if (url.indexOf(window.location.hostname) < 0 && (url.indexOf("http://") == 0 || url.indexOf("https://") == 0)) {
+            return url;
+        }
+        var prefix = window.location.protocol + "//"+ window.location.hostname;
+        var moveTo = url.replace(prefix, "");
+        if (moveTo.match(/^[a-zA-Z0-9\-_]+\.(jsp|do).+$/)) moveTo = "/" + moveTo;
+
+        if (!moveTo.match(/^\/[a-zA-Z0-9\-_]+\.(jsp|do).+$/)) return url;
+
+        return  prefix + "/team/" + CONTEXT.teamAlias + "/page/legacy?url=" + encodeURIComponent(moveTo);
+    }
+    window.__loadModuleIndicator = {busy: function(){}, done: function(){}};
+    Dom.registerEvent(window, "load", function () {
+        windowLoaded = true;
+
+
+        // Ensure the team context is not changed when opening new URL
+        // Make sure that code in /cms/admin/widgets/AdminConsole.js is also updated
+        window.confirmIfSwitchingTeam = function(url, windowName, callback) {
+            // Not logged in yet
+            if (!CONTEXT || !CONTEXT.accountId || !CONTEXT.teamAlias) {
+                if (typeof callback == "function") callback();
+                return false;
+            }
+
+            var groups = url.match(/^\/team\/([^\/]+)\/.+$/i);
+            if (!groups || groups.length < 2) groups = url.match(/.+(?:jsp|do)\?.*team=([\w-]+).*/i);
+            if (!groups || groups.length < 2 || groups[1] == CONTEXT.teamAlias) {
+                if (typeof callback == "function") return callback();
+                return false;
+            }
+
+            if (window.confirm("This action will take you to an another team and terminate your current session.\nSwitch to that team now?")) {
+                if (typeof callback == "function") callback();
+                Dom.emitEvent("p:Logout", window);
+            }
+
+            return false;
+        };
+
+        window._open = window.open;
+        window.open = function(url, windowName, features) {
+            var openFn;
+            if ((typeof(url) == "string" && url.length == 0) || (windowName && windowName != "_self")) {
+                if (url && url.match(/^[a-zA-Z0-9\-_]+\.(jsp|do).+$/)) url = "/" + url;
+                openFn = function() { return window._open(url, windowName, features); };
+            } else {
+                var href = processUrl(url);
+                openFn = function() { window.location.href = href; };
+            }
+            return window.confirmIfSwitchingTeam(url, windowName, openFn);
+        }
+
+        Dom.doOnSelector(document.body, ".ImageContainer > img", function (image) {
+            if (true || image._pendingCrop) {
+                cropImage(image);
+                image._pendingCrop = false;
+            }
+        });
+    }, false);
+    Dom.registerEvent(window, "DOMContentLoaded", init, false);
+    Dom.registerEvent(window, "load", function() {
+        Dom.doOnSelector(document.body, ".MainNavigator li.WithChildren", function (li) {
+            if (Dom.findParentWithClass(li, "widget_MobileHeader")) return;
+            Dom.registerEvent(li, "mouseenter", function(event){
+                if (Dom.hasClass(event.target, "WithChildren")) {
+                    adjustSubMenuPosition(event.target);
+                }
+            });
+        });
+    }, false);
+    /* wrapper for window.location.href */
+
+    Object.defineProperty(wrappedWindowLocation, "href", {
+        get: function() {
+            return window.location.href;
+        },
+        set: function(href) {
+            window.location.href = processUrl(href);
+        },
+        enumerable: true
+    });
+
+    /* fixed form location setting */
+    scope.wrapForm = function (form) {
+        var wrapper = {
+            form: form
+        };
+
+        Object.defineProperty(wrapper, "action", {
+            get: function() {
+                return this.form.action;
+            },
+            set: function(action) {
+                this.form.action = processUrl(action);
+            },
+            enumerable: true
+        });
+
+        return wrapper;
+    };
+
+})(window);

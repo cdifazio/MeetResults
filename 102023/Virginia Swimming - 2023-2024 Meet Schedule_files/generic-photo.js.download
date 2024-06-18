@@ -1,0 +1,165 @@
+(function (scope) {
+
+    function processAll() {
+        var MEDIA_WIDTH = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+
+        var currentSize = null;
+        if (MEDIA_WIDTH >= BaseWidget.RESPONSIVE_BREAKPOINTS.lg) {
+            currentSize = "DESKTOP";
+        } else if (MEDIA_WIDTH >= BaseWidget.RESPONSIVE_BREAKPOINTS.md) {
+            currentSize = "TABLET";
+        } else {
+            currentSize = "PHONE";
+        }
+        Dom.doOnSelector(document.body, ".CMSSection .CMSComponentGenericPhoto .GenericPhoto.Unsized_" + currentSize, function (wrapper) {
+            var component = Dom.findParentWithClass(wrapper, "CMSComponentGenericPhoto");
+
+            if (component._sizeProcessed) return;
+            var image = component.querySelector("img");
+
+            var processed = processImage(image, component);
+            if (processed) {
+                component._sizeProcessed = true;
+            } else {
+                Dom.registerEvent(image, "load", function(event) {
+                    handleImageLoad(event, "CMSComponentGenericPhoto");
+                });
+            }
+        });
+
+        Dom.doOnSelector(document.body, ".CMSSection .CMSComponentTeamLogo .TeamLogo.Unsized_" + currentSize, function (wrapper) {
+            var component = Dom.findParentWithClass(wrapper, "CMSComponentTeamLogo");
+
+            if (component._sizeProcessed) return;
+            var image = component.querySelector("img");
+
+            var processed = processImage(image, component);
+            if (processed) {
+                component._sizeProcessed = true;
+            } else {
+                Dom.registerEvent(image, "load", function(event) {
+                    handleImageLoad(event, "CMSComponentTeamLogo");
+                });
+            }
+        });
+
+        Dom.doOnSelector(document.body, ".CMSSection .CMSComponentGenericPhoto .GenericPhoto:not(.Unsized_" + currentSize + ")", function (wrapper) {
+            var component = Dom.findParentWithClass(wrapper, "CMSComponentGenericPhoto");
+
+            if (component._sizeProcessed) return;
+            var image = component.querySelector("img");
+
+            var processed = processSizedImage(image, component);
+            if (processed) {
+                component._sizeProcessed = true;
+            }
+        });
+
+        Dom.doOnSelector(document.body, ".CMSSection .CMSComponentTeamLogo .TeamLogo:not(.Unsized_" + currentSize + ")", function (wrapper) {
+            var component = Dom.findParentWithClass(wrapper, "CMSComponentTeamLogo");
+
+            if (component._sizeProcessed) return;
+            var image = component.querySelector("img");
+
+            var processed = processSizedImage(image, component);
+            if (processed) {
+                component._sizeProcessed = true;
+            }
+        });
+
+    }
+
+    function handleImageLoad(event, className) {
+        var image = event.target;
+        var component = Dom.findParentWithClass(image, className);
+        processImage(image, component);
+    }
+    function processImage(image, component) {
+        image.style.width = "100%";
+        image.style.height = "auto";
+
+        var section = component.parentNode;
+        var width = Math.min(section.offsetWidth, window.innerWidth);
+        var url = image.getAttribute("src");
+
+        var info = Util.getBestStorageUrlWithInfo(url, width, width);
+        if (info && info.url && info.url != url) {
+            image.setAttribute("src", info.url);
+        }
+        Dom.addClass(image.parentNode, "Processed");
+        if (Dom.hasClass(component, "CMSComponentTeamLogo")) {
+            image.style.width = "inherit";
+            image.style.maxWidth = "100%";
+            if (!image.naturalWidth || image.naturalWidth < 0 || !component.parentNode) return false;
+        }
+        return true;
+        /*
+        if (!image.naturalWidth || image.naturalWidth < 0 || !component.parentNode) return false;
+
+        resizeImageUsingWidth(image, width);
+
+        window.setTimeout(function () {
+            var cw = component.offsetWidth;
+            if (cw < width) {
+                resizeImageUsingWidth(image, cw);
+            }
+            window.setTimeout(function () {
+                var cw = component.offsetWidth;
+                if (cw < width) {
+                    resizeImageUsingWidth(image, cw);
+                }
+            }, 200);
+        }, 10);
+
+        return true;
+        */
+    }
+    function processSizedImage(image, component) {
+        var w = image.offsetWidth;
+        var h = image.offsetHeight;
+
+        var url = image.getAttribute("src");
+        var info = Util.getBestStorageUrlWithInfo(url, w, h);
+
+        if (info && info.url && info.url != url) {
+            image.setAttribute("src", info.url);
+        }
+
+        return true;
+    }
+
+    function resizeImageUsingWidth(image, width) {
+        if (!image.naturalWidth || !image.naturalHeight) return;
+
+        var ir = image.naturalWidth / image.naturalHeight;
+
+        var url = image.getAttribute("src");
+        var info = Util.getBestStorageUrlWithInfo(url, width, width);
+
+        var nw = image.naturalWidth;
+        var nh = image.naturalHeight;
+
+        if (info && info.url && info.url != url) {
+            image.setAttribute("src", info.url);
+
+            if (ir > 1) {
+                nw = info.spec.size;
+                nh = nw / ir;
+            } else {
+                nh = info.spec.size;
+                nw = nh * ir;
+            }
+        }
+
+        if (nw < width) return;
+
+        var r = nw / width;
+        var h = Math.round(nh / r);
+        image.style.width = width + "px";
+        image.style.height = h + "px";
+    }
+
+    Dom.registerEvent(window, "DOMContentLoaded", processAll, false);
+    Dom.registerEvent(window, "load", processAll, false);
+
+})(window);

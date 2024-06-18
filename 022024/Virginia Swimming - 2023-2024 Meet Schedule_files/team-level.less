@@ -1,0 +1,80 @@
+/* LESS: /cms/stylesheet/team-level.less */
+.CMSComponentTeamLevel {
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.CMSComponentTeamLevel > a {
+  text-align: center;
+}
+.CMSComponentTeamLevel > div.LevelSeparator {
+  margin-left: 1em;
+  margin-right: 1em;
+  box-sizing: border-box;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  border-left: 1px solid #666666;
+  min-height: 4em;
+}
+@media screen and (max-width: 767px) {
+  .CMSComponentTeamLevel > div.LevelSeparator {
+    border-left: none !important;
+  }
+}
+.CMSComponentTeamLevel a.LSCRegionBadge {
+  font-size: 1.1em;
+  white-space: pre-wrap;
+  text-transform: uppercase;
+  font-style: italic;
+  font-weight: bold;
+  max-width: 8em;
+}
+@media screen and (max-width: 991px) {
+  .CMSComponentTeamLevel a.LSCRegionBadge {
+    text-align: center;
+  }
+}
+.CMSComponentTeamLevel .USASDeckPassLink {
+  position: relative;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+}
+.CMSComponentTeamLevel .USASDeckPassLink.Notification::before {
+  content: "live now";
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  text-transform: uppercase;
+  text-align: center;
+  color: #FFF;
+  font-size: 0.7em;
+  background-color: red;
+  line-height: 1.5em;
+  padding: 0.1em 0.5em;
+  margin-bottom: -0.1em;
+  box-sizing: content-box;
+  border-bottom-width: 0em;
+  border: 0.1em solid #FFF;
+  opacity: 1;
+  justify-content: center;
+}
+@media screen and (max-width: 991px) {
+  .CMSComponentTeamLevel .USASDeckPassLink.Notification::before {
+    font-size: 0.5em;
+  }
+}
+@media screen and (max-width: 767px) {
+  .CMSComponentTeamLevel .USASDeckPassLink.Notification::before {
+    font-size: 0.4em;
+  }
+}
+/*# sourceMappingURL=team-level.css.map */
+
+

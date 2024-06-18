@@ -1,0 +1,214 @@
+function proccessSSOError() {
+    var removeParam = function(param) {
+        var url = ("" +window.location.href).replace("?" + param, "");
+        return url.replace("&" + param, "");
+    }
+    var deletedAccount = ("" + window.location.href).indexOf("se_error_code=406") >= 0;
+    var unActiveAccount = ("" + window.location.href).indexOf("se_error_code=403") >= 0;
+    var accountNotMatched =  ("" + window.location.href).indexOf("se_error_code=404") >= 0;
+    var tokenUsed = ("" + window.location.href).indexOf("se_error_code=token-used") >= 0;
+    var noOpenToNewMember = ("" + window.location.href).indexOf("se_error_code=405") >= 0;
+
+    var signinOtherAccount = function() {
+        var link = document.querySelector("ul.AccountActions > li > a.SignIn");
+        if (!link) {
+            var rg = /.*login[1-9]*.jsp.*/i;
+            var signinLinks = document.querySelectorAll("body.SESSO a");
+            if (signinLinks && signinLinks.length > 0) {
+                for (var i = 0; i < signinLinks.length; i ++) {
+                    var l = signinLinks[i];
+                    if (l.href && l.href.match(rg)) {
+                        link = l;
+                        break;
+                    }
+                }
+            }
+        }
+        if (link) {
+            (window.wrappedWindowLocation || window.location).href = link.href;
+        }
+
+    };
+    var contactTeam = function() {
+        var teamAlias = (typeof(TEAM_INFO) != "undefined" && TEAM_INFO.alias) || (typeof(CONTEXT) != "undefined" && CONTEXT.teamAlias);
+        (window.wrappedWindowLocation || window.location).href = "/ContactMe.do?act=new&team=" + teamAlias;
+    };
+    if (deletedAccount) {
+        var signInInfoAccountNotMatched = new SignInInfoDialog({
+            message: "You are not registered with The {TEAM_NAME}.",
+            signinOther: signinOtherAccount,
+            contactTeam: contactTeam,
+            actionButtonText: "CLOSE",
+            actionsEnabled: true
+        });
+        signInInfoAccountNotMatched.callback(function(resetParam){
+            if (resetParam) {
+                var url = removeParam("se_error_code=406");
+                window.location.href = url;
+            }
+        });
+        signInInfoAccountNotMatched.open();
+    }
+    if (accountNotMatched || unActiveAccount) {
+        var seErrorCode = accountNotMatched ? 404 : 403;
+        var signInInfoUnActiveAccount = new SignInInfoDialog({
+            message: accountNotMatched ? "You are not registered with The {TEAM_NAME}." : "Your The {TEAM_NAME} account is not currently active.",
+            signinOther: signinOtherAccount,
+            contactTeam: contactTeam,
+            actionsEnabled: true,
+            seErrorCode: seErrorCode,
+            actionButtonText: "CLOSE"
+        });
+        signInInfoUnActiveAccount.callback(function(resetParam){
+            if (resetParam) {
+                var url = removeParam("se_error_code=" + seErrorCode);
+                window.location.href = url;
+            }
+        });
+        signInInfoUnActiveAccount.open();
+    }
+    if (noOpenToNewMember) {
+        var textMap = {
+            teamreg: "Registration is",
+            lessonreg: "Classes are",
+            classreg: "Classes are"
+        };
+        var searchParams = window.location.search.substring(1);
+        var re = /.*&returnFlowUrl=([^&]+).*$/g;
+        var m = re.exec(searchParams);
+        var url = m[1];
+        try {
+            url = atob(url);
+        } catch (e) {
+            var decodeBase64 = function(s) {
+                var e={},i,b=0,c,x,l=0,a,r='',w=String.fromCharCode,L=s.length;
+                var A="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+                for(i=0;i<64;i++){e[A.charAt(i)]=i;}
+                for(x=0;x<L;x++){
+                    c=e[s.charAt(x)];b=(b<<6)+c;l+=6;
+                    while(l>=8){((a=(b>>>(l-=8))&0xff)||(x<(L-2)))&&(r+=w(a));}
+                }
+                return r;
+            };
+            url = decodeBase64(url).replace("login\u0000", "login?");
+        }
+        console.log("returnFlowUrl", url);
+        var flowText = "Registration";
+        if (url.indexOf("teamreg") >= 0) {
+            flowText = textMap["teamreg"];
+        } else if (url.indexOf("lessonreg") >= 0) {
+            flowText = textMap["lessonreg"];
+        } else if (url.indexOf("classreg") >= 0) {
+            flowText = textMap["classreg"];
+        }
+        /*
+        var signInInfo = new SignInInfoDialog({
+            message: flowText + " only open to returning members",
+            signinOther: function () {
+                if (url && url.length > 0) {
+                    window.open(url, "_self");
+                }
+            },
+            contactTeam: contactTeam
+        });
+        signInInfo.callback(function(resetParam){
+            if (resetParam) {
+                var teamAlias = TEAM_INFO.alias || CONTEXT.teamAlias;
+                (window.wrappedWindowLocation || window.location).href = "/" + teamAlias;
+            }
+        });
+        signInInfo.open();
+        */
+        var message = flowText + " only open to returning members."
+        var builder = {
+            title: message,
+            size: "small",
+            buildContent: function (container) {
+                container.appendChild(Dom.newDOMElement({
+                    _name: "span", "class": "MessageDialog",
+                    _text: message
+                }));
+            },
+            actions: [{
+                title: "OK",
+                primary: true,
+                type: "accept",
+                isCloseHandler: true,
+                run: function () {
+                    this._dialog.quit();
+                    var teamAlias = TEAM_INFO.alias || CONTEXT.teamAlias;
+                    (window.wrappedWindowLocation || window.location).href = "/" + teamAlias;
+                    return true;
+                }
+            }]
+        };
+        var dialog = new BuilderBasedDialog(builder);
+        dialog.onBeforeShow = function () {
+            this.overlay.style.zIndex = "1003";
+            this.dialogFrame.style.zIndex = "1003";
+            this.dialogHeaderPane.style.backgroundColor = "#ffffff";
+            this.dialogHeaderPane.style.borderBottom = "none";
+            this.dialogHeaderPane.style.padding = "1em";
+            this.dialogClose.style.visibility = "hidden";
+            this.dialogBody.style.display = "none";
+            this.dialogTitle.style.fontWeight = "normal";
+            this.dialogFooter.style.borderTop = "1px solid #e7e7e7";
+            this.dialogFooter.style.backgroundColor = "#ffffff";
+            var button = this.dialogFooterEndPane.firstElementChild;
+            if (button) {
+                button.style.backgroundColor = " #008CBE";
+                button.style.color = "#ffffff";
+            }
+
+            if (Dom.hasClass(document.body, "Legacy")) {
+                dialog.dialogFrame.style.fontSize = "1.4em";
+            }
+        };
+        dialog.open();
+    }
+
+    if (tokenUsed) {
+        var run =  function (message, extra, onClose) {
+            var builder = {
+                title: "Error",
+                size: "small",
+                buildContent: function (container) {
+                    container.appendChild(Dom.newDOMElement({
+                        _name: "hbox", "class": "MessageDialog Error",
+                        _children: [
+                            { _name: "icon", "class": "close-box" },
+                            {
+                                _name: "vbox", flex: 1, "class": "Messages",
+                                _children: [
+                                    { _name: "strong", _text: message },
+                                    { _name: "p", _text: extra || ""}
+                                ]
+                            }
+                        ]
+                    }));
+                },
+                actions: [{
+                    title: "Close",
+                    primary: true,
+                    isCloseHandler: true,
+                    run: function () {
+                        this._dialog.quit();
+                        if (onClose) onClose();
+                        return true;
+                    }
+                }]
+            };
+            var dialog = new BuilderBasedDialog(builder);
+            dialog.open();
+            dialog.overlay.style.zIndex = "1003";
+            dialog.dialogFrame.style.zIndex = "1003";
+            if (Dom.hasClass(document.body, "Legacy")) {
+                dialog.dialogFrame.style.fontSize = "1.2em";
+            }
+        }
+        run("Invalid token", "Token has been used.", function(){
+            var url = removeParam("se_error_code=token-used");
+            window.location.href = url;
+        });
+    }
+}

@@ -1,0 +1,16 @@
+(function (scope) {
+
+    function init() {
+        var nodes = document.querySelectorAll(".CMSComponentTeamLevel .USASDeckPassLink.Notification");
+        var handle = function () {
+            Array.prototype.forEach.call(nodes, function(node){
+                Dom.removeClass(node, "Notification");
+            });
+        };
+        Array.prototype.forEach.call(nodes, function(node){
+            Dom.registerEvent(node, "click", handle);
+        });
+    }
+
+    Dom.registerEvent(window, "DOMContentLoaded", init, false);
+})(window);

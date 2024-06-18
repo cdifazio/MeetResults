@@ -1,0 +1,41 @@
+/* LESS: /cms/stylesheet/generic-content.less */
+.CMSComponentGenericContent,
+.CMSComponentMainText {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  min-width: 4em !important;
+}
+.CMSComponentGenericContent .ContainerWrapper,
+.CMSComponentMainText .ContainerWrapper {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+}
+.CMSComponentGenericContent .HeadingTitle,
+.CMSComponentMainText .HeadingTitle {
+  font-size: 1em;
+}
+@media screen and (min-width: 768px) {
+  .CMSComponentGenericContent .HeadingTitle,
+  .CMSComponentMainText .HeadingTitle {
+    font-size: 1.2em;
+  }
+}
+.sys-viewport.md > .CMSComponentGenericContent .HeadingTitle,
+.sys-viewport.md > .CMSComponentMainText .HeadingTitle {
+  font-size: 1.2em;
+}
+.CMSComponentGenericContent img,
+.CMSComponentMainText img {
+  width: 100%;
+  height: auto;
+}
+.CMSComponentGenericContent .TableWrapper,
+.CMSComponentMainText .TableWrapper {
+  overflow-x: auto;
+  max-width: 100%;
+}
+/*# sourceMappingURL=generic-content.css.map */
+
+

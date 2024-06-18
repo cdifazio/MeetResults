@@ -1,0 +1,1580 @@
+/* LESS: /cms/templates/4/stylesheet/style.less */
+/*END_VARIABLES*/
+body {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+#globalContainer {
+  display: inline-block;
+  width: 100%;
+}
+@media screen and (max-width: 991px) {
+  #globalContainer {
+    background: transparent;
+  }
+}
+@media screen and (min-width: 1400px) {
+  body {
+    align-items: center;
+    background: #DDD;
+  }
+  #globalContainer {
+    width: 1400px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #slideAndCommand,
+  #welcome,
+  #upcomingEvents,
+  #updates,
+  #contactus,
+  #sponsors {
+    background: #FFF;
+  }
+  #globalContainer {
+    background: transparent;
+  }
+}
+@media screen and (min-width: 768px) {
+  #slideAndCommand,
+  #welcome,
+  #upcomingEvents,
+  #menuBar,
+  #updates,
+  #contactus,
+  #sponsors {
+    background: #FFF;
+  }
+}
+.sys-viewport.md > #slideAndCommand,
+.sys-viewport.md > #welcome,
+.sys-viewport.md > #upcomingEvents,
+.sys-viewport.md > #menuBar,
+.sys-viewport.md > #updates,
+.sys-viewport.md > #contactus,
+.sys-viewport.md > #sponsors {
+  background: #FFF;
+}
+.CMSSection {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  padding: 1em 1.5em;
+}
+.CMSSectionSlot {
+  min-width: 1px;
+}
+.CMSSectionSlot .CMSComponent {
+  min-width: 1px;
+}
+body.Inner {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+}
+body.Inner #mainContentWrapper {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+}
+body.Inner #mainContent {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  background: #FFF;
+}
+body.Inner #siteFooter {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+@media screen and (max-width: 991px) {
+  body.Inner #mainContentWrapper {
+    flex: 1 1 auto;
+    -webkit-flex: 1 1 auto;
+    display: inline-block;
+  }
+}
+a {
+  color: #043197;
+  text-decoration: none;
+  font-size: 1em;
+}
+a:hover {
+  color: #3a75fa;
+  cursor: pointer;
+}
+h2.ComponentHeader {
+  margin: 0px;
+  font-size: 1.4em;
+  text-align: center;
+  margin-bottom: 0.5em !important;
+  color: #0649e2;
+  padding: 0.5em 0em !important;
+  border-bottom: none !important;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h2.ComponentHeader:before {
+  content: " ";
+  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  border-bottom: solid 1px #0649e2;
+  margin-right: 0.5em;
+}
+h2.ComponentHeader:after {
+  content: " ";
+  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  margin-left: 0.5em;
+  border-bottom: solid 1px #0649e2;
+}
+#headerPane {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+}
+#headerPane #teamIdentityBar {
+  order: 2;
+}
+#headerPane #cms_Section_teamIdentity {
+  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  justify-content: center;
+}
+@media screen and (min-width: 992px) {
+  #headerPane #cms_Section_teamIdentity.CMSVerticalSection .CMSSectionSlot .CMSComponent + .CMSComponent {
+    margin-top: 1em;
+  }
+}
+.sys-viewport.lg > #headerPane #cms_Section_teamIdentity.CMSVerticalSection .CMSSectionSlot .CMSComponent + .CMSComponent {
+  margin-top: 1em;
+}
+#headerPane #cms_Section_teamIdentity .CMSTeamLogoEmpty {
+  justify-content: center;
+}
+#headerPane #globalTopBar {
+  order: 1;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+}
+@media screen and (min-width: 992px) {
+  #headerPane #globalTopBar #cms_Section_topBar.CMSHorizontalSection .CMSSectionSlot .CMSComponent + .CMSComponent {
+    margin-left: 1em;
+  }
+}
+.sys-viewport.lg > #headerPane #globalTopBar #cms_Section_topBar.CMSHorizontalSection .CMSSectionSlot .CMSComponent + .CMSComponent {
+  margin-left: 1em;
+}
+#headerPane #menuBar {
+  order: 3;
+  font-size: 1em;
+  line-height: 1;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+#headerPane #cms_Section_menuBar {
+  padding: 0em;
+  background: #FFF;
+}
+#headerPane #cms_Section_topBar {
+  padding: 1em;
+  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+}
+#headerPane #cms_Section_topBar .CMSComponentTeamLinks {
+  font-size: 1em !important;
+  align-items: center;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+}
+#headerPane #cms_Section_topBar.CMSHorizontalSection > .CMSSectionSlot {
+  width: 100%;
+}
+@media screen and (max-width: 991px) {
+  #headerPane #menuBar,
+  #headerPane #cms_Section_teamIdentity {
+    margin-top: 0em;
+  }
+  #headerPane #cms_Section_topBar {
+    padding: 0em;
+  }
+}
+#globalTopBar {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+}
+@media screen and (min-width: 992px) {
+  #globalTopBar {
+    background-color: #043197 !important;
+  }
+  #globalTopBar .CMSComponentAccountBar .ImageContainer,
+  #globalTopBar .CMSComponentAccountBar .GuessIconContainer {
+    border-color: #3a75fa !important;
+  }
+}
+.sys-viewport.lg > #globalTopBar {
+  background-color: #043197 !important;
+}
+.sys-viewport.lg > #globalTopBar .CMSComponentAccountBar .ImageContainer,
+.sys-viewport.lg > #globalTopBar .CMSComponentAccountBar .GuessIconContainer {
+  border-color: #3a75fa !important;
+}
+#cms_Section_topBar {
+  padding: 0px;
+  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+}
+#cms_Section_topBar .CMSComponentTeamLinks {
+  font-size: 1em !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#cms_Section_topBar .CMSComponentSocialLinks {
+  display: flex;
+}
+#cms_Section_topBar .CMSComponentSocialLinks .Vertical li a {
+  color: #fff;
+  background: transparent;
+}
+#cms_Section_topBar .CMSComponentSocialLinks .Vertical li a:hover {
+  color: #fff;
+  background: transparent;
+}
+#cms_Section_topBar .CMSComponentSocialLinks .Vertical li a:hover icon {
+  background: transparent;
+}
+#cms_Section_topBar .CMSComponentSocialLinks .Vertical li a span:before {
+  color: #fff;
+}
+#cms_Section_topBar .CMSComponentSocialLinks .Vertical li a icon {
+  background-color: transparent;
+  color: #fff;
+}
+#cms_Section_topBar .CMSComponentSocialLinks .Vertical li a icon:before {
+  color: #fff;
+}
+#cms_Section_topBar .CMSComponentSocialLinks .Vertical li a icon:hover {
+  color: #fff;
+  background: transparent;
+}
+@media screen and (min-width: 768px) {
+  #cms_Section_topBar {
+    align-items: left;
+    flex: 0 1 auto;
+  }
+}
+.sys-viewport.md > #cms_Section_topBar {
+  align-items: left;
+  flex: 0 1 auto;
+}
+@media screen and (min-width: 992px) {
+  #cms_Section_topBar {
+    padding: 0.5em 3em;
+  }
+}
+.sys-viewport.lg > #cms_Section_topBar {
+  padding: 0.5em 3em;
+}
+.CMSComponentSocialLinks .Horizontal {
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  justify-content: center;
+  align-items: center;
+}
+.CMSComponentSocialLinks .Horizontal > li {
+  margin: 0px;
+  padding: 0px;
+}
+.CMSComponentSocialLinks .Horizontal > li > a {
+  background: #fff !important;
+}
+.CMSComponentSocialLinks .Horizontal > li > a > icon {
+  color: #043197;
+}
+.CMSComponentSocialLinks .Horizontal > li > a > icon + span {
+  margin-left: 0.5em;
+}
+.CMSComponentSocialLinks .Horizontal > li:hover a {
+  background: #3a75fa !important;
+}
+.CMSComponentSocialLinks .Horizontal > li:hover a icon {
+  color: #fff;
+}
+.CMSComponentSocialLinks > .Vertical {
+  font-size: 10px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+}
+.CMSComponentSocialLinks > .Vertical li a {
+  display: flex !important;
+  justify-content: space-between;
+}
+.CMSComponentSocialLinks > .Vertical li a span {
+  text-align: left !important;
+}
+.CMSComponentSocialLinks .Horizontal > li > a {
+  display: block;
+  font-size: 1.4em;
+  line-height: 1em;
+  width: 1em;
+  padding: 0.2em;
+  border-radius: 0.8em;
+  background: #1878A0;
+  color: #FFF;
+}
+.CMSComponentSocialLinks .Horizontal > li > a > span {
+  display: none;
+}
+.CMSComponentSocialLinks .Horizontal > li + li {
+  margin-left: 1ex;
+}
+.CMSComponentTeamLinks ul {
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex: 0 1 auto;
+}
+.CMSComponentTeamLinks ul > li > a {
+  color: #FFF;
+  text-decoration: none;
+  text-transform: none;
+  font-size: 0.9em;
+}
+.CMSComponentTeamLinks ul > li > a:hover {
+  color: #0649e2;
+}
+.CMSComponentAccountBar {
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  justify-content: flex-end;
+  color: #FFF;
+}
+.CMSComponentAccountBar .GuessIconContainer {
+  color: #FFF;
+  border: solid 2px #FFF;
+}
+.CMSComponentAccountBar .GuessIconContainer:hover,
+.CMSComponentAccountBar .GuessIconContainer:hover icon {
+  color: #0649e2;
+  border-color: #0649e2;
+}
+.CMSComponentAccountBar .AccountGreeting strong:hover {
+  color: #0649e2;
+}
+.CMSComponentAccountBar ul.Menu {
+  background: #f2f2f2;
+  padding: 1em;
+  border-radius: 0.2em;
+}
+.CMSComponentAccountBar ul.Menu > li > a {
+  color: #7f7f7f;
+}
+.CMSComponentAccountBar ul.Menu > li > a:hover {
+  color: #032165;
+  background: none;
+}
+.CMSComponentTeamLevel > div.LevelSeparator {
+  border-left: 1px solid #043197;
+}
+.CMSComponentTeamLevel a {
+  color: #3a75fa !important;
+}
+.CMSSection .CMSSectionSlot .CMSComponentMainNavigator.Alone {
+  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+}
+.CMSSection .CMSSectionSlot .CMSComponentMainNavigator.Alone .MainNavigatorWrapper {
+  width: 100%;
+}
+.MainNavigator {
+  border: 1px solid #e7e7e7;
+  border-left: none;
+  border-right: none;
+  padding-left: 3em;
+  padding-right: 3em;
+  justify-content: center;
+}
+.MainNavigator a {
+  font-size: 1.1em;
+  color: #7f7f7f;
+  font-size: 1em !important;
+}
+.MainNavigator > li + li {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+.MainNavigator li > a {
+  border-bottom: solid 0.2em transparent;
+  text-transform: none;
+  box-sizing: border-box;
+}
+.MainNavigator li > a:hover {
+  border-bottom: solid 0.2em #043197;
+  color: #043197;
+}
+.MainNavigator li.Active > a {
+  border-bottom: solid 0.2em #043197;
+  color: #043197;
+}
+.MainNavigator li.WithChildren:hover > a {
+  border-bottom: solid 0.2em transparent;
+}
+.MainNavigator li.WithChildren > ul {
+  background: #f2f2f2;
+  border-top: solid 0.2em #043197;
+}
+.MainNavigator li.WithChildren > ul li,
+.MainNavigator li.WithChildren > ul a {
+  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+}
+.MainNavigator li.WithChildren > ul a {
+  border-bottom: solid 0.2em #e7e7e7;
+}
+.TeamFeedComponentContent .ViewMoreWrapper,
+.CMSComponentUpcomingEvents .UpcomingEvents .AnonId_footerActions,
+.CMSComponentNews .Footer {
+  justify-content: center !important;
+}
+.TeamFeedComponentContent .ViewMoreWrapper > a,
+.CMSComponentUpcomingEvents .UpcomingEvents .AnonId_footerActions > a,
+.CMSComponentNews .Footer > a {
+  text-transform: none !important;
+  border-radius: 0.2em;
+  color: #FFF;
+  padding: 0.5em 2em !important;
+  background-color: #043197 !important;
+  text-align: center;
+  min-width: 6em;
+  margin: 0 5px;
+}
+.TeamFeedComponentContent .ViewMoreWrapper > a:hover,
+.CMSComponentUpcomingEvents .UpcomingEvents .AnonId_footerActions > a:hover,
+.CMSComponentNews .Footer > a:hover {
+  color: #3a75fa;
+  background-color: #0649e2;
+}
+.CMSComponentUpcomingEvents .UpcomingEvents {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  border: none;
+}
+.CMSComponentUpcomingEvents .UpcomingEvents > .AnonId_sidePane .AnonId_viewCalendarLink {
+  display: none;
+}
+.CMSComponentUpcomingEvents .UpcomingEvents > .AnonId_sidePane > .AnonId_selectorPanes {
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  justify-content: center;
+}
+.CMSComponentUpcomingEvents .UpcomingEvents > .AnonId_sidePane > .AnonId_selectorPanes > .TypeSelector {
+  border-left: none;
+  text-align: center;
+  padding-right: 1em;
+  padding-left: 1em;
+  font-size: 1.15em;
+  background-color: transparent !important;
+  color: #7f7f7f !important;
+}
+@media screen and (min-width: 768px) {
+  .CMSComponentUpcomingEvents .UpcomingEvents > .AnonId_sidePane > .AnonId_selectorPanes > .TypeSelector {
+    border-bottom-color: #e7e7e7;
+  }
+}
+.sys-viewport.md > .CMSComponentUpcomingEvents .UpcomingEvents > .AnonId_sidePane > .AnonId_selectorPanes > .TypeSelector {
+  border-bottom-color: #e7e7e7;
+}
+.CMSComponentUpcomingEvents .UpcomingEvents > .AnonId_sidePane > .AnonId_selectorPanes > .TypeSelector.Active {
+  border-bottom: solid 0.3em #043197;
+  border-bottom-color: #043197 !important;
+  color: #043197 !important;
+  background-color: transparent !important;
+  font-weight: bold;
+}
+@media screen and (min-width: 768px) {
+  .CMSComponentUpcomingEvents .UpcomingEvents > .AnonId_sidePane > .AnonId_selectorPanes > .TypeSelector.Active {
+    margin-bottom: -0.3em;
+  }
+}
+.sys-viewport.md > .CMSComponentUpcomingEvents .UpcomingEvents > .AnonId_sidePane > .AnonId_selectorPanes > .TypeSelector.Active {
+  margin-bottom: -0.3em;
+}
+.CMSComponentUpcomingEvents .UpcomingEvents > .AnonId_contentPane {
+  border-left: none;
+}
+.CMSComponentUpcomingEvents .UpcomingEvents > .AnonId_contentPane > .AnonId_categoryHeader {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .CMSComponentUpcomingEvents .UpcomingEvents .AnonId_eventList {
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+.sys-viewport.md > .CMSComponentUpcomingEvents .UpcomingEvents .AnonId_eventList {
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  justify-content: space-between;
+}
+.CMSComponentUpcomingEvents .UpcomingEvents .AnonId_eventList .Item {
+  border-top: none;
+  padding: 0.5em 1em;
+  margin-top: 1em;
+  background-color: #fff;
+  width: 100%;
+}
+.CMSComponentUpcomingEvents .UpcomingEvents .AnonId_eventList .Item.Supplelement {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .CMSComponentUpcomingEvents .UpcomingEvents .AnonId_eventList .Item {
+    padding: 0em;
+    border: 1px solid #e7e7e7;
+    border-radius: .3em;
+  }
+}
+.sys-viewport.md > .CMSComponentUpcomingEvents .UpcomingEvents .AnonId_eventList .Item {
+  padding: 0em;
+  border: 1px solid #e7e7e7;
+  border-radius: .3em;
+}
+@media screen and (max-width: 767px) {
+  .CMSComponentUpcomingEvents .UpcomingEvents .AnonId_eventList .Item {
+    width: auto;
+  }
+}
+.CMSComponentUpcomingEvents .UpcomingEvents .AnonId_eventList .Item + .Item {
+  border-top: solid 0.1em #e7e7e7;
+}
+.CMSComponentUpcomingEvents .UpcomingEvents .AnonId_eventList .Item .Calendar {
+  display: none;
+}
+.CMSComponentUpcomingEvents .UpcomingEvents .AnonId_eventList .Item > .ContentWrapper {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  padding: 10px;
+  margin: 0em;
+}
+.CMSComponentUpcomingEvents .UpcomingEvents .AnonId_eventList .Item > .ContentWrapper .Actions > a.Button.Primary {
+  color: #f5f5f5;
+  border-color: #3a75fa;
+  background-color: #043197;
+  font-size: 0.9em;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  justify-content: center;
+}
+.CMSComponentUpcomingEvents .UpcomingEvents .AnonId_eventList .Item > .ContentWrapper > .AnonId_actionContainer {
+  margin-top: 0.25em;
+  margin-bottom: 0.5em;
+}
+.CMSComponentUpcomingEvents .UpcomingEvents .AnonId_eventList .Item > .ContentWrapper > .AnonId_actionContainer.HasActions {
+  margin-top: 1em;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  justify-content: flex-start;
+}
+@media screen and (max-width: 767px) {
+  .CMSComponentUpcomingEvents .UpcomingEvents .AnonId_eventList .Item > .ContentWrapper > .AnonId_actionContainer.HasActions {
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    display: flex;
+    justify-content: center;
+  }
+  .CMSComponentUpcomingEvents .UpcomingEvents .AnonId_eventList .Item > .ContentWrapper > .AnonId_actionContainer.HasActions a.Button ~ a.Button {
+    margin-left: 0em;
+    margin-top: 0.5em;
+  }
+}
+.CMSComponentUpcomingEvents .UpcomingEvents .AnonId_eventList .Item > .ContentWrapper > .Content > .Title {
+  color: #4f4f4f;
+  font-size: 1.3em;
+  margin-top: 0.25em;
+}
+.CMSComponentUpcomingEvents .UpcomingEvents .AnonId_eventList .Item > .ContentWrapper > .Content > .InfoDataContainer {
+  font-size: 1.1em;
+  margin-top: 0.2em;
+  color: #7f7f7f;
+}
+.CMSComponentUpcomingEvents .UpcomingEvents .AnonId_footerActions {
+  margin-top: 1em;
+}
+.CMSComponentMainText .HeadingTitle {
+  font-size: 1.75em !important;
+}
+.CMSComponentMainText .Content {
+  font-size: 1.1em;
+}
+.CMSComponentCommandButtons .Square .Container {
+  justify-content: center !important;
+  width: 100%;
+  display: flex;
+}
+.CMSComponentCommandButtons .Square .CommandItem {
+  max-width: 300px;
+  min-width: 300px;
+  border: none;
+  background-color: #043197;
+  position: relative;
+  overflow: hidden;
+}
+.CMSComponentCommandButtons .Square .CommandItem:hover {
+  background-color: #03297e;
+}
+.CMSComponentCommandButtons .Square .CommandItem:hover .ImageWrapper .ImageContainer img {
+  opacity: 0.8;
+}
+.CMSComponentCommandButtons .Square .CommandItem .CommandTitle {
+  font-size: 1.3em;
+  color: #fff;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  padding: 0.5em 1em;
+  text-transform: none;
+  max-width: 100%;
+  height: 2.4050000000000002em;
+  overflow-y: hidden;
+}
+.CMSComponentCommandButtons .Square .CommandItem .Description {
+  font-size: 1.1em;
+  display: none;
+}
+.CMSComponentCommandButtons .Square .CommandItem .LinkBox {
+  display: none;
+}
+.CMSComponentCommandButtons .Square .CommandItem .LinkBox icon {
+  display: none;
+}
+.CMSComponentCommandButtons .Square .CommandItem .ActionLink {
+  color: #043197;
+}
+.CMSComponentCommandButtons .Square .CommandItem .ActionLink:hover {
+  color: #3a75fa;
+}
+.CMSComponentCommandButtons .Square .CommandItem .ImageWrapper {
+  padding-bottom: 56.25%;
+  width: 100%;
+  height: auto;
+  position: relative;
+  border-radius: .3em;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  background: #FFF;
+}
+.CMSComponentCommandButtons .Square .CommandItem .ImageContainer {
+  position: absolute;
+  border-top-left-radius: 0.3em;
+  border-top-right-radius: 0.3em;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 100%;
+}
+.CMSComponentCommandButtons .Square .CommandItem .ImageContainer img {
+  opacity: 1;
+}
+.CMSComponentCommandButtons .Container > * {
+  flex: 0 1 auto;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .CMSComponentCommandButtons .Container > * {
+    flex: 0 1 auto;
+    width: 48%;
+  }
+}
+.sys-viewport.md > .CMSComponentCommandButtons .Container > * {
+  flex: 0 1 auto;
+  width: 48%;
+}
+@media screen and (min-width: 992px) {
+  .CMSComponentCommandButtons .Container > * {
+    flex: 0 1 auto;
+    width: 100%;
+    max-width: 23%;
+  }
+}
+.sys-viewport.lg > .CMSComponentCommandButtons .Container > * {
+  flex: 0 1 auto;
+  width: 100%;
+  max-width: 23%;
+}
+.CMSComponentCommandButtons .CommandButtons:not(.Square) {
+  border: none;
+  justify-content: center;
+  align-items: center;
+}
+.CMSComponentCommandButtons .CommandButtons:not(.Square) > .CommandItem {
+  border: none !important;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  margin: 0.5em;
+  border-radius: .3em;
+  padding: 3em 1em;
+  color: #fff;
+  background-color: #043197;
+  justify-content: center;
+  min-width: 300px;
+  max-width: 300px;
+  box-sizing: border-box;
+  height: 16em;
+}
+.CMSComponentCommandButtons .CommandButtons:not(.Square) > .CommandItem:not(.Text) {
+  padding: 3em 1em;
+}
+@media screen and (max-width: 767px) {
+  .CMSComponentCommandButtons .CommandButtons:not(.Square) > .CommandItem + .CommandItem {
+    margin-top: 0em;
+  }
+}
+.CMSComponentCommandButtons .CommandButtons:not(.Square) > .CommandItem .CommandTitle {
+  margin-left: 0em !important;
+  text-transform: none;
+  font-size: 1.3em;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 0.5em;
+  width: 100%;
+  height: 2.4050000000000002em;
+  overflow-y: hidden;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  justify-content: center;
+}
+.CMSComponentCommandButtons .CommandButtons:not(.Square) > .CommandItem span.ActionLink {
+  visibility: visible;
+  margin-top: 0.2em;
+}
+.CMSComponentCommandButtons .CommandButtons:not(.Square) > .CommandItem span.ActionLink icon {
+  display: none;
+}
+.CMSComponentCommandButtons .CommandButtons:not(.Square) > .CommandItem span.ActionLink:hover {
+  text-decoration: none !important;
+}
+.CMSComponentCommandButtons .CommandButtons:not(.Square) > .CommandItem:hover {
+  background-color: #3a75fa !important;
+}
+.CMSComponentCommandButtons .CommandButtons:not(.Square) > .CommandItem:hover > * {
+  color: #043197;
+}
+.CMSComponentCommandButtons .CommandButtons:not(.Square) > .CommandItem .ImageContainer {
+  width: 4em;
+  height: 4em;
+  box-sizing: border-box;
+}
+.CMSComponentCommandButtons .CommandButtons:not(.Square) > .CommandItem .IconWrapper icon.CommandIcon {
+  padding: 0.2em;
+  width: 1.7em;
+  height: 1.7em;
+  font-size: 1.75em;
+}
+.CMSComponentCommandButtons .CommandButtons:not(.Square) > .CommandItem .ImageWrapper,
+.CMSComponentCommandButtons .CommandButtons:not(.Square) > .CommandItem .IconWrapper {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5em;
+}
+.CMSComponentCommandButtons .CommandButtons:not(.Square) > .CommandItem.Text.HasAction .CommandTitle {
+  margin-top: 0em;
+}
+.CMSComponentCommandButtons .CommandButtons:not(.Square) > .CommandItem.Text.HasAction .ActionLink {
+  margin-top: 1em;
+}
+.CMSComponentCommandButtons .CommandButtons:not(.Square) > .CommandItem.Text:not(.HasAction) .CommandTitle {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+.CMSComponentCommandButtons .CommandButtons:not(.Square) > .CommandItem.ImageIcon .IconWrapper,
+.CMSComponentCommandButtons .CommandButtons:not(.Square) > .CommandItem:not(.ImageIcon) .ImageWrapper {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .CMSComponentCommandButtons > .CommandButtons.Square {
+    min-height: 15em;
+  }
+}
+.sys-viewport.md > .CMSComponentCommandButtons > .CommandButtons.Square {
+  min-height: 15em;
+}
+.CMSComponentSwimAThon {
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  background: #DDF2F7;
+}
+.CMSComponentSwimAThon .SwimAThon > .ImageContainer {
+  height: 7em;
+}
+#slideAndCommand,
+#welcome,
+#upcomingEvents,
+#contactus,
+#updates,
+#sponsors {
+  margin: 0em;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+}
+#slideAndCommand .CMSVerticalSection > .CMSSectionSlot > .CMSComponent + .CMSComponent,
+#welcome .CMSVerticalSection > .CMSSectionSlot > .CMSComponent + .CMSComponent,
+#upcomingEvents .CMSVerticalSection > .CMSSectionSlot > .CMSComponent + .CMSComponent,
+#contactus .CMSVerticalSection > .CMSSectionSlot > .CMSComponent + .CMSComponent,
+#updates .CMSVerticalSection > .CMSSectionSlot > .CMSComponent + .CMSComponent,
+#sponsors .CMSVerticalSection > .CMSSectionSlot > .CMSComponent + .CMSComponent {
+  margin-top: 2em;
+}
+@media screen and (max-width: 991px) {
+  #slideAndCommand .CMSSection > .CMSSectionSlot > .CMSComponent + .CMSComponent,
+  #welcome .CMSSection > .CMSSectionSlot > .CMSComponent + .CMSComponent,
+  #upcomingEvents .CMSSection > .CMSSectionSlot > .CMSComponent + .CMSComponent,
+  #contactus .CMSSection > .CMSSectionSlot > .CMSComponent + .CMSComponent,
+  #updates .CMSSection > .CMSSectionSlot > .CMSComponent + .CMSComponent,
+  #sponsors .CMSSection > .CMSSectionSlot > .CMSComponent + .CMSComponent {
+    margin-top: 0.5em;
+  }
+}
+@media screen and (min-width: 992px) {
+  #slideAndCommand .CMSHorizontalSection > .CMSSectionSlot > .CMSComponent + .CMSComponent,
+  #welcome .CMSHorizontalSection > .CMSSectionSlot > .CMSComponent + .CMSComponent,
+  #upcomingEvents .CMSHorizontalSection > .CMSSectionSlot > .CMSComponent + .CMSComponent,
+  #contactus .CMSHorizontalSection > .CMSSectionSlot > .CMSComponent + .CMSComponent,
+  #updates .CMSHorizontalSection > .CMSSectionSlot > .CMSComponent + .CMSComponent,
+  #sponsors .CMSHorizontalSection > .CMSSectionSlot > .CMSComponent + .CMSComponent {
+    margin-left: 2em;
+  }
+}
+.sys-viewport.lg > #slideAndCommand .CMSHorizontalSection > .CMSSectionSlot > .CMSComponent + .CMSComponent,
+.sys-viewport.lg > #welcome .CMSHorizontalSection > .CMSSectionSlot > .CMSComponent + .CMSComponent,
+.sys-viewport.lg > #upcomingEvents .CMSHorizontalSection > .CMSSectionSlot > .CMSComponent + .CMSComponent,
+.sys-viewport.lg > #contactus .CMSHorizontalSection > .CMSSectionSlot > .CMSComponent + .CMSComponent,
+.sys-viewport.lg > #updates .CMSHorizontalSection > .CMSSectionSlot > .CMSComponent + .CMSComponent,
+.sys-viewport.lg > #sponsors .CMSHorizontalSection > .CMSSectionSlot > .CMSComponent + .CMSComponent {
+  margin-left: 2em;
+}
+@media screen and (max-width: 991px) {
+  #slideAndCommand {
+    margin-top: 0em;
+  }
+  #slideAndCommand #cms_Section_slideCommand {
+    padding: 0 !important;
+  }
+}
+@media screen and (max-width: 767px) {
+  .CMSComponentTeamPartners .List {
+    padding: 0em;
+    margin: 0em;
+    justify-content: center;
+  }
+  .CMSComponentNews .ItemList .Item .Content {
+    padding: 0em 1em;
+    margin: 0em;
+  }
+}
+#sponsors > #cms_Section_sponsors {
+  margin-right: 1em;
+}
+@media screen and (min-width: 768px) {
+  #sponsors > #cms_Section_sponsors {
+    margin-right: 0em;
+  }
+}
+.sys-viewport.md > #sponsors > #cms_Section_sponsors {
+  margin-right: 0em;
+}
+@media screen and (max-width: 991px) {
+  #cms_Section_welcome .CMSComponentMainText {
+    padding: 1em;
+  }
+}
+#cms_Section_updates {
+  justify-content: center;
+}
+.CMSComponentSlideShow .CarouselWrapper {
+  width: 100%;
+  padding-bottom: 40%;
+  position: relative;
+}
+.CMSComponentSlideShow .widget_Carousel {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+}
+body .DynamicTemplate_cms_widgets_Carousel_xhtml .SimpleContentBox {
+  color: #FFF;
+}
+body .DynamicTemplate_cms_widgets_Carousel_xhtml .SimpleContentBox .PrimaryText {
+  font-size: 3em;
+}
+body .DynamicTemplate_cms_widgets_Carousel_xhtml .SimpleContentBox .SecondaryText {
+  font-size: 2em;
+}
+body .DynamicTemplate_cms_widgets_Carousel_xhtml .SimpleContentBox .Action {
+  font-size: 1.2em;
+  background-color: #043197;
+}
+@media screen and (min-width: 992px) {
+  body .CMSHorizontalSection .CMSComponentSlideShow {
+    align-self: flex-start;
+  }
+  .CMSSection.CMSVerticalSection .CMSSectionSlot {
+    min-width: 1px;
+  }
+}
+.sys-viewport.lg > body .CMSHorizontalSection .CMSComponentSlideShow {
+  align-self: flex-start;
+}
+.sys-viewport.lg > .CMSSection.CMSVerticalSection .CMSSectionSlot {
+  min-width: 1px;
+}
+.CMSComponentTeamFeed {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+}
+.CMSComponentTeamFeed .TeamFeedComponentContent .ViewMoreWrapper a:hover {
+  text-decoration: none;
+}
+.CMSComponentTeamFeed .ViewMoreWrapper {
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  padding: 1em 1em;
+}
+.CMSComponentNews .ItemList {
+  justify-content: flex-start;
+}
+@media screen and (min-width: 768px) {
+  .CMSComponentNews .ItemList {
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+.sys-viewport.md > .CMSComponentNews .ItemList {
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  justify-content: space-between;
+}
+.CMSComponentNews .Item {
+  background-color: #fff;
+  border-radius: .3em;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #e7e7e7;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  flex-direction: row !important;
+  padding: 1em 0em;
+  width: 100%;
+  margin: .5em;
+}
+@media screen and (min-width: 768px) {
+  .CMSComponentNews .Item {
+    width: 100%;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    display: flex;
+    padding: 1em 1em;
+  }
+}
+.sys-viewport.md > .CMSComponentNews .Item {
+  width: 100%;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  padding: 1em 1em;
+}
+@media screen and (max-width: 767px) {
+  .CMSComponentNews .Item {
+    margin: .5em 0em;
+  }
+}
+@media screen and (max-width: 991px) {
+  .CMSComponentNews .Item {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .CMSComponentNews .Item > .ReadMore {
+    visibility: visible;
+    text-decoration: none;
+    padding: 0.5em;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    display: flex;
+    justify-content: center;
+  }
+}
+.sys-viewport.md > .CMSComponentNews .Item > .ReadMore {
+  visibility: visible;
+  text-decoration: none;
+  padding: 0.5em;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  justify-content: center;
+}
+.CMSComponentNews .Item > .Content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding: 2em;
+}
+.CMSComponentNews .Item > .Content > strong {
+  opacity: 0.7;
+  font-weight: normal;
+  text-align: left;
+}
+.CMSComponentNews .Item > .Content > h4 {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin: 0px;
+  text-align: left;
+}
+.CMSComponentNews .Item > .Content > h4 > a {
+  color: #043197;
+  text-decoration: none !important;
+}
+.CMSComponentNews .Item > .Content > p {
+  margin: 0px;
+  font-size: 1.1em;
+  overflow: visible;
+  text-align: left;
+  margin-top: 1em;
+  color: #4f4f4f;
+}
+@media screen and (min-width: 768px) {
+  .CMSComponentNews .Item > .Content > p {
+    max-height: 8.5em;
+    margin-bottom: 2em;
+  }
+}
+.sys-viewport.md > .CMSComponentNews .Item > .Content > p {
+  max-height: 8.5em;
+  margin-bottom: 2em;
+}
+.CMSComponentNews .Item:hover .Content h4 a {
+  color: #0952f8;
+}
+.CMSComponentNews .Item + .Supplement {
+  border-top: none;
+}
+.CMSComponentNews .Footer {
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  padding: 1em 1em;
+}
+.CMSComponentNews .ItemList .Item .ImageWrapper,
+.CMSComponentFullNews .ItemList .Item .ImageWrapper {
+  width: 15em !important;
+  height: 11.25em !important;
+  max-width: 15em;
+  max-height: 11.25em;
+  min-width: 15em;
+  min-height: 11.25em;
+  overflow: hidden;
+  background-color: rgba(4, 49, 151, 0.05);
+  position: relative;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+}
+@media screen and (max-width: 767px) {
+  .CMSComponentNews .ItemList .Item .ImageWrapper,
+  .CMSComponentFullNews .ItemList .Item .ImageWrapper {
+    display: none;
+  }
+}
+.CMSComponentNews .ItemList .Item .ImageWrapper .ImageContainer,
+.CMSComponentFullNews .ItemList .Item .ImageWrapper .ImageContainer {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  width: 100%;
+  height: 100%;
+}
+.CMSComponentFullNews .ItemList .Item .ImageWrapper {
+  margin-right: 1em;
+}
+#siteFooter {
+  font-size: 1em;
+  padding: 1em;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  background: #ffffff;
+  color: #4f4f4f;
+  border-top: 1px solid #e7e7e7;
+  justify-content: center;
+}
+@media screen and (max-width: 767px) {
+  #siteFooter {
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    display: flex;
+  }
+}
+#siteFooter > #footerLogoContainer {
+  flex: 1 1 8em;
+  -webkit-flex: 1 1 8em;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0em;
+}
+@media screen and (max-width: 767px) {
+  #siteFooter > #footerLogoContainer {
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+  }
+}
+#siteFooter > #footerTULogo {
+  flex: 1 1 8em;
+  -webkit-flex: 1 1 8em;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 767px) {
+  #siteFooter > #footerTULogo {
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+  }
+}
+#siteFooter > #footerTULogo .ImageContainer,
+#siteFooter > #cms_Section_footerLogo .ImageContainer {
+  min-width: 15em;
+  min-height: 8em;
+}
+#siteFooter > #footerSecure {
+  min-width: 5em;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#siteFooter > #footerSecure .ImageContainer {
+  min-width: 5em;
+  min-height: 5em;
+}
+@media screen and (max-width: 767px) {
+  #siteFooter > #footerSecure {
+    margin: 1em;
+  }
+}
+#siteFooter > #footerContent {
+  flex: 2 1 15em;
+  -webkit-flex: 2 1 15em;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  margin: 1em 0em;
+  justify-content: center;
+}
+@media screen and (min-width: 768px) {
+  #siteFooter > #footerContent {
+    margin: 0em;
+  }
+}
+.sys-viewport.md > #siteFooter > #footerContent {
+  margin: 0em;
+}
+@media screen and (max-width: 767px) {
+  #siteFooter > #footerContent {
+    flex: 0 1 auto;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    margin: 0em;
+  }
+}
+#siteFooter > #footerContent > #footerSocialContainer > .CMSComponentSocialLinks .Horizontal {
+  justify-content: center;
+  font-size: 1.4em;
+}
+#siteFooter > #footerContent > #footerSocialContainer > .CMSComponentSocialLinks .Horizontal > li:hover icon {
+  color: #0649e2;
+}
+#siteFooter > #footerContent > #footerSocialContainer > .CMSComponentSocialLinks .Horizontal > li:hover a {
+  background-color: #FFF;
+}
+#siteFooter > #footerContent > #footerSocialContainer .CMSComponentSocialLinks > .Vertical {
+  font-size: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+#siteFooter > #footerContent > #footerSocialContainer .CMSComponentSocialLinks > .Vertical li a {
+  display: flex !important;
+  justify-content: space-between;
+}
+#siteFooter > #footerContent > #footerSocialContainer .CMSComponentSocialLinks > .Vertical li a span {
+  text-align: left !important;
+}
+#siteFooter > #footerContent > #copyright {
+  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+}
+#siteFooter > #footerContent > #copyright > p {
+  margin: 0px;
+  margin-bottom: 0.7em;
+  text-align: center;
+  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+}
+#siteFooter > #footerContent > #copyright > p > strong {
+  color: #043197;
+}
+#siteFooter #footerLinks {
+  align-items: center;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  margin: 1.5em 0em;
+}
+@media screen and (min-width: 768px) {
+  #siteFooter #footerLinks {
+    justify-content: center;
+    margin: 0em;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    display: flex;
+  }
+  #siteFooter #footerLinks a.sysSEOnly + a.sysSEOnly,
+  #siteFooter #footerLinks a.sysSOOnly + a.sysSOOnly {
+    border-left: solid 0.1em #7f7f7f;
+  }
+}
+.sys-viewport.md > #siteFooter #footerLinks {
+  justify-content: center;
+  margin: 0em;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+}
+.sys-viewport.md > #siteFooter #footerLinks a.sysSEOnly + a.sysSEOnly,
+.sys-viewport.md > #siteFooter #footerLinks a.sysSOOnly + a.sysSOOnly {
+  border-left: solid 0.1em #7f7f7f;
+}
+@media screen and (max-width: 991px) {
+  #siteFooter #footerLinks {
+    margin: 0em;
+  }
+}
+#siteFooter #footerLinks > a {
+  justify-content: center;
+  padding: 0.5em;
+}
+#siteFooter > #tuLink img {
+  width: 100%;
+  height: auto;
+}
+#siteFooter > #tuLink {
+  align-items: center;
+  justify-content: center;
+  min-height: 8em;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  #siteFooter > #tuLink {
+    min-width: 15em;
+    min-height: 8em;
+  }
+}
+.sys-viewport.md > #siteFooter > #tuLink {
+  min-width: 15em;
+  min-height: 8em;
+}
+body.Inner #cms_Section_cms_Primary {
+  padding: 2em !important;
+}
+@media screen and (max-width: 991px) {
+  body.Inner #cms_Section_cms_Primary {
+    padding: 1em !important;
+  }
+}
+body.Inner #cms_Section_cms_Primary .CustomPageComponentContent > *:first-child {
+  margin-top: 0em;
+}
+body.Inner #cms_Section_cms_Primary .CustomPageComponentContent > *:last-child {
+  margin-bottom: 0em;
+}
+body.Inner #cms_Section_cms_Primary .CMSComponentSystemPage > * {
+  padding: 0em;
+  margin: 0em;
+}
+body.Inner #cms_Section_cms_Primary .CMSComponentSystemPage .Title {
+  margin-bottom: 1em;
+}
+.CMSComponentCommandButtons .CommandButtons:not(.Square) > .CommandItem {
+  border: none !important;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_selectorPanes {
+  border: none;
+}
+body .DynamicTemplate_cms_widgets_UpcomingEvents_xhtml {
+  background: inherit;
+}
+.CMSComponentTeamPartners .Entry {
+  border: none !important;
+}
+@media screen and (max-width: 801px) {
+  #upcomingEvents .CMSHorizontalSection > .CMSSectionSlot > .CMSComponent + .CMSComponent {
+    margin-left: 0px;
+  }
+}
+.CMSComponentContactUs .TabBody {
+  flex-wrap: wrap;
+}
+.CMSComponentContactUs .AnonId_header .TabHeader {
+  padding: 0.8em 1em;
+  font-size: 1.15em;
+  font-weight: normal;
+  border-bottom-width: 0.3em !important;
+  border-bottom-style: solid !important;
+  border-bottom-color: transparent;
+}
+.CMSComponentContactUs .AnonId_header .TabHeader span {
+  width: 100%;
+}
+.CMSComponentContactUs .AnonId_header .TabHeader.ActiveTab {
+  font-weight: bold;
+  background: none;
+  border-bottom-color: #043197 !important;
+}
+.CMSComponentContactUs .AnonId_header .TabHeader.ActiveTab span {
+  color: #043197;
+}
+.CMSComponentContactUs .Section {
+  flex-direction: column;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+@media screen and (max-width: 767px) {
+  .CMSComponentContactUs .Section {
+    min-width: 100%;
+    padding: 2em 0em;
+  }
+}
+@media screen and (max-width: 991px) {
+  .CMSComponentContactUs .Section {
+    min-width: 45%;
+    padding: 1em 0em;
+  }
+}
+.CMSComponentContactUs .Section .Title {
+  font-weight: bold;
+}
+.CMSComponentContactUs .Hours .ItemList .Item .WeekDay {
+  margin-right: 15px;
+}
+.CMSComponentContactUs .Phone span {
+  font-family: 'Helvetica', sans-serif;
+}
+.CMSComponentAccountBar .MenuContainer .Menu {
+  right: 0px !important;
+}
+.CMSComponentAccountBar .MenuContainer .Menu.NotLogged {
+  display: block !important;
+  position: relative;
+  border-radius: 5px;
+  top: 0px;
+  padding: 0px;
+}
+.CMSComponentAccountBar .MenuContainer .Menu.NotLogged li a:hover {
+  border-radius: 5px;
+}
+.CMSComponentAccountBar .MenuContainer .GuessIconContainer {
+  display: none !important;
+}
+.CMSComponent.CMSComponentFullNewsDetail {
+  max-width: 60em;
+  margin-right: auto;
+  margin-left: auto;
+}
+.CMSComponentSwimAThon {
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  background: #3a75fa;
+}
+.CMSComponentSwimAThon .SwimAThon > .ImageContainer {
+  height: 7em;
+}
+.CMSComponentSwimAThon .SwimAThon {
+  color: #FFF;
+  width: 100%;
+}
+@media screen and (max-width: 767px) {
+  .CMSComponentSwimAThon .SwimAThon {
+    flex-direction: row;
+    padding: 0px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .CMSComponentSwimAThon .SwimAThon .Banner {
+    flex-direction: row;
+    padding: 0px;
+    min-height: auto;
+    max-width: 175px;
+  }
+}
+.CMSComponentSwimAThon .SwimAThon .Content .HelpButton {
+  padding: 0em !important;
+}
+@media screen and (max-width: 767px) {
+  .CMSComponentSwimAThon .SwimAThon .Content {
+    text-align: center;
+  }
+  .CMSComponentSwimAThon .SwimAThon .Content .HelpContainer {
+    align-items: center;
+    margin-top: 0px;
+    justify-content: center;
+    padding: 0.5em;
+  }
+  .CMSComponentSwimAThon .SwimAThon .Content .Title {
+    text-align: center;
+  }
+}
+.CMSComponentSwimAThon .SwimAThon .Content > .HelpContainer {
+  font-size: 1.1em !important;
+}
+@media screen and (max-width: 991px) {
+  .CMSComponentSwimAThon .SwimAThon .Content > .HelpContainer {
+    align-items: flex-end;
+  }
+  .CMSComponentSwimAThon .SwimAThon .Content > .HelpContainer .Title {
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    display: flex;
+  }
+  .CMSComponentSwimAThon .SwimAThon .Content > .HelpContainer .Title > * + * {
+    margin-left: 0px;
+  }
+}
+.CMSComponentSwimAThon .SwimAThon .Content > .AmountBar {
+  order: 2;
+  border-radius: 0.3em;
+  background-color: #FFF;
+  background-image: none;
+  height: 0.8em;
+  overflow: hidden;
+}
+.CMSComponentSwimAThon .SwimAThon .Content > .AmountBar > .RaisedBar {
+  background-color: #bf1b44;
+  border-radius: 0.3em;
+  background-image: none;
+}
+.CMSComponentSwimAThon .SwimAThon .Content > .Amount {
+  order: 1;
+}
+.CMSComponentSwimAThon .SwimAThon .Content > .Amount .Goal,
+.CMSComponentSwimAThon .SwimAThon .Content > .Amount .Raised {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+}
+.CMSComponentSwimAThon .SwimAThon .Content > .Amount .Goal > *,
+.CMSComponentSwimAThon .SwimAThon .Content > .Amount .Raised > * {
+  font-size: 0.8em;
+  font-weight: 400px;
+}
+.CMSComponentSwimAThon .SwimAThon .Content > .Amount .Goal > *.Value,
+.CMSComponentSwimAThon .SwimAThon .Content > .Amount .Raised > *.Value {
+  font-size: 1.2em;
+  color: #FFF;
+  font-weight: 700px;
+}
+.CMSComponentSwimAThon .SwimAThon .Content > .Amount .Goal {
+  text-align: right;
+}
+@media screen and (max-width: 767px) {
+  body .DynamicTemplate_cms_widgets_Carousel_xhtml .SimpleContentBox .SimpleContentWrapper,
+  body .DynamicTemplate_cms_widgets_Carousel_xhtml .PhotoSliderItemContent .ItemContentWrapper {
+    width: 100% !important;
+  }
+}
+/*# sourceMappingURL=style.css.map */
+
+

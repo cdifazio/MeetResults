@@ -1,0 +1,341 @@
+/* LESS: /cms/stylesheet/common.less */
+.Pagination {
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  justify-content: flex-end;
+}
+.Pagination > ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+}
+.Pagination > ul > li {
+  border: solid 1px #D6DFE4;
+}
+.Pagination > ul > li + li {
+  border-left: none;
+}
+.Pagination > ul > li.Back {
+  border-top-left-radius: 0.2em;
+  border-bottom-left-radius: 0.2em;
+}
+.Pagination > ul > li.Next {
+  border-top-right-radius: 0.2em;
+  border-bottom-right-radius: 0.2em;
+}
+.Pagination > ul > li > a,
+.Pagination > ul > li > span {
+  display: block;
+  padding: 0.7em;
+  min-width: 1.5em;
+  text-align: center;
+  color: #469ADB;
+}
+.Pagination > ul > li > span {
+  cursor: default;
+}
+.Pagination > ul > li.Disabled a {
+  color: rgba(70, 154, 219, 0.4);
+}
+.Pagination > ul > li.Active a {
+  background: #469ADB;
+  color: #FFFFFF;
+}
+.ImageContainer {
+  position: relative;
+  width: 5em;
+  height: 5em;
+  overflow: hidden;
+}
+.ImageContainer > img {
+  transition: opacity 0.3s ease;
+  position: absolute;
+  opacity: 1;
+}
+.ImageContainer:not(.Initialized) > img {
+  display: none;
+  opacity: 0;
+}
+.widget_MediaCollectionView:not(.Initialized) > img,
+*[ui-type="MediaCollectionView"]:not(.Initialized) > img {
+  display: none;
+  opacity: 0;
+}
+.AnonId_busyIndicator:not(.Busy) {
+  display: none;
+}
+.Busy .AnonId_busyIndicator {
+  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  background: rgba(0, 0, 0, 0.05);
+  align-items: center;
+  justify-content: center;
+}
+.Busy .AnonId_busyIndicator > hbox {
+  align-items: center;
+  background: #FFF;
+  padding: 1em;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+}
+.Busy .AnonId_busyIndicator > hbox > icon:first-child {
+  animation-name: spin360;
+  animation-duration: 1500ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  margin-right: 0.7em;
+  font-size: 1.3em;
+}
+.ErrorPageContainer {
+  margin: 4em 15em;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  min-height: 15em;
+}
+@media screen and (max-width: 767px) {
+  .ErrorPageContainer {
+    margin: 4em 1.2em;
+  }
+  .ErrorPageContainer > .IconDisplay {
+    display: none;
+  }
+  .ErrorPageContainer .BodyContainer > .ActionContainer > button {
+    flex: 1 1 auto;
+    -webkit-flex: 1 1 auto;
+  }
+}
+.ErrorPageContainer > .IconDisplay {
+  margin-right: 2em;
+}
+.ErrorPageContainer > .IconDisplay img {
+  width: 5.5em;
+  height: auto;
+}
+.ErrorPageContainer > .IconDisplay:not(.NotFound) {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  width: 7em;
+  height: 7em;
+  align-items: center;
+  justify-content: center;
+  border: 0.4em solid #CCC;
+  border-radius: 50%;
+  background: #646464;
+  padding: 2em;
+  box-sizing: border-box;
+}
+.ErrorPageContainer > .IconDisplay .Code {
+  font-size: 3em;
+  color: #CCC;
+}
+.ErrorPageContainer .BodyContainer {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  word-break: break-word;
+  color: #646464;
+}
+.ErrorPageContainer .BodyContainer > .ErrorTitle {
+  font-size: 2em;
+  margin-bottom: 1.2em;
+}
+.ErrorPageContainer .BodyContainer > .RedirectMessage {
+  margin-top: 1em;
+  font-weight: bold;
+}
+.ErrorPageContainer .BodyContainer > .ActionContainer {
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  margin-top: 2em;
+  justify-content: flex-start;
+}
+.ErrorPageContainer .BodyContainer > .ActionContainer > button {
+  align-items: center;
+  background-color: #0DBBD3;
+  text-transform: uppercase;
+  color: #FFF;
+}
+@media screen and (min-width: 992px) {
+  .CMSSection.CMSHorizontalSection {
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    display: flex;
+  }
+  .CMSSection.CMSHorizontalSection > .CMSSectionSlot {
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    display: flex;
+  }
+}
+.sys-viewport.lg > .CMSSection.CMSHorizontalSection {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+}
+.sys-viewport.lg > .CMSSection.CMSHorizontalSection > .CMSSectionSlot {
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+}
+@media screen and (min-width: 992px) {
+  .CMSSection.CMSVerticalSection {
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    display: flex;
+  }
+  .CMSSection.CMSVerticalSection > .CMSSectionSlot {
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    display: flex;
+    flex: 1 1 auto;
+    -webkit-flex: 1 1 auto;
+    min-width: 0em;
+  }
+}
+.sys-viewport.lg > .CMSSection.CMSVerticalSection {
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+}
+.sys-viewport.lg > .CMSSection.CMSVerticalSection > .CMSSectionSlot {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  min-width: 0em;
+}
+@media screen and (max-width: 991px) {
+  body,
+  html {
+    overflow-x: hidden;
+  }
+}
+@media screen and (min-width: 992px) {
+  .CMSSection.CMSHorizontalSection .CMSComponent.Flex1 {
+    flex: 1 1 5em;
+    -webkit-flex: 1 1 5em;
+  }
+  .CMSSection.CMSHorizontalSection .CMSComponent.Flex2 {
+    flex: 2 1 5em;
+    -webkit-flex: 2 1 5em;
+  }
+  .CMSSection.CMSHorizontalSection .CMSComponent.Flex3 {
+    flex: 3 1 5em;
+    -webkit-flex: 3 1 5em;
+  }
+  .CMSSection.CMSHorizontalSection .CMSComponent.Flex4 {
+    flex: 4 1 5em;
+    -webkit-flex: 4 1 5em;
+  }
+  .CMSSection.CMSHorizontalSection .CMSComponent.Flex5 {
+    flex: 5 1 5em;
+    -webkit-flex: 5 1 5em;
+  }
+  .CMSSection.CMSHorizontalSection .CMSComponent.Flex6 {
+    flex: 6 1 5em;
+    -webkit-flex: 6 1 5em;
+  }
+  .CMSSection.CMSHorizontalSection .CMSComponent.Flex7 {
+    flex: 7 1 5em;
+    -webkit-flex: 7 1 5em;
+  }
+  .CMSSection.CMSHorizontalSection .CMSComponent.Flex8 {
+    flex: 8 1 5em;
+    -webkit-flex: 8 1 5em;
+  }
+  .CMSSection.CMSHorizontalSection .CMSComponent.Flex9 {
+    flex: 9 1 5em;
+    -webkit-flex: 9 1 5em;
+  }
+  .CMSSection.CMSHorizontalSection .CMSComponent.Flex10 {
+    flex: 10 1 5em;
+    -webkit-flex: 10 1 5em;
+  }
+  .CMSSection.CMSHorizontalSection .CMSComponent.Flex11 {
+    flex: 11 1 5em;
+    -webkit-flex: 11 1 5em;
+  }
+}
+.sys-viewport.lg > .CMSSection.CMSHorizontalSection .CMSComponent.Flex1 {
+  flex: 1 1 5em;
+  -webkit-flex: 1 1 5em;
+}
+.sys-viewport.lg > .CMSSection.CMSHorizontalSection .CMSComponent.Flex2 {
+  flex: 2 1 5em;
+  -webkit-flex: 2 1 5em;
+}
+.sys-viewport.lg > .CMSSection.CMSHorizontalSection .CMSComponent.Flex3 {
+  flex: 3 1 5em;
+  -webkit-flex: 3 1 5em;
+}
+.sys-viewport.lg > .CMSSection.CMSHorizontalSection .CMSComponent.Flex4 {
+  flex: 4 1 5em;
+  -webkit-flex: 4 1 5em;
+}
+.sys-viewport.lg > .CMSSection.CMSHorizontalSection .CMSComponent.Flex5 {
+  flex: 5 1 5em;
+  -webkit-flex: 5 1 5em;
+}
+.sys-viewport.lg > .CMSSection.CMSHorizontalSection .CMSComponent.Flex6 {
+  flex: 6 1 5em;
+  -webkit-flex: 6 1 5em;
+}
+.sys-viewport.lg > .CMSSection.CMSHorizontalSection .CMSComponent.Flex7 {
+  flex: 7 1 5em;
+  -webkit-flex: 7 1 5em;
+}
+.sys-viewport.lg > .CMSSection.CMSHorizontalSection .CMSComponent.Flex8 {
+  flex: 8 1 5em;
+  -webkit-flex: 8 1 5em;
+}
+.sys-viewport.lg > .CMSSection.CMSHorizontalSection .CMSComponent.Flex9 {
+  flex: 9 1 5em;
+  -webkit-flex: 9 1 5em;
+}
+.sys-viewport.lg > .CMSSection.CMSHorizontalSection .CMSComponent.Flex10 {
+  flex: 10 1 5em;
+  -webkit-flex: 10 1 5em;
+}
+.sys-viewport.lg > .CMSSection.CMSHorizontalSection .CMSComponent.Flex11 {
+  flex: 11 1 5em;
+  -webkit-flex: 11 1 5em;
+}
+body.FlavorSO .sysSEOnly,
+body.FlavorSE .sysSOOnly {
+  display: none;
+}
+h2.ComponentHeader {
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.4);
+}
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+body.Inner #mainContentWrapper {
+  width: 100%;
+}
+.CMSComponentGenericContent .ContainerWrapper,
+.CMSComponentMainText .ContainerWrapper,
+.CustomPageComponentContent,
+.SystemPageComponentContent {
+  word-break: break-word;
+}
+.CMSComponentGenericContent .ContainerWrapper .TableWrapper,
+.CMSComponentMainText .ContainerWrapper .TableWrapper,
+.CustomPageComponentContent .TableWrapper,
+.SystemPageComponentContent .TableWrapper {
+  overflow-x: auto;
+  max-width: 100%;
+}
+/*# sourceMappingURL=common.css.map */
+
+

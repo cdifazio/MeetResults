@@ -1,0 +1,1179 @@
+/* Template CSS: /cms/widgets/Carousel.xhtml */
+body:not(.HasClosables) .widget_Carousel .SliderItem .SimpleContentBox,
+body:not(.HasClosables) .widget_Carousel .SliderItem .PhotoSliderItemContent {
+  z-index: 1;
+}
+body:not(.HasClosables) .widget_Carousel .AnonId_nextButton,
+body:not(.HasClosables) .widget_Carousel .AnonId_previousButton,
+body:not(.HasClosables) .widget_Carousel .AnonId_statusContainer {
+  z-index: 1;
+}
+body .DynamicTemplate_cms_widgets_Carousel_xhtml {
+  height: 100%;
+  width: 100%;
+}
+body .DynamicTemplate_cms_widgets_Carousel_xhtml .SliderItem {
+  position: relative;
+  opacity: 0.9999;
+}
+body .DynamicTemplate_cms_widgets_Carousel_xhtml .SimpleContentBox,
+body .DynamicTemplate_cms_widgets_Carousel_xhtml .PhotoSliderItemContent {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  padding: 2em;
+  overflow: hidden;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 767px) {
+  body .DynamicTemplate_cms_widgets_Carousel_xhtml .SimpleContentBox,
+  body .DynamicTemplate_cms_widgets_Carousel_xhtml .PhotoSliderItemContent {
+    padding: 0.5em 2em;
+  }
+}
+body .DynamicTemplate_cms_widgets_Carousel_xhtml .ItemContentWrapper {
+  padding: 1rem;
+}
+@media screen and (max-width: 991px) {
+  body .DynamicTemplate_cms_widgets_Carousel_xhtml .ItemContentWrapper {
+    padding: 0.5rem;
+  }
+}
+body .DynamicTemplate_cms_widgets_Carousel_xhtml .ItemContentWrapper > p {
+  margin: 0em;
+}
+body .DynamicTemplate_cms_widgets_Carousel_xhtml .SimpleContentBox .SimpleContentWrapper .OverlayContent {
+  padding: 1rem;
+}
+@media screen and (max-width: 991px) {
+  body .DynamicTemplate_cms_widgets_Carousel_xhtml .SimpleContentBox .SimpleContentWrapper .OverlayContent {
+    padding: 0.5rem;
+  }
+}
+body .DynamicTemplate_cms_widgets_Carousel_xhtml .SimpleContentBox .SimpleContentWrapper > * + * {
+  margin-top: 1rem;
+}
+@media screen and (max-width: 991px) {
+  body .DynamicTemplate_cms_widgets_Carousel_xhtml .SimpleContentBox .SimpleContentWrapper > * + * {
+    margin-top: 0.5rem;
+  }
+}
+body .DynamicTemplate_cms_widgets_Carousel_xhtml .SimpleContentBox .SimpleContentWrapper > .OverlayContent > * + * {
+  margin-top: 1rem;
+}
+@media screen and (max-width: 991px) {
+  body .DynamicTemplate_cms_widgets_Carousel_xhtml .SimpleContentBox .SimpleContentWrapper > .OverlayContent > * + * {
+    margin-top: 0.5rem;
+  }
+}
+@media screen and (max-width: 991px) {
+  body .DynamicTemplate_cms_widgets_Carousel_xhtml .SimpleContentBox .PrimaryText {
+    font-size: 1.5em !important;
+  }
+  body .DynamicTemplate_cms_widgets_Carousel_xhtml .SimpleContentBox .Action,
+  body .DynamicTemplate_cms_widgets_Carousel_xhtml .SimpleContentBox .SecondaryText {
+    font-size: 1.2em !important;
+  }
+}
+body .DynamicTemplate_cms_widgets_Carousel_xhtml .SimpleContentBox .PrimaryText,
+body .DynamicTemplate_cms_widgets_Carousel_xhtml .SimpleContentBox .SecondaryText {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  margin: 0em;
+}
+body .DynamicTemplate_cms_widgets_Carousel_xhtml .SimpleContentBox .Action {
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  cursor: pointer;
+  padding: 0.5em 1em;
+  border-radius: 0.2em;
+  opacity: 0.9;
+  background-color: #469ADB;
+}
+body .DynamicTemplate_cms_widgets_Carousel_xhtml .SimpleContentBox .Action:hover {
+  opacity: 1;
+}
+@media screen and (max-width: 991px) {
+  body .DynamicTemplate_cms_widgets_Carousel_xhtml .SimpleContentBox .Action {
+    border-radius: 0.1em;
+    padding: 0.25em 0.5em;
+  }
+}
+body .DynamicTemplate_cms_widgets_Carousel_xhtml .SimpleContentBox .ActionWrapper {
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  line-height: 1;
+}
+body .DynamicTemplate_cms_widgets_Carousel_xhtml .AnonId__cms_widgets_Carousel_xhtml_previousButton,
+body .DynamicTemplate_cms_widgets_Carousel_xhtml .AnonId__cms_widgets_Carousel_xhtml_nextButton {
+  position: absolute;
+  top: 50%;
+  margin-top: -1.5em;
+  padding: 1em 0;
+  cursor: pointer;
+  color: #FFF;
+  font-size: 2em;
+}
+@media screen and (min-width: 992px) {
+  body .DynamicTemplate_cms_widgets_Carousel_xhtml .AnonId__cms_widgets_Carousel_xhtml_previousButton,
+  body .DynamicTemplate_cms_widgets_Carousel_xhtml .AnonId__cms_widgets_Carousel_xhtml_nextButton {
+    visibility: hidden;
+  }
+}
+.sys-viewport.lg > body .DynamicTemplate_cms_widgets_Carousel_xhtml .AnonId__cms_widgets_Carousel_xhtml_previousButton,
+.sys-viewport.lg > body .DynamicTemplate_cms_widgets_Carousel_xhtml .AnonId__cms_widgets_Carousel_xhtml_nextButton {
+  visibility: hidden;
+}
+body .DynamicTemplate_cms_widgets_Carousel_xhtml .AnonId__cms_widgets_Carousel_xhtml_previousButton:hover,
+body .DynamicTemplate_cms_widgets_Carousel_xhtml .AnonId__cms_widgets_Carousel_xhtml_nextButton:hover {
+  background-color: rgba(250, 250, 250, 0.5);
+}
+body .DynamicTemplate_cms_widgets_Carousel_xhtml:hover .AnonId__cms_widgets_Carousel_xhtml_previousButton,
+body .DynamicTemplate_cms_widgets_Carousel_xhtml:hover .AnonId__cms_widgets_Carousel_xhtml_nextButton {
+  visibility: visible;
+}
+body .DynamicTemplate_cms_widgets_Carousel_xhtml .AnonId__cms_widgets_Carousel_xhtml_previousButton {
+  left: 0em;
+  border-top-right-radius: 0.1em;
+  border-bottom-right-radius: 0.1em;
+}
+body .DynamicTemplate_cms_widgets_Carousel_xhtml .AnonId__cms_widgets_Carousel_xhtml_nextButton {
+  right: 0em;
+  border-top-left-radius: 0.1em;
+  border-bottom-left-radius: 0.1em;
+}
+body .DynamicTemplate_cms_widgets_Carousel_xhtml .AnonId__cms_widgets_Carousel_xhtml_statusContainer {
+  position: absolute;
+  display: block;
+  text-align: center;
+  bottom: 0.8em;
+  left: 0;
+  right: 0;
+}
+body .DynamicTemplate_cms_widgets_Carousel_xhtml .AnonId__cms_widgets_Carousel_xhtml_statusContainer.Hidden {
+  display: none;
+}
+body .DynamicTemplate_cms_widgets_Carousel_xhtml .AnonId__cms_widgets_Carousel_xhtml_statusContainer icon {
+  color: #666;
+  padding: 0.4em;
+  font-size: 0.8em;
+  opacity: 0.5;
+  cursor: pointer;
+}
+body .DynamicTemplate_cms_widgets_Carousel_xhtml .AnonId__cms_widgets_Carousel_xhtml_statusContainer icon.Active {
+  color: #FFF;
+}
+body .DynamicTemplate_cms_widgets_Carousel_xhtml .AnonId__cms_widgets_Carousel_xhtml_statusContainer icon:hover {
+  opacity: 1;
+}
+body .DynamicTemplate_cms_widgets_Carousel_xhtml .AnonId__cms_widgets_Carousel_xhtml_statusContainer icon + icon {
+  margin-left: 0.3em;
+}
+@media screen and (max-width: 991px) {
+  body .DynamicTemplate_cms_widgets_Carousel_xhtml .AnonId__cms_widgets_Carousel_xhtml_statusContainer {
+    bottom: 0.5em;
+  }
+  body .DynamicTemplate_cms_widgets_Carousel_xhtml .AnonId__cms_widgets_Carousel_xhtml_statusContainer icon {
+    font-size: 0.25em;
+  }
+}
+.DynamicTemplate_cms_widgets_Carousel_xhtml .AnonId__cms_widgets_Carousel_xhtml_imageContainer,
+body .CarouselImageContainer {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.DynamicTemplate_cms_widgets_Carousel_xhtml .AnonId__cms_widgets_Carousel_xhtml_imageContainer .SliderItem,
+body .CarouselImageContainer .SliderItem {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.DynamicTemplate_cms_widgets_Carousel_xhtml .AnonId__cms_widgets_Carousel_xhtml_imageContainer .SliderItem > img,
+body .CarouselImageContainer .SliderItem > img {
+  display: none;
+  position: absolute;
+}
+
+
+/* Template CSS: /cms/widgets/MobileCombinedNavigation.xhtml */
+body .DynamicTemplate_cms_widgets_MobileCombinedNavigation_xhtml {
+  position: relative;
+}
+.DynamicTemplate_cms_widgets_MobileCombinedNavigation_xhtml .AnonId__cms_widgets_MobileCombinedNavigation_xhtml_menuButton {
+  padding: 1em;
+}
+.DynamicTemplate_cms_widgets_MobileCombinedNavigation_xhtml .AnonId__cms_widgets_MobileCombinedNavigation_xhtml_menuButton > * {
+  cursor: pointer;
+}
+.DynamicTemplate_cms_widgets_MobileCombinedNavigation_xhtml .AnonId__cms_widgets_MobileCombinedNavigation_xhtml_menuButton > icon {
+  font-size: 1.4em;
+}
+body .DynamicTemplate_cms_widgets_MobileCombinedNavigation_xhtml.Activated > .AnonId__cms_widgets_MobileCombinedNavigation_xhtml_menuButton > icon::before {
+  content: "\F156";
+}
+body .DynamicTemplate_cms_widgets_MobileCombinedNavigation_xhtml:not(.Activated) > .AnonId__cms_widgets_MobileCombinedNavigation_xhtml_menuContainer {
+  display: none;
+}
+.DynamicTemplate_cms_widgets_MobileCombinedNavigation_xhtml .AnonId__cms_widgets_MobileCombinedNavigation_xhtml_menuContainer {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  position: absolute;
+  top: 100%;
+  right: 0%;
+  background: #FFF;
+  z-index: 1;
+}
+.DynamicTemplate_cms_widgets_MobileCombinedNavigation_xhtml .AnonId__cms_widgets_MobileCombinedNavigation_xhtml_menuContainer div.MainNavigatorWrapper {
+  max-height: 20em;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.DynamicTemplate_cms_widgets_MobileCombinedNavigation_xhtml .AnonId__cms_widgets_MobileCombinedNavigation_xhtml_menuContainer ul.MainNavigator li {
+  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+}
+.DynamicTemplate_cms_widgets_MobileCombinedNavigation_xhtml .AnonId__cms_widgets_MobileCombinedNavigation_xhtml_menuContainer ul.MainNavigator li span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.DynamicTemplate_cms_widgets_MobileCombinedNavigation_xhtml .AnonId__cms_widgets_MobileCombinedNavigation_xhtml_menuContainer ul > li.WithChildren ul > li {
+  margin-left: 1.5em;
+}
+
+
+/* Template CSS: /cms/widgets/MobileHeader.xhtml */
+body .DynamicTemplate_cms_widgets_MobileHeader_xhtml,
+body .CMSMobileHeader {
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  padding: 0.3em 0.5em;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 4em;
+  box-sizing: border-box;
+  z-index: 1000;
+  position: fixed;
+}
+body .DynamicTemplate_cms_widgets_MobileHeader_xhtml.Pinned {
+  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.4);
+}
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .Spacer {
+  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+}
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_toolBox {
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  align-items: center;
+}
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuButton {
+  position: absolute;
+  width: 4em;
+  height: 4em;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0px;
+  right: 0px;
+  transition: background-color 0.2s ease;
+  background-color: transparent;
+}
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuButton icon {
+  font-size: 1.6em;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+}
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuButton icon::before {
+  font-size: 1em;
+}
+body .DynamicTemplate_cms_widgets_MobileHeader_xhtml.MenuActivated .AnonId__cms_widgets_MobileHeader_xhtml_menuButton {
+  background-color: #EEE;
+  color: #333;
+}
+body .DynamicTemplate_cms_widgets_MobileHeader_xhtml.MenuActivated .AnonId__cms_widgets_MobileHeader_xhtml_menuButton icon::before {
+  content: "\F156";
+}
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuContainer {
+  position: fixed;
+  top: 4em;
+  right: 0px;
+  width: 80%;
+  max-width: 30em;
+  bottom: 0px;
+  z-index: 1;
+  overflow: hidden;
+  transition: all 0.1s ease-in-out;
+}
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuContainerInner {
+  position: absolute;
+  top: 0px;
+  left: 1em;
+  bottom: 0px;
+  right: 0px;
+  padding: 1em;
+  overflow: auto;
+  overflow-x: hidden;
+  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.4);
+  background-color: #EEE;
+  color: #333;
+}
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuContainerInner a {
+  color: #333;
+}
+body .DynamicTemplate_cms_widgets_MobileHeader_xhtml:not(.WithLogo) .AnonId__cms_widgets_MobileHeader_xhtml_logoContainer {
+  display: none;
+}
+body .DynamicTemplate_cms_widgets_MobileHeader_xhtml:not(.WithTeamName) .AnonId__cms_widgets_MobileHeader_xhtml_teamName {
+  display: none;
+}
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_actionsContainer {
+  margin-right: 3.7em;
+  align-items: center;
+}
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_actionsContainer .CMSComponentAccountBar ul.Menu > li {
+  font-size: 0.9em;
+}
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_logoLink {
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  align-items: center;
+  margin-right: 1em;
+  overflow: hidden;
+}
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_logoContainer {
+  display: inline-block;
+  height: 3.4em;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  align-items: center;
+}
+body .DynamicTemplate_cms_widgets_MobileHeader_xhtml.WithTeamName .AnonId__cms_widgets_MobileHeader_xhtml_logoContainer {
+  width: 3.4em;
+}
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_teamName {
+  margin: 0px;
+  font-size: 1.1em;
+  font-weight: bold;
+  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  margin-left: 0.5em;
+  line-height: 1.2em;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+  max-height: 2.4em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml a .AnonId__cms_widgets_MobileHeader_xhtml_teamName {
+  color: #FFF;
+}
+body .DynamicTemplate_cms_widgets_MobileHeader_xhtml:not(.MenuActivated) .AnonId__cms_widgets_MobileHeader_xhtml_menuContainer {
+  visibility: hidden;
+  width: 0px;
+}
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuHeader {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuHeader .CMSComponentSocialLinks > ul {
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  min-width: 0em;
+  margin-right: 0em;
+  align-items: center;
+  margin-bottom: 1em;
+}
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuHeader .CMSComponentSocialLinks > ul li {
+  margin-top: 0em;
+}
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuHeader .CMSComponentSocialLinks > ul li a {
+  min-width: 0em;
+}
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuHeader .CMSComponentSocialLinks > ul li a span {
+  display: none;
+}
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuHeader .CMSComponentSocialLinks > ul.Vertical li {
+  font-size: 1.2em;
+}
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuHeader .CMSComponentSocialLinks > ul.Vertical li + li {
+  margin-left: 0.7em;
+}
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuHeader .CMSComponentTeamLevel {
+  margin-bottom: 1em;
+}
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuHeader .CMSComponentTeamLevel a > img {
+  max-height: 3em;
+}
+@media screen and (max-width: 767px) {
+  .DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuHeader .CMSComponentTeamLevel a > img {
+    max-height: 2.5em;
+  }
+}
+@media screen and (max-width: 991px) {
+  .DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuHeader .CMSComponentTeamLevel a.LSCRegionBadge {
+    font-size: 0.8em;
+  }
+  .DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuHeader .CMSComponentTeamLevel > div.LevelSeparator {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    min-height: 3em;
+  }
+}
+@media screen and (max-width: 991px) and (max-width: 767px) {
+  .DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuHeader .CMSComponentTeamLevel > div.LevelSeparator {
+    margin-left: 0.1em;
+    margin-right: 0.1em;
+    min-height: 2em;
+  }
+}
+@media screen and (max-width: 991px) and (max-width: 767px) {
+  .DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuHeader .CMSComponentTeamLevel a.LSCRegionBadge {
+    font-size: 0.6em;
+  }
+}
+@media screen and (max-width: 767px) {
+  body.BritishSwimming .widget_MobileHeader .CMSComponentTeamLevel {
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    display: flex;
+  }
+  body.BritishSwimming .widget_MobileHeader .CMSComponentTeamLevel .LevelSeparator {
+    display: none;
+  }
+}
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuContent .MainNavigator li.Active > a,
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuFooter .MainNavigator li.Active > a,
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuContent .MainNavigator li.WithChildren > ul,
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuFooter .MainNavigator li.WithChildren > ul,
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuContent .MainNavigator li.WithChildren > ul a,
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuFooter .MainNavigator li.WithChildren > ul a {
+  border: none;
+}
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuContent ul,
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuFooter ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuContent ul li,
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuFooter ul li {
+  padding: 0px;
+  margin: 0px;
+}
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuContent ul li a,
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuFooter ul li a {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1em !important;
+  font-weight: bold;
+}
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuContent ul li.WithChildren ul,
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuFooter ul li.WithChildren ul {
+  padding-left: 1.5em;
+}
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuContent ul li.WithChildren ul > li > a,
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuFooter ul li.WithChildren ul > li > a {
+  padding: 0.5em 1em;
+}
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_menuFooter {
+  margin-top: 0.5em;
+  padding-top: 0.5em;
+  border-top: solid 2px rgba(0, 0, 0, 0.1);
+}
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_toolItemsContainer .ToolItem + .ToolItem {
+  margin-left: 0.5em;
+}
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .AnonId__cms_widgets_MobileHeader_xhtml_toolItemsContainer icon {
+  color: #FFF;
+  opacity: 0.9999 !important;
+}
+@media screen and (max-width: 991px) {
+  body .CMSComponentTeamLogo,
+  body .CMSComponentMainNavigator,
+  body .CMSComponentTeamLinks,
+  body :not(.AnonId_accountInfoContainer) > .CMSComponentAccountBar,
+  body :not(.AnonId_toolItemsContainer) > .CMSComponentShoppingCartButton,
+  body :not(.AnonId_menuHeader) > .CMSComponentTeamLevel,
+  body :not(.AnonId_menuHeader) > .CMSComponentSocialLinks {
+    display: none !important;
+  }
+  body .CMSDetectEmpty.CMSMobileEmptyContainer {
+    display: none !important;
+  }
+  body {
+    padding-top: 4em;
+  }
+}
+@media screen and (min-width: 992px) {
+  body .DynamicTemplate_cms_widgets_MobileHeader_xhtml,
+  body .CMSMobileHeader {
+    display: none;
+  }
+}
+.sys-viewport.lg > body .DynamicTemplate_cms_widgets_MobileHeader_xhtml,
+.sys-viewport.lg > body .CMSMobileHeader {
+  display: none;
+}
+.DynamicTemplate_cms_widgets_MobileHeader_xhtml .MainNavigator li.WithChildren > ul {
+  background: none;
+}
+
+
+/* Template CSS: /cms/widgets/ReviewShowcase.xhtml */
+body .DynamicTemplate_cms_widgets_ReviewShowcase_xhtml.Busy .AnonId__cms_widgets_ReviewShowcase_xhtml_slideShowContainer {
+  display: none;
+}
+body .AnonId__v2_businesspublisher_integration_ReviewShowcaseBoard_xhtml_reviewShowcaseRepeaterView {
+  overflow: inherit !important;
+  height: auto !important;
+}
+@media screen and (min-width: 992px) {
+  body .CMSComponent.CMSComponentReviewShowcase {
+    padding: 0em 1em;
+  }
+}
+.sys-viewport.lg > body .CMSComponent.CMSComponentReviewShowcase {
+  padding: 0em 1em;
+}
+@media screen and (max-width: 991px) {
+  body .CMSComponent.CMSComponentReviewShowcase {
+    padding: 0em 0.5em;
+  }
+}
+
+
+/* Template CSS: /cms/widgets/SignInInfoDialog.xhtml */
+body .DynamicTemplate_cms_widgets_SignInInfoDialog_xhtml {
+  overflow: hidden;
+  align-items: center;
+}
+body .DynamicTemplate_cms_widgets_SignInInfoDialog_xhtml .Box {
+  font-size: 1.2em;
+  width: 22em;
+  padding: 0em 2em 1em 2em;
+}
+body .DynamicTemplate_cms_widgets_SignInInfoDialog_xhtml .Description {
+  margin-bottom: 1.5em;
+}
+body .DynamicTemplate_cms_widgets_SignInInfoDialog_xhtml .Actions > a {
+  align-items: center;
+}
+body .DynamicTemplate_cms_widgets_SignInInfoDialog_xhtml .Actions > a:hover {
+  cursor: pointer;
+}
+body .DynamicTemplate_cms_widgets_SignInInfoDialog_xhtml .Actions:not(.Active) {
+  display: none;
+}
+body .DynamicTemplate_cms_widgets_SignInInfoDialog_xhtml .AnonId__cms_widgets_SignInInfoDialog_xhtml_okButton {
+  background-color: #008CBE;
+  color: #ffffff;
+  font-weight: bold;
+  border: 1px solid #008CBE;
+}
+body .DynamicTemplate_cms_widgets_SignInInfoDialog_xhtml .AnonId__cms_widgets_SignInInfoDialog_xhtml_okButton:hover {
+  background-color: #ffffff;
+  color: #008CBE;
+  cursor: pointer;
+}
+body .DynamicTemplate_cms_widgets_SignInInfoDialog_xhtml .AnonId__cms_widgets_SignInInfoDialog_xhtml_contactTeam2 {
+  margin-left: 0.5em;
+}
+body .DynamicTemplate_cms_widgets_SignInInfoDialog_xhtml .AnonId__cms_widgets_SignInInfoDialog_xhtml_contactUsBox:not(.Active) {
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  body .DynamicTemplate_cms_widgets_SignInInfoDialog_xhtml {
+    flex: 1 1 auto;
+    -webkit-flex: 1 1 auto;
+  }
+  body .DynamicTemplate_cms_widgets_SignInInfoDialog_xhtml .Box {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0em 1em 0.5em 1em;
+  }
+  body .DynamicTemplate_cms_widgets_SignInInfoDialog_xhtml .Description {
+    flex: 1 1 auto;
+    -webkit-flex: 1 1 auto;
+  }
+}
+body .DialogFrame_SignInInfoDialog,
+body .Sys_DialogOverlay_SignInInfoDialog {
+  z-index: 1003;
+}
+body .DialogFrame_SignInInfoDialog .AnonId_dialogHeaderPane {
+  align-items: center;
+  background: #ffffff;
+}
+body .DialogFrame_SignInInfoDialog .AnonId_dialogHeaderPane > img {
+  font-size: 2em;
+  padding: 1em;
+  height: 2.5em;
+  width: auto;
+  box-sizing: content-box;
+  font-weight: bold;
+}
+body .DialogFrame_SignInInfoDialog .AnonId_dialogHeaderPane > img.NoImage {
+  position: relative;
+  font-size: 1.4em;
+  padding: 0.5em;
+}
+body .DialogFrame_SignInInfoDialog .AnonId_dialogHeaderPane > img.NoImage:after {
+  content: attr(alt);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: #fff;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
+  box-sizing: border-box;
+}
+body .DialogFrame_SignInInfoDialog .AnonId_dialogHeaderPane .AnonId_dialogTitleContainer {
+  display: none;
+}
+body .DialogFrame_SignInInfoDialog .AnonId_dialogFooterEndPane button[role="primary"] {
+  background: #469BD3;
+  padding: 0.6em 2.5em;
+}
+body .DialogFrame_SignInInfoDialog .AnonId_dialogFooterEndPane button[role="primary"]:active {
+  background: #469BD3;
+}
+body .DialogFrame_SignInInfoDialog .AnonId_dialogBody {
+  border-top: 1px solid #e7e7e7;
+  background-color: #ffffff;
+}
+body .DialogFrame_SignInInfoDialog .AnonId_dialogFooter {
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  body .DialogFrame_SignInInfoDialog {
+    width: 100% !important;
+    height: 100% !important;
+    top: 0em !important;
+    left: 0em !important;
+    transition: none !important;
+  }
+  body .DialogFrame_SignInInfoDialog .AnonId_dialogHeaderPane > img {
+    padding: 0.5em;
+    height: 1.5em;
+  }
+  body .DialogFrame_SignInInfoDialog .AnonId_dialogBody {
+    padding: 1em;
+  }
+}
+body.SESSO.Legacy .DialogFrame_SignInInfoDialog {
+  font-size: 1.4em;
+}
+
+
+/* Template CSS: /cms/widgets/SignInNotificationDialog.xhtml */
+@media screen and (min-width: 768px) {
+  body .DynamicTemplate_cms_widgets_SignInNotificationDialog_xhtml {
+    width: 25em;
+  }
+}
+.sys-viewport.md > body .DynamicTemplate_cms_widgets_SignInNotificationDialog_xhtml {
+  width: 25em;
+}
+body .DynamicTemplate_cms_widgets_SignInNotificationDialog_xhtml .Entry .Action,
+body .DynamicTemplate_cms_widgets_SignInNotificationDialog_xhtml .Entry button {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.20000000099999998em;
+  background-color: #008CBE;
+  color: #ffffff;
+  font-weight: bold;
+  margin-top: 0.5em;
+  padding: 0.466666669em 0.8000000039999999em;
+  border: 1px solid #008CBE;
+  text-decoration: none;
+}
+body .DynamicTemplate_cms_widgets_SignInNotificationDialog_xhtml .Entry .Action:hover,
+body .DynamicTemplate_cms_widgets_SignInNotificationDialog_xhtml .Entry button:hover {
+  background-color: #ffffff;
+  color: #008CBE;
+}
+body .DynamicTemplate_cms_widgets_SignInNotificationDialog_xhtml .Entry .Action + .Action {
+  margin-top: 1em;
+}
+body .DynamicTemplate_cms_widgets_SignInNotificationDialog_xhtml .Entry + .Entry {
+  margin-top: 2em;
+}
+body .DynamicTemplate_cms_widgets_SignInNotificationDialog_xhtml .AnonId__cms_widgets_SignInNotificationDialog_xhtml_titleText {
+  text-align: center;
+  font-weight: bold;
+}
+@media screen and (max-width: 767px) {
+  body .DynamicTemplate_cms_widgets_SignInNotificationDialog_xhtml {
+    flex: 1 1 auto;
+    -webkit-flex: 1 1 auto;
+  }
+}
+body .DynamicTemplate_cms_widgets_SignInNotificationDialog_xhtml .Actions:not(.ShowTeam) .AnonId__cms_widgets_SignInNotificationDialog_xhtml_teamRegistrationButton,
+body .DynamicTemplate_cms_widgets_SignInNotificationDialog_xhtml .Actions:not(.ShowClass) .AnonId__cms_widgets_SignInNotificationDialog_xhtml_classRegistrationButton,
+body .DynamicTemplate_cms_widgets_SignInNotificationDialog_xhtml .Actions:not(.ShowBooking) .AnonId__cms_widgets_SignInNotificationDialog_xhtml_bookingRegistrationButton {
+  display: none;
+}
+body .DynamicTemplate_cms_widgets_SignInNotificationDialog_xhtml .ContactBox {
+  font-size: 0.9em;
+}
+body .DynamicTemplate_cms_widgets_SignInNotificationDialog_xhtml a:hover,
+body .DynamicTemplate_cms_widgets_SignInNotificationDialog_xhtml button:hover {
+  cursor: pointer;
+}
+body .DialogFrame_SignInNotificationDialog,
+body .Sys_DialogOverlay_SignInNotificationDialog {
+  z-index: 1003;
+}
+body.SESSO.Legacy .DialogFrame_SignInNotificationDialog {
+  font-size: 1.4em;
+}
+body > .BoldDialogFrame.DialogFrame_SignInNotificationDialog .AnonId_dialogBody {
+  padding: 1em 2em !important;
+}
+body .DialogFrame_SignInNotificationDialog .AnonId_dialogHeaderPane {
+  align-items: center;
+  background: #ffffff;
+}
+body .DialogFrame_SignInNotificationDialog .AnonId_dialogHeaderPane > img {
+  font-size: 2em;
+  padding: 1em;
+  height: 2.5em;
+  width: auto;
+  box-sizing: content-box;
+  font-weight: bold;
+}
+body .DialogFrame_SignInNotificationDialog .AnonId_dialogHeaderPane > img.NoImage {
+  position: relative;
+  font-size: 1.4em;
+}
+body .DialogFrame_SignInNotificationDialog .AnonId_dialogHeaderPane > img.NoImage:after {
+  content: attr(alt);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: #fff;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
+  box-sizing: border-box;
+}
+body .DialogFrame_SignInNotificationDialog .AnonId_dialogHeaderPane .AnonId_dialogTitleContainer {
+  display: none;
+}
+body .DialogFrame_SignInNotificationDialog .AnonId_dialogFooterEndPane button[role="primary"] {
+  background: #469BD3;
+  padding: 0.6em 2.5em;
+}
+body .DialogFrame_SignInNotificationDialog .AnonId_dialogFooterEndPane button[role="primary"]:active {
+  background: #469BD3;
+}
+body .DialogFrame_SignInNotificationDialog .AnonId_dialogBody {
+  border-top: 1px solid #e7e7e7;
+  background-color: #ffffff;
+  font-size: 1.2em;
+  padding: 1em 2em;
+}
+body .DialogFrame_SignInNotificationDialog .AnonId_dialogFooter {
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  body .DialogFrame_SignInNotificationDialog {
+    width: 100% !important;
+    height: 100% !important;
+    top: 0em !important;
+    left: 0em !important;
+    transition: none !important;
+  }
+  body .DialogFrame_SignInNotificationDialog .AnonId_dialogHeaderPane > img {
+    padding: 0.5em;
+    height: 1.5em;
+  }
+  body .DialogFrame_SignInNotificationDialog .AnonId_dialogBody {
+    padding: 1em;
+  }
+}
+
+
+/* Template CSS: /cms/widgets/UpcomingEvents.xhtml */
+body .DynamicTemplate_cms_widgets_UpcomingEvents_xhtml {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+}
+body .DynamicTemplate_cms_widgets_UpcomingEvents_xhtml.Busy .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList,
+body .DynamicTemplate_cms_widgets_UpcomingEvents_xhtml.Busy .AnonId__cms_widgets_UpcomingEvents_xhtml_footerActions {
+  display: none;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_sidePane,
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_selectorPanes {
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_selectorPanes {
+  border-bottom: solid 0.1em #cbcbcb;
+  width: 100%;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex: 0 1 auto;
+  box-sizing: border-box;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_selectorPanes > .TypeSelector {
+  padding: 0.8em;
+  background-color: #FFF;
+  border-bottom: solid 0.3em #FFF;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_selectorPanes > .TypeSelector:hover {
+  cursor: pointer;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_contentPane {
+  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  width: 100%;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_contentPane > h3 {
+  margin: 0px;
+  padding: 0.7em;
+  color: #F2543B;
+  font-size: 1.2em;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item {
+  align-items: flex-start;
+  padding: 0 0.7em 0.7em;
+  border-top: solid 1px #CCC;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item:hover {
+  cursor: pointer;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .Calendar {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  width: 5em;
+  min-width: 5em;
+  background-color: #F5F6FA;
+  position: relative;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .Calendar:after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  border-top: 0.8em solid #CCC;
+  border-right: 0.8em solid #FFF;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .Calendar > .Month {
+  background: #5CA7DE;
+  padding: 0.2em;
+  color: #FFF;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 0.85em;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .Calendar .Day {
+  color: #ED4B34;
+  text-align: center;
+  padding: 0.3em 0em;
+  font-weight: bold;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .Calendar .Day + .Day:before {
+  content: "-";
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .Calendar > .Year {
+  text-align: center;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #313234;
+  padding-bottom: 1em;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .ContentWrapper {
+  margin-left: 0.7em;
+  padding: 0.7em 0;
+  display: flex;
+  flex-direction: column;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .ContentWrapper > .Content {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .ContentWrapper > .Content > .Title {
+  color: #ee3423;
+  font-weight: bold;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .ContentWrapper > .Content > .AnonId__cms_widgets_UpcomingEvents_xhtml_titleLabel {
+  display: none;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .ContentWrapper > .Content > .InfoDataContainer {
+  margin-top: 0.4em;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .ContentWrapper > .Content > .InfoDataContainer .Label {
+  margin-right: 0.5em;
+  color: #383838;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .ContentWrapper > .Content > .InfoDataContainer > hbox + hbox {
+  margin-top: 0.2em;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .ContentWrapper > .Content > .InfoDataContainer .DisplayValue {
+  color: #787878;
+  white-space: pre-line;
+  max-width: 100%;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .ContentWrapper > .Content > .InfoDataContainer .DisplayValue p {
+  padding-top: 0em;
+  padding-bottom: 0em;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .ContentWrapper > .Content > .InfoDataContainer .DisplayValue p:last-child {
+  margin-bottom: 0em;
+  margin-top: 0em;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .ContentWrapper > .Content > .InfoDataContainer .DisplayValue.NoteInfo {
+  margin: 0.5em 0em;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .ContentWrapper > .Content > .InfoDataContainer .DateBox.SameDay .EndDate {
+  display: none;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .ContentWrapper > .Content > .InfoDataContainer .DateBox .EndDate,
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .ContentWrapper > .Content > .InfoDataContainer .TimeBox .EndTime {
+  margin-left: 0.5em;
+  align-items: center;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .ContentWrapper > .Content > .InfoDataContainer .DateBox .EndDate:before,
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .ContentWrapper > .Content > .InfoDataContainer .TimeBox .EndTime:before {
+  content: "-";
+  margin-right: 0.5em;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .ContentWrapper > .Content > .InfoDataContainer .RosterLocationBox {
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .ContentWrapper > .Content > .InfoDataContainer .RosterLocationBox > hbox {
+  max-width: 100%;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .ContentWrapper > .Content > .InfoDataContainer .RosterLocationBox .Separator {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .ContentWrapper > .Actions {
+  margin: 0px;
+  margin-top: 0.5em;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .ContentWrapper > .Actions a {
+  color: #F2543B;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .ContentWrapper > .Actions > a.Button {
+  align-items: center;
+  border: solid 1px;
+  border-radius: 3px;
+  padding: 0.3em 0.6em;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .ContentWrapper > .Actions > a.Button > icon {
+  margin-right: 0.3em;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .ContentWrapper > .Actions > a.Button:hover {
+  text-decoration: none;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .ContentWrapper > .Actions > a.Button.Default {
+  background: #CEDBF4;
+  border-color: #6f7173;
+  color: #303132;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .ContentWrapper > .Actions > a.Button.Default:hover {
+  background: #e3eaf9;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .ContentWrapper > .Actions > a.Button.Primary {
+  background: #E6F4DD;
+  border-color: #81ab65;
+  color: #445e33;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .ContentWrapper > .Actions > a.Button.Primary:hover {
+  background: #f4faf0;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .ContentWrapper > .Actions > a.Button.Danger {
+  background: #FEE6E6;
+  border-color: #fcb5b5;
+  color: #f73a3a;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .ContentWrapper > .Actions > a.Button.Danger:hover {
+  background: #ffffff;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_eventList .Item > .ContentWrapper > .Actions > a.Button ~ a.Button {
+  margin-left: 0.5em;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_sidePane > .AnonId__cms_widgets_UpcomingEvents_xhtml_viewCalendarLink {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+  padding: 0.7em;
+  background: #127CA6;
+  color: #FFF;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  align-items: center;
+  margin: 0.3em;
+  display: none;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_sidePane > .AnonId__cms_widgets_UpcomingEvents_xhtml_viewCalendarLink:not(.Active) {
+  display: none;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_sidePane > .AnonId__cms_widgets_UpcomingEvents_xhtml_viewCalendarLink > icon {
+  font-size: 1.4em;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_footerActions {
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.7em;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_footerActions > a {
+  display: block;
+  border-radius: 3px;
+  padding: 0.3em 0.7em;
+  background: #127CA6;
+  color: #FFF;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_footerActions > a:not(.Active) {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  body .DynamicTemplate_cms_widgets_UpcomingEvents_xhtml {
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    display: flex;
+  }
+  body .DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_sidePane {
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    display: flex;
+  }
+  body .DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_sidePane > .AnonId__cms_widgets_UpcomingEvents_xhtml_viewCalendarLink {
+    display: flex;
+  }
+  body .DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_contentPane {
+    border-left: solid 0.15em #F2543B;
+    border-bottom: none;
+    flex: 1 1 auto;
+    -webkit-flex: 1 1 auto;
+  }
+  .DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_selectorPanes {
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    display: flex;
+  }
+  .DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_selectorPanes > .TypeSelector {
+    padding-right: 3em;
+    border-left: solid 0.15em;
+    border-bottom: none;
+  }
+  .DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_selectorPanes > .TypeSelector + .TypeSelector {
+    margin-top: 0.1em;
+  }
+  .DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_moreCalendarLink {
+    display: none;
+  }
+  .DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_moreCalendarLink:not(.Active) {
+    display: none;
+  }
+}
+.sys-viewport.md > body .DynamicTemplate_cms_widgets_UpcomingEvents_xhtml {
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+}
+.sys-viewport.md > body .DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_sidePane {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+}
+.sys-viewport.md > body .DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_sidePane > .AnonId__cms_widgets_UpcomingEvents_xhtml_viewCalendarLink {
+  display: flex;
+}
+.sys-viewport.md > body .DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_contentPane {
+  border-left: solid 0.15em #F2543B;
+  border-bottom: none;
+  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+}
+.sys-viewport.md > .DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_selectorPanes {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  display: flex;
+}
+.sys-viewport.md > .DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_selectorPanes > .TypeSelector {
+  padding-right: 3em;
+  border-left: solid 0.15em;
+  border-bottom: none;
+}
+.sys-viewport.md > .DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_selectorPanes > .TypeSelector + .TypeSelector {
+  margin-top: 0.1em;
+}
+.sys-viewport.md > .DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_moreCalendarLink {
+  display: none;
+}
+.sys-viewport.md > .DynamicTemplate_cms_widgets_UpcomingEvents_xhtml .AnonId__cms_widgets_UpcomingEvents_xhtml_moreCalendarLink:not(.Active) {
+  display: none;
+}
+
+
